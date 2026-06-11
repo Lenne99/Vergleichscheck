@@ -51,7 +51,7 @@ export default function Footer() {
                 </svg>
               </div>
               <span className="font-bold text-white text-lg tracking-tight">
-                vergleichs<span className="text-blue-400">check</span>
+                vergleich<span className="text-blue-400">check</span>
               </span>
             </div>
             <p className="text-sm leading-relaxed mb-4">
@@ -92,7 +92,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs">
-          <p>© 2026 Vergleichscheck.com · Alle Rechte vorbehalten</p>
+          <p>© 2026 Vergleichcheck.com · Alle Rechte vorbehalten</p>
           <p className="text-slate-500 text-center sm:text-right max-w-sm">
             * Einige Links sind Affiliate-Links. Wir erhalten eine Provision bei Kauf — ohne Mehrkosten für dich.
           </p>

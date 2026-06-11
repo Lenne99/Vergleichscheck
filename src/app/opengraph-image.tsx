@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Vergleichscheck.com – Unabhängige Software-Vergleiche für Selbstständige";
+export const alt = "Vergleichcheck.com – Unabhängige Software-Vergleiche für Selbstständige";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -26,7 +26,7 @@ export default async function Image() {
             <div style={{ color: "white", fontSize: "24px", fontWeight: "bold" }}>✓</div>
           </div>
           <div style={{ color: "white", fontSize: "28px", fontWeight: "bold", letterSpacing: "-0.5px" }}>
-            vergleichs<span style={{ color: "#60A5FA" }}>check</span>.com
+            vergleich<span style={{ color: "#60A5FA" }}>check</span>.com
           </div>
         </div>
         <div style={{ color: "white", fontSize: "52px", fontWeight: "bold", lineHeight: 1.15, marginBottom: "24px", maxWidth: "900px" }}>
