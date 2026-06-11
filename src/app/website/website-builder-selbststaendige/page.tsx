@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Beste Website Builder für Selbstständige 2026 – In 1 Tag online",
     description: "Squarespace, Framer, Jimdo, Wix & Super.so im Vergleich. Mit Branchenempfehlung und 5-Schritte-Fahrplan.",
-    url: "https://vergleichscheck.com/website/website-builder-selbststaendige",
+    url: "https://vergleichcheck.com/website/website-builder-selbststaendige",
     type: "article",
   },
 };
