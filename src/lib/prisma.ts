@@ -1,11 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+// Prisma ist aktuell deaktiviert (Phase 1: kein Datenbank-Setup nötig).
+// Wird in Phase 2 aktiviert wenn PostgreSQL angebunden wird.
 
-const globalForPrisma = global as unknown as { prisma: PrismaClient };
-
-export const prisma =
-  globalForPrisma.prisma ||
-  new PrismaClient({
-    log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
-  });
-
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
+export const prisma = null as any;

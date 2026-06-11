@@ -4,18 +4,15 @@ import type { NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Schütze /admin Routes
-  if (pathname.startsWith('/admin')) {
-    // Nur /admin/login ist ohne Session erlaubt
-    if (pathname === '/admin/login' || pathname === '/admin/login/') {
-      return NextResponse.next();
-    }
+  if (!pathname.startsWith('/admin')) return NextResponse.next();
 
-    // Alle anderen /admin Routes brauchen Session
-    const sessionToken = request.cookies.get('sessionToken')?.value;
-    if (!sessionToken) {
-      return NextResponse.redirect(new URL('/admin/login', request.url));
-    }
+  // Login-Seite immer erlauben
+  if (pathname === '/admin/login') return NextResponse.next();
+
+  // Session-Cookie prüfen (einfache Präsenz-Prüfung im Edge, echte Validierung im API)
+  const token = request.cookies.get('sessionToken')?.value;
+  if (!token) {
+    return NextResponse.redirect(new URL('/admin/login', request.url));
   }
 
   return NextResponse.next();

@@ -1,127 +1,77 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
-import { hashPassword, generateSessionToken, verifyPassword } from '@/lib/auth';
+import { createSessionToken } from '@/lib/session';
+
+const ADMIN_USERS = [
+  {
+    id: 'admin-1',
+    name: 'Lenne',
+    email: 'admin@vergleichscheck.com',
+    username: 'Lenne',
+    password: process.env.ADMIN_PASSWORD || '12345',
+    role: 'ADMIN',
+  },
+];
+
+// Einfaches In-Memory Rate-Limiting (resets bei Server-Neustart)
+const loginAttempts = new Map<string, { count: number; blockedUntil: number }>();
+const MAX_ATTEMPTS = 5;
+const BLOCK_DURATION = 15 * 60 * 1000;
 
 export async function POST(request: NextRequest) {
   try {
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+
+    const attempts = loginAttempts.get(ip);
+    if (attempts && attempts.blockedUntil > Date.now()) {
+      const minutesLeft = Math.ceil((attempts.blockedUntil - Date.now()) / 60000);
+      return NextResponse.json(
+        { error: `Zu viele Versuche. Bitte warte ${minutesLeft} Minuten.` },
+        { status: 429 }
+      );
+    }
+
     const { email, password } = await request.json();
 
     if (!email || !password) {
-      return NextResponse.json(
-        { error: 'Email und Passwort erforderlich' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Benutzername und Passwort erforderlich' }, { status: 400 });
     }
 
-    // Finde User
-    const user = await prisma.user.findUnique({
-      where: { email },
-    });
+    const user = ADMIN_USERS.find(
+      (u) => (u.email === email || u.username === email) && u.password === password
+    );
 
     if (!user) {
-      // Log fehlgeschlagener Login
-      await prisma.loginHistory.create({
-        data: {
-          userId: 'unknown',
-          ipAddress: getClientIp(request),
-          userAgent: request.headers.get('user-agent') || undefined,
-          success: false,
-          reason: 'Benutzer nicht gefunden',
-        },
-      });
+      const current = loginAttempts.get(ip) || { count: 0, blockedUntil: 0 };
+      current.count += 1;
+      if (current.count >= MAX_ATTEMPTS) {
+        current.blockedUntil = Date.now() + BLOCK_DURATION;
+        current.count = 0;
+      }
+      loginAttempts.set(ip, current);
 
-      return NextResponse.json(
-        { error: 'Ungültige Anmeldedaten' },
-        { status: 401 }
-      );
+      return NextResponse.json({ error: 'Ungültiger Benutzername oder Passwort' }, { status: 401 });
     }
 
-    // Vergleiche Passwort
-    const passwordValid = await verifyPassword(password, user.passwordHash);
+    loginAttempts.delete(ip);
 
-    if (!passwordValid) {
-      // Log fehlgeschlagener Login
-      await prisma.loginHistory.create({
-        data: {
-          userId: user.id,
-          ipAddress: getClientIp(request),
-          userAgent: request.headers.get('user-agent') || undefined,
-          success: false,
-          reason: 'Falsches Passwort',
-        },
-      });
+    const token = await createSessionToken(user.id);
 
-      return NextResponse.json(
-        { error: 'Ungültige Anmeldedaten' },
-        { status: 401 }
-      );
-    }
-
-    if (!user.isActive) {
-      return NextResponse.json(
-        { error: 'Benutzer ist deaktiviert' },
-        { status: 403 }
-      );
-    }
-
-    // Erstelle Session
-    const sessionToken = generateSessionToken();
-    const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24h
-
-    await prisma.session.create({
-      data: {
-        userId: user.id,
-        token: sessionToken,
-        expiresAt,
-        ipAddress: getClientIp(request),
-        userAgent: request.headers.get('user-agent') || undefined,
-      },
-    });
-
-    // Update lastLogin
-    await prisma.user.update({
-      where: { id: user.id },
-      data: { lastLogin: new Date() },
-    });
-
-    // Log erfolgreicher Login
-    await prisma.loginHistory.create({
-      data: {
-        userId: user.id,
-        ipAddress: getClientIp(request),
-        userAgent: request.headers.get('user-agent') || undefined,
-        success: true,
-      },
-    });
-
-    // Erstelle Response mit HttpOnly Cookie
     const response = NextResponse.json(
-      {
-        success: true,
-        user: { id: user.id, email: user.email, name: user.name, role: user.role }
-      },
+      { success: true, user: { id: user.id, name: user.name, email: user.email, role: user.role } },
       { status: 200 }
     );
 
-    response.cookies.set('sessionToken', sessionToken, {
+    response.cookies.set('sessionToken', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
-      maxAge: 24 * 60 * 60, // 24h in seconds
+      maxAge: 24 * 60 * 60,
       path: '/',
     });
 
     return response;
   } catch (error) {
     console.error('Login error:', error);
-    return NextResponse.json(
-      { error: 'Interner Fehler' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Interner Fehler' }, { status: 500 });
   }
-}
-
-function getClientIp(request: NextRequest): string {
-  const forwarded = request.headers.get('x-forwarded-for');
-  return (forwarded?.split(',')[0] || request.ip || 'unknown').trim();
 }
