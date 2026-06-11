@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
+import FaqAccordion from "@/components/FaqAccordion";
 
 export const metadata: Metadata = {
   title: "Buchhaltungssoftware für Selbstständige ohne Vorkenntnisse 2026 – Ehrlicher Test",
@@ -393,16 +394,10 @@ export default function Page() {
 
           {/* ── FAQ ── */}
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-6 text-center">Häufige Fragen von Buchhaltungs-Einsteigern</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">Häufige Fragen von Buchhaltungs-Einsteigern</h2>
             <div className="space-y-3">
-              {faqs.map((item, i) => (
-                <div key={i} className="bg-white rounded-xl border border-slate-200 p-5">
-                  <h3 className="font-bold text-slate-900 mb-2 flex items-start gap-2">
-                    <span className="text-blue-600 shrink-0 mt-0.5 text-lg leading-none">?</span>
-                    {item.q}
-                  </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed pl-6">{item.a}</p>
-                </div>
+              {faqs.map((item) => (
+                <FaqAccordion key={item.q} question={item.q} answer={item.a} />
               ))}
             </div>
           </section>
