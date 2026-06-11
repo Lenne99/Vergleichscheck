@@ -64,11 +64,11 @@ const colorMap: Record<string, string> = {
 };
 
 const featured = {
-  title: "Beste Buchhaltungssoftware für Selbstständige 2025",
+  title: "Beste Buchhaltungssoftware für Selbstständige 2026",
   winner: "lexoffice",
   desc: "Wir haben 5 Programme getestet. lexoffice gewinnt dank bester Bedienbarkeit, DATEV-Export und GoBD-Konformität.",
   href: "/buchhaltung/beste-buchhaltungssoftware-selbststaendige",
-  meta: "5 Tools · Zuletzt aktualisiert: Juni 2025",
+  meta: "5 Tools · Zuletzt aktualisiert: Juni 2026",
 };
 
 const recentArticles = [
@@ -78,15 +78,15 @@ const recentArticles = [
     title: "Buchhaltungssoftware ohne Vorkenntnisse – welche ist wirklich einfach?",
     desc: "Die 5 größten Ängste von Buchhaltungs-Einsteigern – und wie die richtige Software sie löst.",
     href: "/buchhaltung/buchhaltungssoftware-ohne-vorkenntnisse",
-    meta: "4 min Lesezeit · Juni 2025",
+    meta: "4 min Lesezeit · Juni 2026",
   },
   {
     tag: "Großer Vergleich",
     tagColor: "bg-blue-50 text-blue-700",
-    title: "Beste Buchhaltungssoftware für Selbstständige 2025",
+    title: "Beste Buchhaltungssoftware für Selbstständige 2026",
     desc: "lexoffice, sevDesk, FastBill, Buchhaltungsbutler und WISO im direkten Vergleich mit Scoring.",
     href: "/buchhaltung/beste-buchhaltungssoftware-selbststaendige",
-    meta: "8 min Lesezeit · Juni 2025",
+    meta: "8 min Lesezeit · Juni 2026",
   },
 ];
 

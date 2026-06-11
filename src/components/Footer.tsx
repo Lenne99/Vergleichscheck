@@ -78,7 +78,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs">
-          <p>© 2025 Vergleichscheck.com · Alle Rechte vorbehalten</p>
+          <p>© 2026 Vergleichscheck.com · Alle Rechte vorbehalten</p>
           <p className="text-slate-500 text-center sm:text-right max-w-sm">
             * Einige Links sind Affiliate-Links. Wir erhalten eine Provision bei Kauf — ohne Mehrkosten für dich.
           </p>

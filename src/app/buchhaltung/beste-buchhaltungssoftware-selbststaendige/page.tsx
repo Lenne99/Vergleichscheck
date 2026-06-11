@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Beste Buchhaltungssoftware für Selbstständige 2025 – Test & Vergleich",
+  title: "Beste Buchhaltungssoftware für Selbstständige 2026 – Test & Vergleich",
   description:
     "lexoffice, sevDesk, FastBill, Buchhaltungsbutler oder WISO? Wir haben alle 5 getestet. Klare Empfehlung für Selbstständige in Deutschland – mit Vergleichstabelle und FAQ.",
 };
@@ -243,14 +243,14 @@ export default function Page() {
 
             <div className="flex flex-wrap gap-2 mb-5">
               <span className="inline-flex items-center gap-1.5 text-xs font-semibold bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full">
-                <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Vergleich 2025
+                <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Vergleich 2026
               </span>
               <span className="text-xs font-semibold bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full">✓ Unabhängig getestet</span>
-              <span className="text-xs font-semibold bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full">5 Tools · Juni 2025</span>
+              <span className="text-xs font-semibold bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full">5 Tools · Juni 2026</span>
             </div>
 
             <h1 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-4">
-              Beste Buchhaltungssoftware<br className="hidden md:block" /> für Selbstständige 2025
+              Beste Buchhaltungssoftware<br className="hidden md:block" /> für Selbstständige 2026
             </h1>
             <p className="text-slate-600 text-lg mb-7 max-w-2xl leading-relaxed">
               Wir haben 5 Programme mit echten Testkonten geprüft — speziell für Freelancer, Solo-Selbstständige und Einzelunternehmer in Deutschland. Klare Empfehlung, kein Fachjargon.
@@ -557,7 +557,7 @@ export default function Page() {
               <div className="bg-slate-800 px-8 py-4 flex flex-wrap justify-center gap-6 text-xs text-slate-400">
                 <span className="flex items-center gap-1.5"><span className="text-emerald-400">✓</span> Unabhängig getestet</span>
                 <span className="flex items-center gap-1.5"><span className="text-emerald-400">✓</span> Kein bezahlter Testsieger</span>
-                <span className="flex items-center gap-1.5"><span className="text-emerald-400">✓</span> Letztes Update: Juni 2025</span>
+                <span className="flex items-center gap-1.5"><span className="text-emerald-400">✓</span> Letztes Update: Juni 2026</span>
               </div>
             </div>
           </section>

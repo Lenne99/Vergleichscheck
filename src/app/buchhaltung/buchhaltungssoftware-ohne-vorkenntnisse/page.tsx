@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Buchhaltungssoftware für Selbstständige ohne Vorkenntnisse 2025 – Ehrlicher Test",
+  title: "Buchhaltungssoftware für Selbstständige ohne Vorkenntnisse 2026 – Ehrlicher Test",
   description:
     "Keine Ahnung von Buchhaltung? Kein Problem. Wir zeigen welche Software auch ohne Steuerwissen funktioniert – mit EÜR, USt-Voranmeldung und DATEV-Export. Klare Empfehlung für Einsteiger.",
 };
@@ -160,7 +160,7 @@ export default function Page() {
 
             <div className="flex flex-wrap gap-2 mb-5">
               <span className="text-xs font-semibold bg-amber-50 text-amber-700 px-3 py-1.5 rounded-full border border-amber-200">
-                👶 Einsteiger-Ratgeber 2025
+                👶 Einsteiger-Ratgeber 2026
               </span>
               <span className="text-xs font-semibold bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full">✓ Kein Buchhaltungswissen nötig</span>
             </div>
