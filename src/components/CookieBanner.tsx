@@ -6,38 +6,37 @@ export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    try {
-      if (!localStorage.getItem("vc_cookie_ok")) setVisible(true);
-    } catch {
-      // localStorage not available (SSR or private mode)
-    }
+    const accepted = localStorage.getItem("cookie_accepted");
+    if (!accepted) setVisible(true);
   }, []);
 
   function accept() {
-    try { localStorage.setItem("vc_cookie_ok", "1"); } catch { /* ignore */ }
+    localStorage.setItem("cookie_accepted", "true");
     setVisible(false);
   }
 
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-3 sm:p-4">
-      <div className="max-w-4xl mx-auto bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl px-5 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-        <div className="flex items-start gap-3 flex-1">
-          <span className="text-green-400 text-lg shrink-0 mt-0.5">🔒</span>
-          <p className="text-sm text-slate-300 leading-relaxed">
-            Diese Website verwendet <strong className="text-white">ausschließlich technisch notwendige Cookies</strong> — kein Tracking, kein Google Analytics.{" "}
-            <Link href="/datenschutz" className="text-blue-400 hover:text-blue-300 underline">
-              Datenschutzerklärung
-            </Link>
-          </p>
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-slate-900 border-t border-slate-700 shadow-xl">
+      <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p className="text-sm text-slate-300 text-center sm:text-left">
+          Diese Website verwendet ausschließlich technisch notwendige Cookies. Kein Tracking, kein Google Analytics.
+        </p>
+        <div className="flex items-center gap-3 shrink-0">
+          <Link
+            href="/datenschutz"
+            className="text-sm text-slate-400 hover:text-white underline transition-colors whitespace-nowrap"
+          >
+            Datenschutz
+          </Link>
+          <button
+            onClick={accept}
+            className="inline-flex items-center gap-1.5 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors whitespace-nowrap"
+          >
+            Verstanden
+          </button>
         </div>
-        <button
-          onClick={accept}
-          className="shrink-0 bg-green-600 hover:bg-green-500 text-white text-sm font-semibold px-5 py-2 rounded-xl transition-colors whitespace-nowrap"
-        >
-          Verstanden
-        </button>
       </div>
     </div>
   );

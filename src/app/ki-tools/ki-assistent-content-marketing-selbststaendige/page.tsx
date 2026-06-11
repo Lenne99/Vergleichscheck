@@ -145,7 +145,7 @@ const tools = [
     rating: 4.1,
     votes: "890",
     cta: "Gemini kostenlos testen",
-    ctaStyle: "bg-green-600 hover:bg-green-700 text-slate-900",
+    ctaStyle: "bg-green-600 hover:bg-green-700 text-white",
   },
   {
     name: "Jasper",
