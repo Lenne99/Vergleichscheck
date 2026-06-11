@@ -46,11 +46,11 @@ const categories = [
   {
     icon: "🌐",
     label: "Website",
-    title: "Website & Online-Präsenz",
-    desc: "Website-Builder, Hosting-Anbieter und Terminbuchungssysteme.",
-    href: "#",
-    count: "Demnächst",
-    live: false,
+    title: "Website Builder",
+    desc: "Squarespace, Framer, Jimdo & Co. – in 1 Tag online ohne Programmierkenntnisse.",
+    href: "/website/website-builder-selbststaendige",
+    count: "1 Vergleich",
+    live: true,
     color: "amber",
   },
 ];
@@ -111,6 +111,14 @@ const recentArticles = [
     desc: "Notion, Todoist, Toggl Track & Co. – kein Overkill, einfach nutzbar für Solo-Business.",
     href: "/produktivitaet/produktivitaet-tools-selbststaendige",
     meta: "6 min Lesezeit · Juni 2026",
+  },
+  {
+    tag: "Website",
+    tagColor: "bg-amber-50 text-amber-700",
+    title: "Beste Website Builder für Selbstständige 2026",
+    desc: "Squarespace, Framer, Jimdo & Co. – in 1 Tag online ohne Programmierkenntnisse.",
+    href: "/website/website-builder-selbststaendige",
+    meta: "7 min Lesezeit · Juni 2026",
   },
 ];
 

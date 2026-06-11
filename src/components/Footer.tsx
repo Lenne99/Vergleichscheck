@@ -8,7 +8,7 @@ const cols = [
       { label: "KI-Assistenten", href: "/ki-tools/ki-assistent-content-marketing-selbststaendige" },
       { label: "Marketing-Tools", href: "/marketing/social-media-tools-selbststaendige" },
       { label: "Produktivität", href: "/produktivitaet/produktivitaet-tools-selbststaendige" },
-      { label: "Website-Builder", href: "#" },
+      { label: "Website-Builder", href: "/website/website-builder-selbststaendige" },
     ],
   },
   {
