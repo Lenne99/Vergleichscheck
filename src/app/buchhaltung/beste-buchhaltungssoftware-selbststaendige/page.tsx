@@ -264,7 +264,7 @@ export default function Page() {
                 <div className="font-bold text-slate-900 text-lg">{winner.name} <span className="text-slate-500 font-normal text-sm">— ab {winner.priceLabel}/Monat</span></div>
                 <div className="text-sm text-slate-600 mt-0.5">Beste Bedienbarkeit, DATEV-Export, GoBD-konform, 30 Tage gratis.</div>
               </div>
-              <a href="#" className="shrink-0 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold px-5 py-2.5 rounded-xl text-sm transition-all whitespace-nowrap shadow-md shadow-amber-500/20">
+              <a href="#" className="shrink-0 inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition-all whitespace-nowrap shadow-md shadow-green-600/20">
                 Kostenlos testen <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 7h6M7 4l3 3-3 3"/></svg>
               </a>
             </div>
@@ -312,7 +312,7 @@ export default function Page() {
                       <div className="shrink-0 text-right">
                         <div className="font-bold text-slate-900 text-lg">{t.priceLabel}</div>
                         <div className="text-xs text-slate-400 mb-2">{t.priceNote}</div>
-                        <a href="#" className={`inline-flex items-center gap-1.5 text-xs font-bold px-3 py-2 rounded-lg transition-colors ${t.highlight ? "bg-amber-500 hover:bg-amber-400 text-slate-900" : "bg-blue-600 hover:bg-blue-700 text-white"}`}>
+                        <a href="#" className={`inline-flex items-center gap-1.5 text-xs font-bold px-3 py-2 rounded-lg transition-colors ${t.highlight ? "bg-green-600 hover:bg-green-700 text-white" : "bg-blue-600 hover:bg-blue-700 text-white"}`}>
                           {t.highlight ? "30 Tage gratis →" : "Testen →"}
                         </a>
                       </div>
@@ -464,7 +464,7 @@ export default function Page() {
                         <p className="text-sm font-semibold text-slate-800 mt-0.5">{t.bestFor}</p>
                       </div>
                       <div className="flex flex-col items-start sm:items-end gap-1 shrink-0">
-                        <a href="#" className={`inline-flex items-center gap-2 font-bold px-5 py-2.5 rounded-xl text-sm transition-all ${t.highlight ? "bg-amber-500 hover:bg-amber-400 text-slate-900 shadow-md shadow-amber-500/20" : "bg-blue-600 hover:bg-blue-700 text-white"}`}>
+                        <a href="#" className={`inline-flex items-center gap-2 font-bold px-5 py-2.5 rounded-xl text-sm transition-all ${t.highlight ? "bg-green-600 hover:bg-green-700 text-white shadow-md shadow-green-600/20" : "bg-blue-600 hover:bg-blue-700 text-white"}`}>
                           {t.cta} <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 7h6M7 4l3 3-3 3"/></svg>
                         </a>
                         <span className="text-xs text-slate-400">{t.ctaNote}</span>
@@ -547,7 +547,7 @@ export default function Page() {
                 <p className="text-slate-400 mb-8 max-w-xl mx-auto leading-relaxed">
                   Für die meisten Selbstständigen in Deutschland vereint lexoffice Benutzerfreundlichkeit, DATEV-Export und GoBD-Konformität zum besten Gesamtpaket.
                 </p>
-                <a href="#" className="inline-flex items-center gap-2.5 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-8 py-4 rounded-xl text-base transition-all shadow-xl shadow-amber-500/20">
+                <a href="#" className="inline-flex items-center gap-2.5 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-xl text-base transition-all shadow-xl shadow-green-600/20">
                   lexoffice 30 Tage kostenlos testen
                   <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 8h8M9 5l3 3-3 3"/></svg>
                 </a>
