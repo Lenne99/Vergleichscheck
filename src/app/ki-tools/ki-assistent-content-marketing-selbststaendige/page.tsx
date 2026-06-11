@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "KI-Assistent für Content & Marketing 2026 – Welches Tool macht was am besten?",
     description: "ChatGPT, Claude, Perplexity & Co. nach konkreten Aufgaben bewertet. Mit fertigen Prompt-Vorlagen zum Kopieren.",
-    url: "https://vergleichscheck.com/ki-tools/ki-assistent-content-marketing-selbststaendige",
+    url: "https://vergleichcheck.com/ki-tools/ki-assistent-content-marketing-selbststaendige",
     type: "article",
   },
 };

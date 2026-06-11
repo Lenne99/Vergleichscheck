@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Buchhaltungssoftware ohne Vorkenntnisse 2026 – Welche ist wirklich einfach?",
     description: "Die 5 größten Einsteiger-Ängste gelöst. Nur 3 Tools schaffen es wirklich für absolute Anfänger. Mit 5-Schritte-Startanleitung.",
-    url: "https://vergleichscheck.com/buchhaltung/buchhaltungssoftware-ohne-vorkenntnisse",
+    url: "https://vergleichcheck.com/buchhaltung/buchhaltungssoftware-ohne-vorkenntnisse",
     type: "article",
   },
 };
