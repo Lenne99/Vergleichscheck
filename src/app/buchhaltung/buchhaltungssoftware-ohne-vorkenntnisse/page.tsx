@@ -461,7 +461,7 @@ export default function Page() {
               <Link href="/buchhaltung/beste-buchhaltungssoftware-selbststaendige" className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all">
                 <div className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">Buchhaltung</div>
                 <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Beste Buchhaltungssoftware 2026</div>
-                <div className="text-slate-500 text-sm mt-1">Der komplette Vergleich aller Top-Programme</div>
+                <div className="text-slate-500 text-sm mt-1">5 Programme ehrlich getestet – klare Empfehlung</div>
               </Link>
               <Link href="/ki-tools/ki-assistent-content-marketing-selbststaendige" className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all">
                 <div className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-1">KI-Tools</div>
@@ -472,6 +472,16 @@ export default function Page() {
                 <div className="text-xs font-bold text-pink-600 uppercase tracking-wider mb-1">Marketing</div>
                 <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Social-Media-Tools für Selbstständige</div>
                 <div className="text-slate-500 text-sm mt-1">Kundenakquise automatisieren ohne Agentur</div>
+              </Link>
+              <Link href="/produktivitaet/produktivitaet-tools-selbststaendige" className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all">
+                <div className="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-1">Produktivität</div>
+                <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Produktivitäts-Tools für Selbstständige</div>
+                <div className="text-slate-500 text-sm mt-1">Mehr erledigen in weniger Zeit</div>
+              </Link>
+              <Link href="/website/website-builder-selbststaendige" className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all sm:col-span-2">
+                <div className="text-xs font-bold text-orange-600 uppercase tracking-wider mb-1">Website</div>
+                <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Website-Builder für Selbstständige</div>
+                <div className="text-slate-500 text-sm mt-1">Online-Auftritt ohne Technikstress aufbauen</div>
               </Link>
             </div>
           </section>
