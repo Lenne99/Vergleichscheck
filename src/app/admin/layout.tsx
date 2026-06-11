@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
@@ -17,6 +17,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const router = useRouter();
   const pathname = usePathname();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [currentUser, setCurrentUser] = useState<{ name: string; email: string; role: string } | null>(null);
+
+  useEffect(() => {
+    fetch('/api/admin/auth/me')
+      .then((r) => r.json())
+      .then((data) => { if (data.user) setCurrentUser(data.user); })
+      .catch(() => {});
+  }, []);
 
   async function handleLogout() {
     await fetch('/api/admin/auth/logout', { method: 'POST' });
@@ -100,8 +108,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <div className="p-4 border-t border-slate-700 shrink-0">
           <div className="bg-slate-800 rounded-xl p-3 mb-3">
             <p className="text-xs text-slate-400">Angemeldet als</p>
-            <p className="font-semibold text-white text-sm">Lenne</p>
-            <p className="text-xs text-slate-400">Admin</p>
+            <p className="font-semibold text-white text-sm">{currentUser?.name ?? '–'}</p>
+            <p className="text-xs text-slate-400">{currentUser?.role ?? ''}</p>
           </div>
           <button
             onClick={handleLogout}
