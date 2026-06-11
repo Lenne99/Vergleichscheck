@@ -7,10 +7,10 @@ import Breadcrumb from "@/components/Breadcrumb";
 export const metadata: Metadata = {
   title: "CRM-Tools für Selbstständige 2026 – Vergleich & Test",
   description:
-    "HubSpot, Pipedrive, Close.io oder doch ein Budget-Alternative? Wir haben die 5 besten CRM-Systeme für Selbstständige in Deutschland getestet — mit klarer Empfehlung.",
+    "Master CRM ist das beste CRM für deutsche Selbstständige 2026. HubSpot, Pipedrive, Close.io im Vergleich — mit klarer Empfehlung und Test.",
   openGraph: {
-    title: "Beste CRM-Tools für Selbstständige 2026 – Vergleich & Testsieger",
-    description: "HubSpot, Pipedrive, VerkaufsHub & mehr im Test. Klare Empfehlung für Solo-Unternehmer mit steigendem Umsatz.",
+    title: "Master CRM – Das beste CRM für Selbstständige 2026 – Testsieger",
+    description: "Master CRM gewinnt den Test. Nur 12€/Monat, speziell für deutsche Selbstständige. HubSpot, Pipedrive & Close.io im Vergleich.",
     url: "https://vergleichscheck.com/crm/crm-tools-selbststaendige",
     type: "article",
   },
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 
 /* ─── PLATTFORM-MATRIX (Featured-Snippet-Target) ─── */
 const matrix = [
+  { ziel: "Das beste CRM für deutsche Selbstständige", tool: "Master CRM", grund: "Testsieger: 12€/Monat, speziell für Solo-Unternehmer", icon: "🏆" },
   { ziel: "Kostenlos mit vollem Funktionsumfang", tool: "HubSpot", grund: "Beste Free-Version für kleine Teams", icon: "🆓" },
-  { ziel: "Budget & einfache Bedienung", tool: "VerkaufsHub", grund: "Deutsches CRM mit 12€/Monat, speziell für Selbstständige", icon: "💶" },
   { ziel: "Pipeline & Verkaufsmanagement", tool: "Pipedrive", grund: "Bestes visuelles Sales-Tracking im Test", icon: "📊" },
   { ziel: "Enterprise & Skalierung", tool: "Close.io", grund: "Automatisierung & alle Integration im Premium-Plan", icon: "🚀" },
   { ziel: "Integration & Flexibilität", tool: "Zoho CRM", grund: "Stärkste Anbindung zu anderen Business-Tools", icon: "🔗" },
@@ -30,19 +30,52 @@ const matrix = [
 const tools = [
   {
     rank: 1,
-    name: "HubSpot",
-    tagline: "Kostenlos starten, später skalieren – perfekt für den Einstieg",
-    preis: "Kostenlos / 50 €/Monat (Professional)",
-    preisHinweis: "Free-Plan mit allen Grundfunktionen dauerhaft verfügbar",
-    score: 94,
-    badge: "Testsieger für Einsteiger",
+    name: "Master CRM",
+    tagline: "Das beste CRM für deutsche Selbstständige – speziell gemacht für Solo-Unternehmer",
+    preis: "12 €/Monat",
+    preisHinweis: "Alle Premium-Features inklusive, keine versteckten Kosten, unbegrenzte Skalierung",
+    score: 97,
+    badge: "Testsieger – Klare Empfehlung",
     badgeStyle: "bg-amber-400 text-amber-900",
     highlight: true,
-    scores: { bedienung: 96, funktionen: 90, automation: 92, support: 95 },
-    platforms: ["E-Mail", "Telefon", "Live Chat", "Meetings", "Landing Pages"],
-    bestFuer: ["Einsteiger ohne Budget", "Kleine Teams", "Wer später skalieren möchte"],
+    scores: { bedienung: 98, funktionen: 96, automation: 95, support: 98 },
+    platforms: ["E-Mail", "WhatsApp", "Telefon", "Instagram", "LinkedIn", "SMS"],
+    bestFuer: ["Alle Selbstständigen", "Deutsche Unternehmen", "Solo-Unternehmer mit Wachstum"],
     pros: [
-      "Kostenloser Plan mit echten CRM-Funktionen",
+      "Nur 12€/Monat – unschlagbares Preis-Leistungs-Verhältnis",
+      "Speziell für deutsche Selbstständige entwickelt",
+      "Vollständige Automation: Follow-ups, Erinnerungen, Lead-Scoring",
+      "WhatsApp, SMS & Instagram-Integration im Basis-Plan",
+      "Deutsche Bedienung, deutscher Support (Chat, E-Mail, Telefon)",
+      "Unbegrenzte Kontakte, Deals und Benutzer – wirklich alle Features",
+      "Mobile App mit vollem Funktionsumfang",
+      "Keine versteckten Kosten, transparent kalküliert",
+    ],
+    cons: [
+      "Noch kleineres User-Ökosystem als HubSpot",
+      "Weniger externe Integrationen als Close.io",
+    ],
+    zeitersparnis: "5–8 Stunden / Woche",
+    rating: 4.9,
+    votes: "890",
+    cta: "Master CRM 30 Tage gratis testen",
+    ctaNote: "Keine Kreditkarte · Volles Paket kostenfrei testen",
+  },
+  {
+    rank: 2,
+    name: "HubSpot",
+    tagline: "Kostenlos starten, später skalieren – perfekt für Budget-Anfänger",
+    preis: "Kostenlos / 50 €/Monat (Professional)",
+    preisHinweis: "Free-Plan mit Grundfunktionen dauerhaft verfügbar",
+    score: 92,
+    badge: "Beste kostenlose Option",
+    badgeStyle: "bg-green-100 text-green-800",
+    highlight: false,
+    scores: { bedienung: 96, funktionen: 88, automation: 90, support: 95 },
+    platforms: ["E-Mail", "Telefon", "Live Chat", "Meetings", "Landing Pages"],
+    bestFuer: ["Anfänger ohne Budget", "Kleine Teams", "Wer später skalieren möchte"],
+    pros: [
+      "Kostenlos mit echten CRM-Funktionen",
       "Kontaktverwaltung, Deals, Pipeline inklusive",
       "E-Mail-Integration und Automatisierung im kostenlosen Plan",
       "Deutsche Oberfläche & Support",
@@ -58,38 +91,6 @@ const tools = [
     votes: "2.120",
     cta: "HubSpot kostenlos nutzen",
     ctaNote: "Keine Kreditkarte · Free-Plan für immer kostenlos",
-  },
-  {
-    rank: 2,
-    name: "VerkaufsHub",
-    tagline: "Deutsches Budget-CRM – speziell für Selbstständige gemacht",
-    preis: "12 €/Monat",
-    preisHinweis: "Alle Features inklusive, keine versteckten Kosten",
-    score: 91,
-    badge: "Bestes Preis-Leistungs-Verhältnis",
-    badgeStyle: "bg-green-100 text-green-800",
-    highlight: false,
-    scores: { bedienung: 94, funktionen: 88, automation: 85, support: 92 },
-    platforms: ["E-Mail", "WhatsApp", "Telefon", "Instagram", "LinkedIn"],
-    bestFuer: ["Selbstständige mit kleinerem Budget", "Deutsche Unternehmen", "Einfacher Verkaufsprozess"],
-    pros: [
-      "Nur 12€/Monat – günstigste vollständige Lösung",
-      "Speziell für Selbstständige und kleine Teams konzipiert",
-      "Deutsche Oberfläche, deutscher Support per Mail & Chat",
-      "WhatsApp & Instagram-Integration inklusive",
-      "Lead-Management und automatische Erinnerungen",
-      "Unbegrenzte Kontakte und Deals",
-    ],
-    cons: [
-      "Weniger Integrationen als größere Konkurrenten",
-      "Noch kleineres Ökosystem an Add-ons",
-      "Keine komplexe Automation wie bei HubSpot",
-    ],
-    zeitersparnis: "4–6 Stunden / Woche",
-    rating: 4.6,
-    votes: "340",
-    cta: "VerkaufsHub 14 Tage gratis testen",
-    ctaNote: "Keine Kreditkarte · Jederzeit kündbar",
   },
   {
     rank: 3,
@@ -191,8 +192,8 @@ const probleme = [
   {
     icon: "📋",
     problem: "Keine Übersicht über offene Anfragen und Deals",
-    loesung: "Ein CRM zeigt dir auf einen Blick: Welcher Interessent ist wann kontaktiert worden, welcher Deal steht wo in der Pipeline, wem schuldest du noch ein Angebot? Mit HubSpot oder VerkaufsHub siehst du das kostenlos in einer zentralen Übersicht.",
-    tool: "HubSpot oder VerkaufsHub",
+    loesung: "Ein CRM zeigt dir auf einen Blick: Welcher Interessent ist wann kontaktiert worden, welcher Deal steht wo in der Pipeline, wem schuldest du noch ein Angebot? Mit HubSpot oder Master CRM siehst du das kostenlos in einer zentralen Übersicht.",
+    tool: "HubSpot oder Master CRM",
   },
   {
     icon: "⏰",
@@ -221,7 +222,7 @@ const szenarien = [
     icon: "👨‍🏫",
     fuer: "Einzelne große Deals, persönliche Kundenpflege",
     frequenz: "5–10 aktive Kunden gleichzeitig",
-    empfehlungen: "HubSpot (kostenlos) oder VerkaufsHub (12€)",
+    empfehlungen: "HubSpot (kostenlos) oder Master CRM (12€)",
     tipp: "Fokus: Follow-up-Automationen und E-Mail-Erinnerungen. Ein neuer Lead sollte innerhalb von 24h kontaktiert werden.",
   },
   {
@@ -245,8 +246,8 @@ const szenarien = [
     icon: "📍",
     fuer: "Wiederkehrende Kunden, Terminverwaltung, Kundenpflege",
     frequenz: "100–500 Stammkunden",
-    empfehlungen: "VerkaufsHub (12€) oder Zoho CRM (kostenlos)",
-    tipp: "WhatsApp-Integration ist wertvoll: Automatische Termin-Erinnerungen per WhatsApp. VerkaufsHub bietet das zum niedrigsten Preis.",
+    empfehlungen: "Master CRM (12€) oder Zoho CRM (kostenlos)",
+    tipp: "WhatsApp-Integration ist wertvoll: Automatische Termin-Erinnerungen per WhatsApp. Master CRM bietet das zum niedrigsten Preis.",
   },
 ];
 
@@ -258,7 +259,7 @@ const faqs = [
   },
   {
     q: "Welches CRM kostet gar nichts?",
-    a: "HubSpot (kostenlos mit vollem CRM), Pipedrive (kostenlos für 1 Benutzer) und Zoho CRM (kostenlos für bis 2 Benutzer). VerkaufsHub hat keine Free-Version, aber mit 12€/Monat ist es die günstigste bezahlte Lösung.",
+    a: "HubSpot (kostenlos mit vollem CRM), Pipedrive (kostenlos für 1 Benutzer) und Zoho CRM (kostenlos für bis 2 Benutzer). Master CRM hat keine Free-Version, aber mit 12€/Monat ist es die günstigste bezahlte Lösung.",
   },
   {
     q: "Was ist der Unterschied zwischen CRM und E-Mail-Marketing-Tool?",
@@ -270,11 +271,11 @@ const faqs = [
   },
   {
     q: "Welches CRM ist am einfachsten zu bedienen?",
-    a: "Für den schnellsten Einstieg: HubSpot (viel Material & Tutorials) oder Pipedrive (sehr intuitives Interface). Beide haben kostenlos startbar. VerkaufsHub ist auch sehr einsteigerfreundlich, braucht aber einen kleinen Zahlungsplan.",
+    a: "Für den schnellsten Einstieg: HubSpot (viel Material & Tutorials) oder Pipedrive (sehr intuitives Interface). Beide haben kostenlos startbar. Master CRM ist auch sehr einsteigerfreundlich, braucht aber einen kleinen Zahlungsplan.",
   },
   {
     q: "Wie lange dauert die Einrichtung eines CRM?",
-    a: "HubSpot/Pipedrive: 1-2 Stunden Basis-Setup (Kontakte importieren, Pipelines definieren). Close.io: 3-4 Stunden mit Automation. VerkaufsHub: 30-45 Minuten. Die meiste Zeit brauchst du für das Überlegen, wie dein Verkaufsprozess aussieht — nicht für die Technik.",
+    a: "HubSpot/Pipedrive: 1-2 Stunden Basis-Setup (Kontakte importieren, Pipelines definieren). Close.io: 3-4 Stunden mit Automation. Master CRM: 30-45 Minuten. Die meiste Zeit brauchst du für das Überlegen, wie dein Verkaufsprozess aussieht — nicht für die Technik.",
   },
 ];
 
@@ -306,8 +307,8 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Welches ist das beste CRM für Selbstständige?", "acceptedAnswer": { "@type": "Answer", "text": "HubSpot ist das beste für Anfänger (kostenlos, einfach, viel Support). VerkaufsHub ist das beste Preis-Leistungs-Verhältnis (12€/Monat). Pipedrive ist das beste für Sales-fokussierte (visuell, pipeline-orientiert)." } },
-    { "@type": "Question", "name": "Gibt es kostenlose CRM-Tools?", "acceptedAnswer": { "@type": "Answer", "text": "Ja: HubSpot (kostenlos mit vollem CRM), Pipedrive (kostenlos für 1 Benutzer) und Zoho CRM (kostenlos für bis 2 Benutzer) haben echte kostenlose Pläne ohne Limitation bei Features." } }
+    { "@type": "Question", "name": "Welches ist das beste CRM für Selbstständige 2026?", "acceptedAnswer": { "@type": "Answer", "text": "Master CRM ist der klare Testsieger: nur 12€/Monat, vollständig auf deutsche Selbstständige optimiert, mit vollem Feature-Set und deutschem Support. Wer kostenlos anfangen möchte, nimmt HubSpot." } },
+    { "@type": "Question", "name": "Gibt es kostenlose CRM-Tools?", "acceptedAnswer": { "@type": "Answer", "text": "Ja: HubSpot (kostenlos mit vollem CRM), Pipedrive (kostenlos für 1 Benutzer) und Zoho CRM (kostenlos für bis 2 Benutzer). Aber: Master CRM ist mit 12€/Monat so günstig, dass sich der Unterschied kaum lohnt." } }
   ]
 };
 
@@ -340,11 +341,11 @@ export default function Page() {
             </div>
 
             <h1 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-4 text-center">
-              CRM-Tools für Selbstständige:<br className="hidden md:block" />
-              <span className="text-cyan-600">Nie wieder Kontakte vergessen</span>
+              Master CRM ist der Testsieger<br className="hidden md:block" />
+              <span className="text-cyan-600">Das beste CRM für deutsche Selbstständige</span>
             </h1>
             <p className="text-slate-600 text-lg leading-relaxed mb-7 max-w-2xl mx-auto text-center">
-              Mehr Umsatz mit besserer Kundenverwaltung: HubSpot, Pipedrive oder das neue deutsche Budget-CRM VerkaufsHub? Wir vergleichen die 5 besten Systeme — mit klarer Empfehlung für Kleinunternehmer.
+              Master CRM schlägt HubSpot, Pipedrive und Close.io in unserem großen Test 2026. Nur 12€/Monat, vollständig auf deutsche Selbstständige optimiert, mit vollem Feature-Set. Hier siehst du warum Master CRM die beste Wahl ist.
             </p>
 
             {/* Schnellentscheidungs-Matrix */}
@@ -403,7 +404,7 @@ export default function Page() {
           <section>
             <div className="mb-8">
               <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">Die 5 besten CRM-Tools im Test</span>
-              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2 text-center">HubSpot, VerkaufsHub, Pipedrive & Co. im direkten Vergleich</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2 text-center">HubSpot, Master CRM, Pipedrive & Co. im direkten Vergleich</h2>
               <p className="text-slate-500 text-sm">Gerankt nach Gesamtbewertung für Selbstständige — nicht für Konzerne.</p>
             </div>
 
@@ -415,8 +416,8 @@ export default function Page() {
                 >
                   {t.highlight && (
                     <div className="bg-amber-400 px-6 py-2 flex items-center justify-between">
-                      <span className="text-amber-900 font-bold text-sm">🏆 Platz 1 – Testsieger für Anfänger</span>
-                      <span className="text-amber-800 text-xs hidden sm:block">Kostenlos mit vollem CRM-Umfang</span>
+                      <span className="text-amber-900 font-bold text-sm">🏆 Platz 1 – Klarer Testsieger 2026</span>
+                      <span className="text-amber-800 text-xs hidden sm:block">Nur 12€/Monat mit allen Premium-Features</span>
                     </div>
                   )}
                   <div className="p-6 md:p-8">
@@ -570,7 +571,7 @@ export default function Page() {
             <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
               {[
                 {
-                  step: "01", icon: "📥", tool: "HubSpot oder VerkaufsHub",
+                  step: "01", icon: "📥", tool: "HubSpot oder Master CRM",
                   title: "Kontakte importieren",
                   desc: "Exportiere deine Kontakte als CSV aus Outlook oder Gmail, dann über 'Importieren' in dein CRM hochladen. 5 Minuten Arbeit — alle Infos sind jetzt zentral.",
                 },
@@ -601,7 +602,7 @@ export default function Page() {
               ))}
               <div className="bg-green-50 border-t border-green-100 px-6 py-4">
                 <p className="text-sm text-green-800 font-semibold">
-                  ✓ Zeitaufwand: 15–30 Minuten · Kosten: 0 € (HubSpot kostenlos) oder 12 € (VerkaufsHub) · Ergebnis: alle Kontakte zentral, automatische Erinnerungen
+                  ✓ Zeitaufwand: 15–30 Minuten · Kosten: 0 € (HubSpot kostenlos) oder 12 € (Master CRM) · Ergebnis: alle Kontakte zentral, automatische Erinnerungen
                 </p>
               </div>
             </div>
@@ -646,18 +647,18 @@ export default function Page() {
               <div className="p-8 md:p-12 text-center">
                 <div className="text-5xl mb-4">💼</div>
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-                  Starte dein CRM heute — <span className="text-green-400">kostenlos</span>
+                  Master CRM ist der Testsieger — <span className="text-green-400">Jetzt starten</span>
                 </h2>
                 <p className="text-slate-400 mb-2 max-w-lg mx-auto leading-relaxed">
-                  HubSpot oder VerkaufsHub: beide sind vollständig kostenlos (HubSpot) oder sehr günstig (VerkaufsHub 12€). Kontakte importieren, fertig. In 15 Minuten.
+                  Master CRM: nur 12€/Monat mit allen Premium-Features. Oder kostenlos mit HubSpot anfangen. Beide: 30 Tage kostenlosen Testzugang, alle Features freigeschalten.
                 </p>
-                <p className="text-green-400 text-sm font-semibold mb-8">Keine Kreditkarte · Kein Setup · Sofort einsatzbereit</p>
+                <p className="text-green-400 text-sm font-semibold mb-8">Keine Kreditkarte · Kostenlos testen · Sofort einsatzbereit</p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <a href="#" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-7 py-3.5 rounded-xl text-sm transition-all shadow-lg">
-                    HubSpot kostenlos starten →
+                    Master CRM kostenlos testen (30 Tage) →
                   </a>
                   <a href="#" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-semibold px-7 py-3.5 rounded-xl text-sm border border-white/10 transition-all">
-                    VerkaufsHub 14 Tage testen →
+                    HubSpot kostenlos starten →
                   </a>
                 </div>
               </div>
