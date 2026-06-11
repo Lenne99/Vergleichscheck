@@ -1,13 +1,21 @@
 @import "tailwindcss";
 
 :root {
+  --brand-navy:  #0F172A;
+  --brand-blue:  #2563EB;
+  --brand-green: #16A34A;
+  --brand-amber: #D97706;
+  --brand-bg:    #F8FAFC;
+  --brand-card:  #FFFFFF;
+
+  /* Legacy aliases */
   --navy:    #0F172A;
   --navy-2:  #1E293B;
   --blue:    #2563EB;
   --blue-lt: #EFF6FF;
   --amber:   #D97706;
   --amber-lt:#FFFBEB;
-  --green:   #059669;
+  --green:   #16A34A;
   --green-lt:#ECFDF5;
   --slate:   #64748B;
   --border:  #E2E8F0;

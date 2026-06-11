@@ -21,8 +21,10 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M2 4h4v8H2V4zm5-2h4v10H7V2zm5 4h2v6h-2V6z" fill="white"/>
+              <svg viewBox="0 0 32 32" fill="none" width="22" height="22">
+                <rect x="3" y="14" width="7" height="13" rx="1.5" fill="white" opacity="0.7"/>
+                <rect x="13" y="8" width="7" height="19" rx="1.5" fill="white"/>
+                <path d="M23 16l3 3 5-6" stroke="#34D399" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
             <span className="font-bold text-slate-900 text-lg tracking-tight">
@@ -47,7 +49,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <Link
               href="/buchhaltung/beste-buchhaltungssoftware-selbststaendige"
-              className="hidden sm:inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+              className="hidden sm:inline-flex items-center gap-1.5 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
             >
               Vergleich starten
             </Link>
