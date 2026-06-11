@@ -36,11 +36,11 @@ const categories = [
   {
     icon: "✅",
     label: "Produktivität",
-    title: "Produktivität & Organisation",
-    desc: "Projektmanagement, Zeiterfassung und To-Do-Tools für Freelancer.",
-    href: "#",
-    count: "Demnächst",
-    live: false,
+    title: "Produktivität & Zeitmanagement",
+    desc: "Notion, Todoist, Toggl Track & Co. – Struktur im Solo-Business ohne Overkill.",
+    href: "/produktivitaet/produktivitaet-tools-selbststaendige",
+    count: "1 Vergleich",
+    live: true,
     color: "emerald",
   },
   {
@@ -103,6 +103,14 @@ const recentArticles = [
     desc: "Buffer, Metricool, Canva, Later & Hootsuite – sichtbar werden ohne Marketingagentur.",
     href: "/marketing/social-media-tools-selbststaendige",
     meta: "7 min Lesezeit · Juni 2026",
+  },
+  {
+    tag: "Produktivität",
+    tagColor: "bg-emerald-50 text-emerald-700",
+    title: "Beste Produktivitäts-Tools für Selbstständige 2026",
+    desc: "Notion, Todoist, Toggl Track & Co. – kein Overkill, einfach nutzbar für Solo-Business.",
+    href: "/produktivitaet/produktivitaet-tools-selbststaendige",
+    meta: "6 min Lesezeit · Juni 2026",
   },
 ];
 

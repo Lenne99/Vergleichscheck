@@ -6,7 +6,7 @@ const nav = [
   { label: "Buchhaltung", href: "/buchhaltung/beste-buchhaltungssoftware-selbststaendige" },
   { label: "KI-Tools", href: "/ki-tools/ki-assistent-content-marketing-selbststaendige" },
   { label: "Marketing", href: "/marketing/social-media-tools-selbststaendige" },
-  { label: "Produktivität", href: "#" },
+  { label: "Produktivität", href: "/produktivitaet/produktivitaet-tools-selbststaendige" },
   { label: "Website", href: "#" },
 ];
 

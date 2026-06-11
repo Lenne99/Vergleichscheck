@@ -7,7 +7,7 @@ const cols = [
       { label: "Buchhaltungssoftware", href: "/buchhaltung/beste-buchhaltungssoftware-selbststaendige" },
       { label: "KI-Assistenten", href: "/ki-tools/ki-assistent-content-marketing-selbststaendige" },
       { label: "Marketing-Tools", href: "/marketing/social-media-tools-selbststaendige" },
-      { label: "Produktivität", href: "#" },
+      { label: "Produktivität", href: "/produktivitaet/produktivitaet-tools-selbststaendige" },
       { label: "Website-Builder", href: "#" },
     ],
   },
