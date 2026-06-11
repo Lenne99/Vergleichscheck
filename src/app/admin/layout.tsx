@@ -20,15 +20,20 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const [currentUser, setCurrentUser] = useState<{ name: string; email: string; role: string } | null>(null);
 
   useEffect(() => {
+    if (pathname === '/admin/login') return;
     fetch('/api/admin/auth/me')
       .then((r) => r.json())
       .then((data) => { if (data.user) setCurrentUser(data.user); })
       .catch(() => {});
-  }, []);
+  }, [pathname]);
 
   async function handleLogout() {
     await fetch('/api/admin/auth/logout', { method: 'POST' });
     router.push('/admin/login');
+  }
+
+  if (pathname === '/admin/login') {
+    return <>{children}</>;
   }
 
   return (
