@@ -1,0 +1,257 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============ ADMIN USERS & AUTH ============
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String
+  passwordHash  String
+  role          Role      @default(EDITOR)
+  isActive      Boolean   @default(true)
+  lastLogin     DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  sessions      Session[]
+  loginHistory  LoginHistory[]
+  auditLogs     AuditLog[]
+  pages         Page[]
+  uploads       MediaFile[]
+
+  @@index([email])
+}
+
+enum Role {
+  ADMIN
+  EDITOR
+  VIEWER
+}
+
+model Session {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token     String    @unique
+  expiresAt DateTime
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime  @default(now())
+
+  @@index([userId])
+  @@index([token])
+}
+
+model LoginHistory {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  ipAddress String?
+  userAgent String?
+  success   Boolean
+  reason    String?
+  timestamp DateTime  @default(now())
+
+  @@index([userId])
+  @@index([timestamp])
+}
+
+// ============ CMS - PAGES ============
+
+model Page {
+  id               String    @id @default(cuid())
+  slug             String    @unique
+  title            String
+  metaDescription  String?
+  metaKeywords     String?
+  content          Json?
+  published        Boolean   @default(false)
+  publishedAt      DateTime?
+  createdById      String
+  createdBy        User      @relation(fields: [createdById], references: [id])
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  seoSettings      SeoSetting?
+  auditLogs        AuditLog[]
+
+  @@index([slug])
+  @@index([published])
+  @@index([createdById])
+}
+
+model SeoSetting {
+  id               String    @id @default(cuid())
+  pageId           String    @unique
+  page             Page      @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  ogTitle          String?
+  ogDescription    String?
+  ogImageUrl       String?
+  canonicalUrl     String?
+  robotsMeta       String?
+  structuredData   Json?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@index([pageId])
+}
+
+// ============ MEDIA LIBRARY ============
+
+model MediaFile {
+  id               String    @id @default(cuid())
+  filename         String
+  originalFilename String
+  mimeType         String
+  size             Int
+  path             String
+  width            Int?
+  height           Int?
+  altText          String?
+  uploadedById     String
+  uploadedBy       User      @relation(fields: [uploadedById], references: [id])
+  createdAt        DateTime  @default(now())
+
+  @@index([uploadedById])
+  @@index([createdAt])
+}
+
+// ============ CONTACTS ============
+
+model ContactSubmission {
+  id        String    @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String
+  category  String?
+  status    String    @default("new")
+  ipAddress String?
+  createdAt DateTime  @default(now())
+  repliedAt DateTime?
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+// ============ NEWSLETTER ============
+
+model NewsletterSubscriber {
+  id                String    @id @default(cuid())
+  email             String    @unique
+  status            String    @default("active")
+  subscribedAt      DateTime  @default(now())
+  unsubscribedAt    DateTime?
+  verified          Boolean   @default(false)
+  verificationToken String?   @unique
+  createdAt         DateTime  @default(now())
+
+  newsletters       NewsletterQueue[]
+
+  @@index([status])
+  @@index([email])
+}
+
+model Newsletter {
+  id         String    @id @default(cuid())
+  title      String
+  subject    String
+  content    Json?
+  status     String    @default("draft")
+  scheduledAt DateTime?
+  sentAt     DateTime?
+  createdById String
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  queue      NewsletterQueue[]
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+model NewsletterQueue {
+  id            String    @id @default(cuid())
+  newsletterId  String
+  newsletter    Newsletter @relation(fields: [newsletterId], references: [id], onDelete: Cascade)
+  subscriberId  String
+  subscriber    NewsletterSubscriber @relation(fields: [subscriberId], references: [id], onDelete: Cascade)
+  status        String    @default("pending")
+  sendAttempts  Int       @default(0)
+  lastAttempt   DateTime?
+  errorMessage  String?
+  sentAt        DateTime?
+
+  @@index([newsletterId])
+  @@index([status])
+  @@unique([newsletterId, subscriberId])
+}
+
+// ============ DESIGN SETTINGS ============
+
+model DesignSetting {
+  id                  String  @id @default(cuid())
+  primaryColor        String  @default("#0066cc")
+  secondaryColor      String  @default("#00cc66")
+  accentColor         String  @default("#ff6600")
+  fontFamilyHeading   String  @default("Inter")
+  fontFamilyBody      String  @default("Inter")
+  logoUrl             String?
+  faviconUrl          String?
+  darkModeEnabled     Boolean @default(true)
+  updatedAt           DateTime @updatedAt
+}
+
+// ============ AUDIT LOGS ============
+
+model AuditLog {
+  id          String    @id @default(cuid())
+  entityType  String
+  entityId    String
+  action      String
+  changes     Json?
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+  ipAddress   String?
+  timestamp   DateTime  @default(now())
+
+  @@index([entityType])
+  @@index([entityId])
+  @@index([userId])
+  @@index([timestamp])
+}
+
+// ============ ANALYTICS ============
+
+model PageView {
+  id        String    @id @default(cuid())
+  pageSlug  String
+  referrer  String?
+  userAgent String?
+  ipAddress String?
+  createdAt DateTime  @default(now())
+
+  @@index([pageSlug])
+  @@index([createdAt])
+}
+
+// ============ PASSWORD RESET ============
+
+model PasswordReset {
+  id        String    @id @default(cuid())
+  userId    String
+  token     String    @unique
+  expiresAt DateTime
+  createdAt DateTime  @default(now())
+
+  @@index([token])
+  @@index([userId])
+}
