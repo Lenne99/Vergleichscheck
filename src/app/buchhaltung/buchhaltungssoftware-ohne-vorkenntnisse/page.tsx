@@ -2,11 +2,18 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Buchhaltungssoftware für Selbstständige ohne Vorkenntnisse 2026 – Ehrlicher Test",
   description:
     "Keine Ahnung von Buchhaltung? Kein Problem. Wir zeigen welche Software auch ohne Steuerwissen funktioniert – mit EÜR, USt-Voranmeldung und DATEV-Export. Klare Empfehlung für Einsteiger.",
+  openGraph: {
+    title: "Buchhaltungssoftware ohne Vorkenntnisse 2026 – Welche ist wirklich einfach?",
+    description: "Die 5 größten Einsteiger-Ängste gelöst. Nur 3 Tools schaffen es wirklich für absolute Anfänger. Mit 5-Schritte-Startanleitung.",
+    url: "https://vergleichscheck.com/buchhaltung/buchhaltungssoftware-ohne-vorkenntnisse",
+    type: "article",
+  },
 };
 
 /* ─── DATA ─── */
@@ -141,9 +148,23 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Welche Buchhaltungssoftware ist die einfachste für Anfänger?", "acceptedAnswer": { "@type": "Answer", "text": "lexoffice ist die einfachste Buchhaltungssoftware für Selbstständige ohne Vorkenntnisse: klare Oberfläche, geführte Einrichtung und automatischer Belegimport per App." } },
+    { "@type": "Question", "name": "Brauche ich Buchhaltungskenntnisse für Buchhaltungssoftware?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Moderne Software wie lexoffice oder FastBill ist explizit für Nicht-Buchhalter entwickelt. Du musst keine Kontenpläne kennen – die Software erledigt die Buchungslogik automatisch." } }
+  ]
+};
+
+
 export default function Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Header />
       <main className="flex-1 bg-slate-50">
 

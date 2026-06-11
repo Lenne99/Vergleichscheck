@@ -2,11 +2,18 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Social Media Tools für Selbstständige 2026 – Sichtbar werden ohne Marketingagentur",
   description:
     "Welches Social Media Tool spart Selbstständigen die meiste Zeit? Buffer, Metricool, Canva, Later & Hootsuite im Vergleich – mit klarer Empfehlung nach Plattform und Budget.",
+  openGraph: {
+    title: "Beste Social Media Tools für Selbstständige 2026 – Sichtbar ohne Marketingagentur",
+    description: "Buffer, Metricool, Canva, Later & Hootsuite im Vergleich. Mit klarer Empfehlung nach Plattform und Budget.",
+    url: "https://vergleichscheck.com/marketing/social-media-tools-selbststaendige",
+    type: "article",
+  },
 };
 
 /* ─── PLATTFORM-MATRIX (Featured-Snippet-Target) ─── */
@@ -280,9 +287,23 @@ function ScoreBar({ value }: { value: number }) {
   );
 }
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Welches Social Media Tool ist das beste für Selbstständige?", "acceptedAnswer": { "@type": "Answer", "text": "Buffer ist das beste Social Media Tool für Selbstständige ohne Marketing-Team: einfachste Bedienung, kostenlos für 3 Kanäle, bester LinkedIn-Scheduler im Test." } },
+    { "@type": "Question", "name": "Welches Social Media Tool ist kostenlos?", "acceptedAnswer": { "@type": "Answer", "text": "Buffer (3 Kanäle, 10 Posts), Metricool (1 Brand) und Canva sind dauerhaft kostenlos nutzbar – ausreichend für den Einstieg als Selbstständiger." } }
+  ]
+};
+
+
 export default function Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Header />
       <main className="flex-1 bg-slate-50">
 

@@ -12,12 +12,12 @@ const cols = [
     ],
   },
   {
-    heading: "Beliebt",
+    heading: "Beliebte Vergleiche",
     links: [
-      { label: "lexoffice Test", href: "#" },
-      { label: "sevDesk vs. lexoffice", href: "#" },
-      { label: "Rechnungssoftware Vergleich", href: "#" },
-      { label: "Buchhaltung ohne Steuerberater", href: "#" },
+      { label: "Beste Buchhaltungssoftware", href: "/buchhaltung/beste-buchhaltungssoftware-selbststaendige" },
+      { label: "Buchhaltung für Einsteiger", href: "/buchhaltung/buchhaltungssoftware-ohne-vorkenntnisse" },
+      { label: "KI für Content & Marketing", href: "/ki-tools/ki-assistent-content-marketing-selbststaendige" },
+      { label: "Social Media Tools", href: "/marketing/social-media-tools-selbststaendige" },
     ],
   },
   {
@@ -25,8 +25,7 @@ const cols = [
     links: [
       { label: "Impressum", href: "/impressum" },
       { label: "Datenschutz", href: "/datenschutz" },
-      { label: "Affiliate-Hinweis", href: "#" },
-      { label: "Über uns", href: "#" },
+      { label: "Affiliate-Hinweis", href: "/datenschutz#affiliate" },
     ],
   },
 ];

@@ -2,11 +2,18 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Beste Produktivitäts-Tools für Selbstständige 2026 – Kein Overkill, einfach nutzbar",
   description:
     "Notion, Todoist, Toggl Track & Co. im Vergleich – welches Tool passt zu Solo-Selbstständigen ohne IT-Kenntnisse? Mit klarer Empfehlung nach Anwendungsfall.",
+  openGraph: {
+    title: "Beste Produktivitäts-Tools für Selbstständige 2026 – Kein Overkill",
+    description: "Notion, Todoist, Toggl Track & Co. im Vergleich. 3 fertige System-Setups für Solo-Selbstständige – direkt umsetzbar.",
+    url: "https://vergleichscheck.com/produktivitaet/produktivitaet-tools-selbststaendige",
+    type: "article",
+  },
 };
 
 /* ─── AUFGABEN-MATRIX (Featured-Snippet-Target) ─── */
@@ -248,9 +255,23 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Welches Produktivitäts-Tool ist das beste für Selbstständige?", "acceptedAnswer": { "@type": "Answer", "text": "Notion ist das beste All-in-one-Produktivitäts-Tool für Selbstständige: Tasks, Notizen, Kundenverwaltung und Planung in einem – dauerhaft kostenlos für Einzelpersonen." } },
+    { "@type": "Question", "name": "Ist Notion wirklich kostenlos?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, Notion ist für Einzelpersonen dauerhaft kostenlos ohne versteckte Limits. Der Plus-Plan (10 €/Monat) lohnt sich erst wenn man Gäste einladen oder unbegrenzte KI nutzen möchte." } }
+  ]
+};
+
+
 export default function ProduktivitaetPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Header />
       <main className="flex-1 bg-slate-50">
 

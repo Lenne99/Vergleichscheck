@@ -2,11 +2,18 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Beste Buchhaltungssoftware für Selbstständige 2026 – Test & Vergleich",
   description:
     "lexoffice, sevDesk, FastBill, Buchhaltungsbutler oder WISO? Wir haben alle 5 getestet. Klare Empfehlung für Selbstständige in Deutschland – mit Vergleichstabelle und FAQ.",
+  openGraph: {
+    title: "Beste Buchhaltungssoftware für Selbstständige 2026 – Testsieger: lexoffice",
+    description: "5 Programme ehrlich getestet. lexoffice gewinnt dank bester Bedienbarkeit und GoBD-Konformität. Mit Scoring, Pros & Cons und klarer Empfehlung.",
+    url: "https://vergleichscheck.com/buchhaltung/beste-buchhaltungssoftware-selbststaendige",
+    type: "article",
+  },
 };
 
 /* ─── DATA ─── */
@@ -224,11 +231,25 @@ function Cross() {
 }
 
 /* ─── PAGE ─── */
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Welche Buchhaltungssoftware ist die beste für Selbstständige?", "acceptedAnswer": { "@type": "Answer", "text": "lexoffice ist die beste Buchhaltungssoftware für Selbstständige in Deutschland dank einfachster Bedienung, DATEV-Export und GoBD-Konformität. Ab 7,90 €/Monat." } },
+    { "@type": "Question", "name": "Was kostet Buchhaltungssoftware für Selbstständige?", "acceptedAnswer": { "@type": "Answer", "text": "Buchhaltungssoftware für Selbstständige kostet zwischen 7,90 € und 14,90 €/Monat. Die meisten bieten 14–30 Tage kostenlos zum Testen." } }
+  ]
+};
+
+
 export default function Page() {
   const winner = tools[0];
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Header />
       <main className="flex-1 bg-slate-50">
 

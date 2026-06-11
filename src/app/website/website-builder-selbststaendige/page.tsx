@@ -2,11 +2,18 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Beste Website Builder für Selbstständige 2026 – In 1 Tag online ohne Programmierkenntnisse",
   description:
     "Squarespace, Framer, Jimdo, Wix & Co. im Vergleich – welcher Website Builder passt zu Solo-Selbstständigen? Mit klarer Empfehlung nach Branche und Budget.",
+  openGraph: {
+    title: "Beste Website Builder für Selbstständige 2026 – In 1 Tag online",
+    description: "Squarespace, Framer, Jimdo, Wix & Super.so im Vergleich. Mit Branchenempfehlung und 5-Schritte-Fahrplan.",
+    url: "https://vergleichscheck.com/website/website-builder-selbststaendige",
+    type: "article",
+  },
 };
 
 /* ─── AUFGABEN-MATRIX ─── */
@@ -268,9 +275,23 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Welcher Website Builder ist der beste für Selbstständige?", "acceptedAnswer": { "@type": "Answer", "text": "Squarespace ist für die meisten Selbstständigen die beste Wahl: professionelles Design, All-in-one (Domain, Hosting, SSL), einfache Bedienung, ab 13 €/Monat." } },
+    { "@type": "Question", "name": "Kann ich als Selbstständiger eine Website ohne Vorkenntnisse erstellen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Mit Squarespace, Jimdo oder Wix ist eine professionelle Website in 2–4 Stunden fertig – ohne Programmierkenntnisse. Jimdo baut sogar per KI-Assistent aus 5 Fragen eine erste Website." } }
+  ]
+};
+
+
 export default function WebsiteBuilderPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Header />
       <main className="flex-1 bg-slate-50">
 

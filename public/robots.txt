@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vergleichscheck.com/sitemap.xml

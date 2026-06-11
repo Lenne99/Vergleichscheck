@@ -1,6 +1,18 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Vergleichscheck.com – Unabhängige Software-Vergleiche für Selbstständige",
+  description: "Finde die beste Software für dein Business. Unabhängige Tests & Vergleiche für Buchhaltung, KI-Tools, Marketing, Produktivität und Website-Builder – speziell für Selbstständige in Deutschland.",
+  openGraph: {
+    title: "Vergleichscheck.com – Die besten Tools für dein Solo-Business",
+    description: "Unabhängige Software-Vergleiche für Selbstständige, Freelancer und kleine Unternehmen in Deutschland. Ehrliche Tests, klare Empfehlungen.",
+    url: "https://vergleichscheck.com",
+    type: "website",
+  },
+};
 
 const categories = [
   {
@@ -9,7 +21,7 @@ const categories = [
     title: "Buchhaltungssoftware",
     desc: "Die beste Buchhaltungs- und Rechnungssoftware für Selbstständige in Deutschland.",
     href: "/buchhaltung/beste-buchhaltungssoftware-selbststaendige",
-    count: "5 Tools verglichen",
+    count: "5 Tools · 2 Vergleiche",
     live: true,
     color: "blue",
   },
@@ -19,7 +31,7 @@ const categories = [
     title: "KI-Assistenten",
     desc: "ChatGPT, Claude & Co.: Welches KI-Tool macht was am besten für Selbstständige?",
     href: "/ki-tools/ki-assistent-content-marketing-selbststaendige",
-    count: "5 Tools verglichen",
+    count: "5 Tools · 1 Vergleich",
     live: true,
     color: "violet",
   },
@@ -29,7 +41,7 @@ const categories = [
     title: "Social Media Tools",
     desc: "Buffer, Metricool, Canva & Co. – sichtbar werden ohne Marketingagentur.",
     href: "/marketing/social-media-tools-selbststaendige",
-    count: "1 Vergleich",
+    count: "5 Tools · 1 Vergleich",
     live: true,
     color: "rose",
   },
@@ -39,7 +51,7 @@ const categories = [
     title: "Produktivität & Zeitmanagement",
     desc: "Notion, Todoist, Toggl Track & Co. – Struktur im Solo-Business ohne Overkill.",
     href: "/produktivitaet/produktivitaet-tools-selbststaendige",
-    count: "1 Vergleich",
+    count: "5 Tools · 1 Vergleich",
     live: true,
     color: "emerald",
   },
@@ -49,7 +61,7 @@ const categories = [
     title: "Website Builder",
     desc: "Squarespace, Framer, Jimdo & Co. – in 1 Tag online ohne Programmierkenntnisse.",
     href: "/website/website-builder-selbststaendige",
-    count: "1 Vergleich",
+    count: "5 Tools · 1 Vergleich",
     live: true,
     color: "amber",
   },
@@ -73,18 +85,10 @@ const featured = {
 
 const recentArticles = [
   {
-    tag: "Einsteiger-Ratgeber",
-    tagColor: "bg-amber-50 text-amber-700",
-    title: "Buchhaltungssoftware ohne Vorkenntnisse – welche ist wirklich einfach?",
-    desc: "Die 5 größten Ängste von Buchhaltungs-Einsteigern – und wie die richtige Software sie löst.",
-    href: "/buchhaltung/buchhaltungssoftware-ohne-vorkenntnisse",
-    meta: "4 min Lesezeit · Juni 2026",
-  },
-  {
-    tag: "Großer Vergleich",
+    tag: "Buchhaltung",
     tagColor: "bg-blue-50 text-blue-700",
     title: "Beste Buchhaltungssoftware für Selbstständige 2026",
-    desc: "lexoffice, sevDesk, FastBill, Buchhaltungsbutler und WISO im direkten Vergleich mit Scoring.",
+    desc: "lexoffice, sevDesk, FastBill & Co. im direkten Vergleich mit Scoring – unser Testsieger überrascht.",
     href: "/buchhaltung/beste-buchhaltungssoftware-selbststaendige",
     meta: "8 min Lesezeit · Juni 2026",
   },
@@ -146,17 +150,17 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
-                  href="/buchhaltung/beste-buchhaltungssoftware-selbststaendige"
+                  href="#kategorien"
                   className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3.5 rounded-xl transition-all text-sm shadow-lg shadow-green-600/20"
                 >
-                  Zum Buchhaltungs-Vergleich
+                  Alle Vergleiche entdecken
                   <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 8h6M8 5l3 3-3 3"/></svg>
                 </Link>
                 <Link
-                  href="#kategorien"
+                  href="/buchhaltung/beste-buchhaltungssoftware-selbststaendige"
                   className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-semibold px-6 py-3.5 rounded-xl transition-all text-sm border border-white/10"
                 >
-                  Alle Kategorien
+                  Testsieger: lexoffice →
                 </Link>
               </div>
             </div>
@@ -295,18 +299,24 @@ export default function Home() {
 
         {/* ─── CTA BANNER ─── */}
         <section className="max-w-6xl mx-auto px-4 py-14">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-white">
-              <h2 className="text-2xl font-bold mb-2">Bereit, die richtige Software zu finden?</h2>
-              <p className="text-blue-100 text-sm">Starte mit unserem Buchhaltungs-Vergleich — dem meistgelesenem auf Vergleichscheck.</p>
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 md:p-12 text-center">
+            <h2 className="text-2xl font-bold text-white mb-2">Noch unsicher welches Tool zu dir passt?</h2>
+            <p className="text-blue-100 text-sm mb-6 max-w-md mx-auto">Alle Vergleiche sind kostenlos, unabhängig und speziell für Solo-Selbstständige in Deutschland gemacht.</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link
+                href="#kategorien"
+                className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3.5 rounded-xl transition-all text-sm shadow-lg"
+              >
+                Alle Kategorien ansehen
+                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 8h6M8 5l3 3-3 3"/></svg>
+              </Link>
+              <Link
+                href="/buchhaltung/beste-buchhaltungssoftware-selbststaendige"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl transition-all text-sm border border-white/20"
+              >
+                Buchhaltung-Vergleich →
+              </Link>
             </div>
-            <Link
-              href="/buchhaltung/beste-buchhaltungssoftware-selbststaendige"
-              className="shrink-0 inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3.5 rounded-xl transition-all text-sm whitespace-nowrap shadow-lg"
-            >
-              Jetzt vergleichen
-              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 8h6M8 5l3 3-3 3"/></svg>
-            </Link>
           </div>
         </section>
 

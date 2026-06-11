@@ -2,11 +2,18 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "KI-Assistent für Content & Marketing 2026 – Welches Tool macht was am besten?",
   description:
     "ChatGPT, Claude, Gemini oder Perplexity? Für Selbstständige in Deutschland: Welches KI-Tool für Social Media, Blogartikel, E-Mails und Angebote am besten funktioniert – mit echten Beispielen.",
+  openGraph: {
+    title: "KI-Assistent für Content & Marketing 2026 – Welches Tool macht was am besten?",
+    description: "ChatGPT, Claude, Perplexity & Co. nach konkreten Aufgaben bewertet. Mit fertigen Prompt-Vorlagen zum Kopieren.",
+    url: "https://vergleichscheck.com/ki-tools/ki-assistent-content-marketing-selbststaendige",
+    type: "article",
+  },
 };
 
 /* ─── TASK MATRIX ─── */
@@ -337,9 +344,23 @@ function ScoreBar({ label, value, color = "blue" }: { label: string; value: numb
 }
 
 /* ─── PAGE ─── */
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Welches KI-Tool ist das beste für Selbstständige?", "acceptedAnswer": { "@type": "Answer", "text": "ChatGPT (GPT-4o) ist das vielseitigste KI-Tool für Selbstständige. Für deutschsprachige Texte und Nuancen ist Claude oft überlegen. Perplexity empfiehlt sich für Recherche mit aktuellen Quellen." } },
+    { "@type": "Question", "name": "Ist ChatGPT kostenlos nutzbar?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, ChatGPT hat einen dauerhaft kostenlosen Plan mit GPT-4o mini. Für GPT-4o (deutlich besser) kostet ChatGPT Plus 20 $/Monat. Für die meisten Selbstständigen lohnt sich Plus." } }
+  ]
+};
+
+
 export default function Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Header />
       <main className="flex-1 bg-slate-50">
 
