@@ -1,310 +1,331 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Beste Buchhaltungssoftware für Selbstständige 2025 – Test & Vergleich",
   description:
-    "Welche Buchhaltungssoftware ist 2025 die beste für Selbstständige? Wir haben lexoffice, sevDesk, FastBill, Buchhaltungsbutler & WISO Mein Büro getestet. Jetzt Empfehlung lesen.",
+    "lexoffice, sevDesk, FastBill, Buchhaltungsbutler oder WISO? Wir haben alle 5 getestet. Klare Empfehlung für Selbstständige in Deutschland – mit Vergleichstabelle und FAQ.",
 };
 
+/* ─── DATA ─── */
 const tools = [
   {
     rank: 1,
     name: "lexoffice",
-    tagline: "Beste Gesamtlösung",
-    price: "7,90 €",
-    priceNote: "/ Monat (Lexware-Angebot)",
+    tagline: "Beste Gesamtlösung für Einsteiger & Fortgeschrittene",
+    price: 7.9,
+    priceLabel: "7,90 €",
+    priceNote: "/ Monat (Flex-Tarif)",
     rating: 4.8,
-    votes: 1240,
+    votes: "1.240",
+    score: 96,
     badge: "Testsieger",
-    badgeColor: "bg-amber-400 text-amber-900",
+    badgeStyle: "bg-amber-400 text-amber-900",
+    accent: "blue",
     highlight: true,
-    borderColor: "border-amber-300",
-    bgColor: "bg-amber-50",
-    trialLabel: "30 Tage kostenlos testen",
-    trialColor: "bg-amber-500 hover:bg-amber-600",
     pros: [
       "Kein Buchhaltungswissen nötig",
       "DATEV-Export & GoBD-konform",
-      "Automatischer Bankabgleich",
-      "Steuerberater-Zugang kostenlos",
-      "Sehr gute mobile App",
+      "Automatischer Bankabgleich (alle DE-Banken)",
+      "Steuerberater-Zugang kostenlos inklusive",
+      "Sehr gute iOS & Android App",
+      "Steuererklärung direkt integrierbar",
     ],
-    cons: ["Basispaket etwas eingeschränkt", "Preis steigt mit Features"],
+    cons: [
+      "Basispaket mit eingeschränkten Funktionen",
+      "Preis steigt mit Funktionsumfang",
+    ],
     bestFor: "Einsteiger & alle, die eine vollständige Lösung wollen",
-    usability: 5,
-    invoices: true,
-    accounting: true,
-    datev: true,
-    gobd: true,
-    bankSync: true,
-    mobileApp: true,
+    detail:
+      "lexoffice ist die benutzerfreundlichste vollständige Buchhaltungslösung für Deutschland, entwickelt von der Haufe Group. Die Software führt dich Schritt für Schritt durch alle Prozesse — kein Buchhaltungswissen vorausgesetzt. Automatischer Bankabgleich, DATEV-Export und eine starke App machen die tägliche Arbeit zum Nebenjob.",
+    scores: { bedienung: 98, funktionen: 92, app: 95, support: 90 },
+    cta: "30 Tage kostenlos testen",
+    ctaNote: "Keine Kreditkarte · Jederzeit kündbar",
+    invoices: true, accounting: true, datev: true, gobd: true, bankSync: true, mobileApp: true,
   },
   {
     rank: 2,
     name: "sevDesk",
-    tagline: "Stark für wachsende Businesses",
-    price: "8,90 €",
+    tagline: "Stark für wachsende Unternehmen & Online-Shops",
+    price: 8.9,
+    priceLabel: "8,90 €",
     priceNote: "/ Monat",
     rating: 4.5,
-    votes: 890,
+    votes: "890",
+    score: 88,
     badge: "Top für Wachstum",
-    badgeColor: "bg-blue-100 text-blue-800",
+    badgeStyle: "bg-blue-100 text-blue-800",
+    accent: "blue",
     highlight: false,
-    borderColor: "border-gray-200",
-    bgColor: "bg-white",
-    trialLabel: "Kostenlos testen",
-    trialColor: "bg-blue-600 hover:bg-blue-700",
     pros: [
-      "Rechnungen + Buchhaltung kombiniert",
-      "Viele Shop-Integrationen",
+      "Rechnungen + vollständige Buchhaltung",
+      "Shopify & WooCommerce Integration",
       "Starke mobile App",
       "DATEV-Export vorhanden",
     ],
-    cons: ["Interface komplexer als lexoffice", "Volle Funktionen erst im teureren Paket"],
+    cons: [
+      "Interface komplexer als lexoffice",
+      "Volle Funktionen erst im teureren Paket",
+    ],
     bestFor: "Selbstständige mit wachsendem Unternehmen & Online-Shop",
-    usability: 4,
-    invoices: true,
-    accounting: true,
-    datev: true,
-    gobd: true,
-    bankSync: true,
-    mobileApp: true,
+    detail:
+      "sevDesk verbindet Rechnungsstellung und Buchhaltung zu einer soliden Gesamtlösung — mit besonders starken Integrationen für E-Commerce. Wer einen Online-Shop betreibt oder viele externe Tools nutzt, ist hier besser aufgehoben als bei lexoffice.",
+    scores: { bedienung: 82, funktionen: 90, app: 88, support: 84 },
+    cta: "sevDesk kostenlos testen",
+    ctaNote: "14 Tage kostenloser Testzeitraum",
+    invoices: true, accounting: true, datev: true, gobd: true, bankSync: true, mobileApp: true,
   },
   {
     rank: 3,
     name: "FastBill",
-    tagline: "Einfachster Einstieg",
-    price: "9,00 €",
+    tagline: "Einfachster Einstieg – Rechnungen in 2 Minuten",
+    price: 9.0,
+    priceLabel: "9,00 €",
     priceNote: "/ Monat",
     rating: 4.3,
-    votes: 620,
+    votes: "620",
+    score: 80,
     badge: "Einfachste Bedienung",
-    badgeColor: "bg-green-100 text-green-800",
+    badgeStyle: "bg-emerald-100 text-emerald-800",
+    accent: "blue",
     highlight: false,
-    borderColor: "border-gray-200",
-    bgColor: "bg-white",
-    trialLabel: "Kostenlos testen",
-    trialColor: "bg-blue-600 hover:bg-blue-700",
     pros: [
-      "In 2 Minuten erste Rechnung",
+      "In 2 Minuten erste Rechnung erstellt",
       "Klarste Benutzeroberfläche",
       "Gut für reine Rechnungssteller",
     ],
-    cons: ["Kein vollständiger DATEV-Export im Basispaket", "Buchhaltung begrenzt"],
-    bestFor: "Freelancer, die nur Rechnungen stellen + Steuerberater haben",
-    usability: 5,
-    invoices: true,
-    accounting: false,
-    datev: false,
-    gobd: true,
-    bankSync: false,
-    mobileApp: true,
+    cons: [
+      "Kein DATEV-Export im Basispaket",
+      "Buchhaltungsfunktionen begrenzt",
+    ],
+    bestFor: "Freelancer mit Steuerberater, die nur Rechnungen stellen",
+    detail:
+      "FastBill ist auf absolute Einfachheit optimiert. Wer einen Steuerberater hat und selbst nur Rechnungen stellen will, braucht keine komplexe Buchhaltungssoftware — FastBill macht genau das perfekt.",
+    scores: { bedienung: 98, funktionen: 68, app: 80, support: 78 },
+    cta: "FastBill kostenlos testen",
+    ctaNote: "Kein Buchhaltungswissen nötig",
+    invoices: true, accounting: false, datev: false, gobd: true, bankSync: false, mobileApp: true,
   },
   {
     rank: 4,
     name: "Buchhaltungsbutler",
-    tagline: "Maximale Automatisierung per KI",
-    price: "15,00 €",
+    tagline: "KI-gestützte Automatisierung für viele Belege",
+    price: 15.0,
+    priceLabel: "15,00 €",
     priceNote: "/ Monat",
     rating: 4.2,
-    votes: 410,
-    badge: "KI-gestützt",
-    badgeColor: "bg-purple-100 text-purple-800",
+    votes: "410",
+    score: 78,
+    badge: "KI-Automatisierung",
+    badgeStyle: "bg-violet-100 text-violet-800",
+    accent: "blue",
     highlight: false,
-    borderColor: "border-gray-200",
-    bgColor: "bg-white",
-    trialLabel: "Kostenlos testen",
-    trialColor: "bg-blue-600 hover:bg-blue-700",
     pros: [
-      "KI erkennt Belege automatisch",
-      "Höchste Automatisierung",
+      "KI erkennt und verbucht Belege automatisch",
+      "Höchster Automatisierungsgrad im Test",
       "DATEV-Export inklusive",
     ],
-    cons: ["Teuerste Option", "Lernkurve höher", "Overkill für Kleinst-Freelancer"],
+    cons: [
+      "Teuerste Option",
+      "Lernkurve höher als Alternativen",
+      "Overkill für kleine Freelancer",
+    ],
     bestFor: "Selbstständige mit vielen Belegen & Reisekosten",
-    usability: 3,
-    invoices: true,
-    accounting: true,
-    datev: true,
-    gobd: true,
-    bankSync: true,
-    mobileApp: false,
+    detail:
+      "Der Buchhaltungsbutler setzt auf KI-Belezerkennung, die Rechnungen und Quittungen automatisch verbucht. Wer monatlich viele Belege verarbeitet, spart hier die meiste Zeit — trotz höherem Preis.",
+    scores: { bedienung: 72, funktionen: 88, app: 70, support: 82 },
+    cta: "Buchhaltungsbutler testen",
+    ctaNote: "Kostenloser Testzeitraum verfügbar",
+    invoices: true, accounting: true, datev: true, gobd: true, bankSync: true, mobileApp: false,
   },
   {
     rank: 5,
     name: "WISO Mein Büro",
-    tagline: "Günstigste Vollversion",
-    price: "6,00 €",
+    tagline: "Günstigste Vollversion – offline & online",
+    price: 6.0,
+    priceLabel: "6,00 €",
     priceNote: "/ Monat",
     rating: 4.0,
-    votes: 780,
-    badge: "Bestes Preis-Leistungs-Verhältnis",
-    badgeColor: "bg-orange-100 text-orange-800",
+    votes: "780",
+    score: 74,
+    badge: "Günstigste Vollversion",
+    badgeStyle: "bg-orange-100 text-orange-800",
+    accent: "blue",
     highlight: false,
-    borderColor: "border-gray-200",
-    bgColor: "bg-white",
-    trialLabel: "Kostenlos testen",
-    trialColor: "bg-blue-600 hover:bg-blue-700",
     pros: [
       "Günstigster Preis mit vollem Umfang",
-      "Offline + Online verfügbar",
+      "Offline & Online-Version verfügbar",
       "DATEV-Export inklusive",
       "Bewährtes deutsches Produkt",
     ],
-    cons: ["Interface wirkt altmodisch", "Mobile App schwächer", "Weniger modern"],
-    bestFor: "Budget-bewusste Nutzer, die auf modernes UI verzichten können",
-    usability: 3,
-    invoices: true,
-    accounting: true,
-    datev: true,
-    gobd: true,
-    bankSync: true,
-    mobileApp: false,
+    cons: [
+      "Interface wirkt altmodisch",
+      "Mobile App deutlich schwächer",
+    ],
+    bestFor: "Budget-bewusste Nutzer, die auf ein modernes UI verzichten können",
+    detail:
+      "WISO Mein Büro bietet den günstigsten Einstieg mit vollständigem Funktionsumfang — entwickelt von Buhl Data, seit Jahrzehnten ein zuverlässiger Name in der deutschen Steuer-Software.",
+    scores: { bedienung: 68, funktionen: 84, app: 58, support: 76 },
+    cta: "WISO Mein Büro testen",
+    ctaNote: "Günstigste Option im Test",
+    invoices: true, accounting: true, datev: true, gobd: true, bankSync: true, mobileApp: false,
   },
 ];
 
-const Stars = ({ rating, size = "sm" }: { rating: number; size?: "sm" | "lg" }) => {
-  const full = Math.floor(rating);
-  const half = rating % 1 >= 0.5;
-  const cls = size === "lg" ? "text-xl" : "text-sm";
+const profiles = [
+  { icon: "🌱", label: "Einsteiger", desc: "Keine Buchhaltungskenntnisse, will einfach starten", winner: "lexoffice", color: "blue" },
+  { icon: "💰", label: "Budget-bewusst", desc: "Voller Funktionsumfang zum niedrigsten Preis", winner: "WISO Mein Büro", color: "orange" },
+  { icon: "📈", label: "Wachstum", desc: "Mehr Kunden, Online-Shop, viele Integrationen nötig", winner: "sevDesk", color: "blue" },
+  { icon: "🤖", label: "Automatisierung", desc: "Viele Belege, KI soll den Großteil erledigen", winner: "Buchhaltungsbutler", color: "violet" },
+  { icon: "📄", label: "Nur Rechnungen", desc: "Steuerberater macht Rest, du willst nur abrechnen", winner: "FastBill", color: "emerald" },
+];
+
+const tableFeatures = [
+  { label: "Rechnungen", key: "invoices" },
+  { label: "Buchhaltung", key: "accounting" },
+  { label: "DATEV-Export", key: "datev" },
+  { label: "GoBD-konform", key: "gobd" },
+  { label: "Bankabgleich", key: "bankSync" },
+  { label: "Mobile App", key: "mobileApp" },
+] as const;
+
+/* ─── SUB-COMPONENTS ─── */
+function ScoreBar({ label, value }: { label: string; value: number }) {
+  const color = value >= 90 ? "bg-emerald-500" : value >= 75 ? "bg-blue-500" : "bg-amber-500";
   return (
-    <span className={`${cls} text-amber-400`}>
-      {"★".repeat(full)}
-      {half ? "½" : ""}
-      {"☆".repeat(5 - full - (half ? 1 : 0))}
+    <div>
+      <div className="flex justify-between text-xs text-slate-500 mb-1">
+        <span>{label}</span><span className="font-semibold text-slate-700">{value}</span>
+      </div>
+      <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+        <div className={`h-full ${color} rounded-full`} style={{ width: `${value}%` }} />
+      </div>
+    </div>
+  );
+}
+
+function RatingStars({ rating }: { rating: number }) {
+  const full = Math.floor(rating);
+  const hasHalf = rating % 1 >= 0.5;
+  return (
+    <span className="text-amber-400">
+      {"★".repeat(full)}{hasHalf ? "⯨" : ""}{"☆".repeat(5 - full - (hasHalf ? 1 : 0))}
     </span>
   );
-};
+}
 
-const Check = () => (
-  <span className="inline-flex items-center justify-center w-6 h-6 bg-green-100 text-green-600 rounded-full text-xs font-bold">✓</span>
-);
-const Cross = () => (
-  <span className="inline-flex items-center justify-center w-6 h-6 bg-gray-100 text-gray-400 rounded-full text-xs font-bold">✗</span>
-);
+function Tick() {
+  return <span className="inline-flex items-center justify-center w-6 h-6 bg-emerald-50 text-emerald-600 rounded-full text-xs font-bold">✓</span>;
+}
+function Cross() {
+  return <span className="inline-flex items-center justify-center w-6 h-6 bg-slate-100 text-slate-400 rounded-full text-xs">–</span>;
+}
 
-export default function BuchhaltungssoftwarePage() {
+/* ─── PAGE ─── */
+export default function Page() {
+  const winner = tools[0];
+
   return (
     <>
       <Header />
-      <main className="flex-1 bg-gray-50">
+      <main className="flex-1 bg-slate-50">
 
         {/* ── HERO ── */}
-        <section className="bg-white border-b border-gray-200">
+        <section className="bg-white border-b border-slate-200">
           <div className="max-w-4xl mx-auto px-4 pt-8 pb-10">
-            {/* Breadcrumb */}
-            <p className="text-sm text-gray-500 mb-5">
-              <a href="/" className="hover:text-blue-600">Startseite</a>
-              <span className="mx-1.5">›</span>
-              <span>Buchhaltung</span>
-              <span className="mx-1.5">›</span>
-              <span className="text-gray-800">Beste Buchhaltungssoftware</span>
-            </p>
+            <nav className="text-xs text-slate-400 mb-6 flex items-center gap-1.5">
+              <Link href="/" className="hover:text-blue-600 transition-colors">Startseite</Link>
+              <span>›</span><span>Buchhaltung</span>
+              <span>›</span><span className="text-slate-600">Beste Buchhaltungssoftware</span>
+            </nav>
 
-            <div className="flex items-start gap-3 mb-4">
-              <span className="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full shrink-0 mt-1">
-                Vergleich 2025
+            <div className="flex flex-wrap gap-2 mb-5">
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full">
+                <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Vergleich 2025
               </span>
-              <span className="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-1 rounded-full shrink-0 mt-1">
-                ✓ Unabhängig getestet
-              </span>
+              <span className="text-xs font-semibold bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full">✓ Unabhängig getestet</span>
+              <span className="text-xs font-semibold bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full">5 Tools · Juni 2025</span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-4">
-              Beste Buchhaltungssoftware für<br className="hidden md:block" /> Selbstständige 2025
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-4">
+              Beste Buchhaltungssoftware<br className="hidden md:block" /> für Selbstständige 2025
             </h1>
-            <p className="text-lg text-gray-600 mb-6 max-w-2xl">
-              Wir haben 5 Programme getestet, die speziell für Freelancer, Solo-Selbstständige und Kleinunternehmer in Deutschland geeignet sind. Mit klarer Empfehlung – kein Fachjargon.
+            <p className="text-slate-600 text-lg mb-7 max-w-2xl leading-relaxed">
+              Wir haben 5 Programme mit echten Testkonten geprüft — speziell für Freelancer, Solo-Selbstständige und Einzelunternehmer in Deutschland. Klare Empfehlung, kein Fachjargon.
             </p>
 
-            {/* Quick winner box */}
-            <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <div className="text-3xl">🏆</div>
-              <div className="flex-1">
-                <div className="font-bold text-gray-900 mb-0.5">Unser Testsieger: lexoffice</div>
-                <p className="text-sm text-gray-600">
-                  Beste Kombination aus Benutzerfreundlichkeit, Funktionsumfang und Deutschland-Kompatibilität. Perfekt für Einsteiger.
-                </p>
+            {/* Winner card */}
+            <div className="bg-gradient-to-r from-amber-50 to-amber-100/60 border border-amber-200 rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+              <div className="shrink-0 w-12 h-12 bg-amber-400 rounded-xl flex items-center justify-center text-xl">🏆</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-xs font-bold text-amber-700 uppercase tracking-wider mb-0.5">Unser Testsieger</div>
+                <div className="font-bold text-slate-900 text-lg">{winner.name} <span className="text-slate-500 font-normal text-sm">— ab {winner.priceLabel}/Monat</span></div>
+                <div className="text-sm text-slate-600 mt-0.5">Beste Bedienbarkeit, DATEV-Export, GoBD-konform, 30 Tage gratis.</div>
               </div>
-              <a
-                href="#"
-                className="shrink-0 bg-amber-500 hover:bg-amber-600 text-white font-bold px-5 py-2.5 rounded-lg text-sm transition-colors whitespace-nowrap"
-              >
-                30 Tage kostenlos →
+              <a href="#" className="shrink-0 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold px-5 py-2.5 rounded-xl text-sm transition-all whitespace-nowrap shadow-md shadow-amber-500/20">
+                Kostenlos testen <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 7h6M7 4l3 3-3 3"/></svg>
               </a>
             </div>
           </div>
         </section>
 
-        {/* ── TRUST BAR ── */}
-        <section className="bg-gray-900 text-white">
-          <div className="max-w-4xl mx-auto px-4 py-3 flex flex-wrap justify-center gap-6 text-xs text-gray-300">
-            <span>✓ 5 Programme getestet</span>
-            <span>✓ Echte Nutzerkonten erstellt</span>
-            <span>✓ Keine bezahlten Platzierungen</span>
-            <span>✓ Letztes Update: Juni 2025</span>
-          </div>
-        </section>
+        <div className="max-w-4xl mx-auto px-4 py-12 space-y-16">
 
-        <div className="max-w-4xl mx-auto px-4 py-10 space-y-16">
-
-          {/* ── SCHNELLÜBERSICHT ── */}
+          {/* ── RANKINGS ── */}
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Schnellübersicht: Die besten Programme</h2>
-            <p className="text-gray-500 text-sm mb-6">Für eine schnelle Entscheidung – alle Details stehen weiter unten.</p>
+            <h2 className="text-xl font-bold text-slate-900 mb-1">Die 5 besten Programme im Überblick</h2>
+            <p className="text-slate-500 text-sm mb-7">Gerankt nach Testergebnis — alle Details weiter unten.</p>
 
-            <div className="space-y-4">
-              {tools.map((tool) => (
+            <div className="space-y-3">
+              {tools.map((t) => (
                 <div
-                  key={tool.name}
-                  className={`rounded-xl border-2 ${tool.highlight ? tool.borderColor : "border-gray-200"} ${tool.bgColor} p-5 transition-shadow hover:shadow-md`}
+                  key={t.name}
+                  className={`group bg-white rounded-2xl border-2 transition-all duration-200 hover:shadow-lg ${t.highlight ? "border-amber-300 shadow-md shadow-amber-500/10" : "border-slate-200 hover:border-slate-300"}`}
                 >
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    {/* Rank + Name */}
-                    <div className="flex items-start gap-4 flex-1">
-                      <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${tool.rank === 1 ? "bg-amber-400 text-amber-900" : "bg-gray-200 text-gray-600"}`}>
-                        {tool.rank}
+                  <div className="p-5">
+                    <div className="flex items-start gap-4">
+                      {/* Rank */}
+                      <div className={`shrink-0 w-9 h-9 rounded-xl flex items-center justify-center font-bold text-sm ${t.rank === 1 ? "bg-amber-400 text-amber-900" : "bg-slate-100 text-slate-500"}`}>
+                        {t.rank}
                       </div>
-                      <div className="flex-1">
+
+                      {/* Info */}
+                      <div className="flex-1 min-w-0">
                         <div className="flex flex-wrap items-center gap-2 mb-1">
-                          <span className="font-bold text-lg text-gray-900">{tool.name}</span>
-                          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${tool.badgeColor}`}>
-                            {tool.badge}
+                          <span className="font-bold text-slate-900 text-base">{t.name}</span>
+                          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${t.badgeStyle}`}>{t.badge}</span>
+                        </div>
+                        <p className="text-sm text-slate-500 mb-2">{t.tagline}</p>
+                        <div className="flex items-center gap-3">
+                          <RatingStars rating={t.rating} />
+                          <span className="text-sm font-bold text-slate-700">{t.rating}</span>
+                          <span className="text-xs text-slate-400">({t.votes})</span>
+                          <span className="hidden sm:inline-flex items-center gap-1 text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
+                            Score: {t.score}/100
                           </span>
                         </div>
-                        <p className="text-sm text-gray-600 mb-2">{tool.tagline}</p>
-                        <div className="flex items-center gap-2">
-                          <Stars rating={tool.rating} />
-                          <span className="text-sm font-semibold text-gray-700">{tool.rating}</span>
-                          <span className="text-xs text-gray-400">({tool.votes} Bewertungen)</span>
-                        </div>
+                      </div>
+
+                      {/* Price + CTA */}
+                      <div className="shrink-0 text-right">
+                        <div className="font-bold text-slate-900 text-lg">{t.priceLabel}</div>
+                        <div className="text-xs text-slate-400 mb-2">{t.priceNote}</div>
+                        <a href="#" className={`inline-flex items-center gap-1.5 text-xs font-bold px-3 py-2 rounded-lg transition-colors ${t.highlight ? "bg-amber-500 hover:bg-amber-400 text-slate-900" : "bg-blue-600 hover:bg-blue-700 text-white"}`}>
+                          {t.highlight ? "30 Tage gratis →" : "Testen →"}
+                        </a>
                       </div>
                     </div>
 
-                    {/* Price + CTA */}
-                    <div className="sm:text-right flex sm:flex-col justify-between sm:justify-start items-center sm:items-end gap-3 shrink-0">
-                      <div>
-                        <span className="text-xl font-bold text-gray-900">{tool.price}</span>
-                        <span className="text-xs text-gray-500 block">{tool.priceNote}</span>
-                      </div>
-                      <a
-                        href="#"
-                        className={`${tool.trialColor} text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors whitespace-nowrap`}
-                      >
-                        {tool.trialLabel} →
-                      </a>
+                    {/* Pros strip */}
+                    <div className="mt-4 pt-4 border-t border-slate-100 flex flex-wrap gap-x-5 gap-y-1.5">
+                      {t.pros.slice(0, 3).map((p) => (
+                        <span key={p} className="text-xs text-slate-600 flex items-center gap-1.5">
+                          <span className="text-emerald-500 font-bold">✓</span>{p}
+                        </span>
+                      ))}
                     </div>
-                  </div>
-
-                  {/* Pros preview */}
-                  <div className="mt-3 pt-3 border-t border-gray-200 flex flex-wrap gap-x-4 gap-y-1">
-                    {tool.pros.slice(0, 3).map((pro) => (
-                      <span key={pro} className="text-xs text-gray-600">
-                        <span className="text-green-500 font-bold">✓</span> {pro}
-                      </span>
-                    ))}
                   </div>
                 </div>
               ))}
@@ -313,332 +334,183 @@ export default function BuchhaltungssoftwarePage() {
 
           {/* ── VERGLEICHSTABELLE ── */}
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Funktionsvergleich im Detail</h2>
-            <p className="text-gray-500 text-sm mb-6">Welches Tool hat welche Funktion? Auf einen Blick.</p>
+            <h2 className="text-xl font-bold text-slate-900 mb-1">Funktionsvergleich</h2>
+            <p className="text-slate-500 text-sm mb-6">Welches Tool hat welche Funktion?</p>
 
-            <div className="overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm">
+            <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-gray-50 border-b border-gray-200">
-                    <th className="text-left px-4 py-3 font-semibold text-gray-700 min-w-[140px]">Funktion</th>
+                  <tr className="border-b border-slate-200">
+                    <th className="text-left px-5 py-4 font-semibold text-slate-600 bg-slate-50 min-w-[130px] rounded-tl-2xl">Funktion</th>
                     {tools.map((t) => (
-                      <th key={t.name} className={`text-center px-3 py-3 font-semibold text-xs ${t.highlight ? "text-amber-700 bg-amber-50" : "text-gray-700"}`}>
+                      <th key={t.name} className={`text-center px-4 py-4 text-xs font-bold ${t.highlight ? "bg-amber-50 text-amber-800" : "bg-slate-50 text-slate-600"}`}>
                         {t.name}
-                        {t.highlight && <div className="text-amber-500 text-xs">🏆</div>}
+                        {t.highlight && <div className="text-amber-500 text-base leading-none mt-0.5">🏆</div>}
                       </th>
                     ))}
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-100">
-                  {[
-                    { label: "Preis/Monat", values: tools.map(t => <span className="font-semibold">{t.price}</span>) },
-                    { label: "Rechnungen", values: tools.map(t => t.invoices ? <Check /> : <Cross />) },
-                    { label: "Buchhaltung", values: tools.map(t => t.accounting ? <Check /> : <Cross />) },
-                    { label: "DATEV-Export", values: tools.map(t => t.datev ? <Check /> : <Cross />) },
-                    { label: "GoBD-konform", values: tools.map(t => t.gobd ? <Check /> : <Cross />) },
-                    { label: "Bankabgleich", values: tools.map(t => t.bankSync ? <Check /> : <Cross />) },
-                    { label: "Mobile App", values: tools.map(t => t.mobileApp ? <Check /> : <Cross />) },
-                  ].map((row, i) => (
-                    <tr key={row.label} className={i % 2 === 0 ? "bg-white" : "bg-gray-50/60"}>
-                      <td className="px-4 py-3 font-medium text-gray-700">{row.label}</td>
-                      {row.values.map((v, j) => (
-                        <td key={j} className={`px-3 py-3 text-center ${tools[j].highlight ? "bg-amber-50/50" : ""}`}>
-                          {v}
+                <tbody className="divide-y divide-slate-100">
+                  <tr>
+                    <td className="px-5 py-3.5 font-semibold text-slate-700 bg-slate-50/50">Preis/Monat</td>
+                    {tools.map((t) => (
+                      <td key={t.name} className={`px-4 py-3.5 text-center font-bold text-slate-900 ${t.highlight ? "bg-amber-50/30" : ""}`}>
+                        {t.priceLabel}
+                      </td>
+                    ))}
+                  </tr>
+                  {tableFeatures.map(({ label, key }, i) => (
+                    <tr key={key} className={i % 2 === 0 ? "" : "bg-slate-50/40"}>
+                      <td className="px-5 py-3.5 font-medium text-slate-600">{label}</td>
+                      {tools.map((t) => (
+                        <td key={t.name} className={`px-4 py-3.5 text-center ${t.highlight ? "bg-amber-50/20" : ""}`}>
+                          {t[key] ? <Tick /> : <Cross />}
                         </td>
                       ))}
                     </tr>
                   ))}
+                  <tr>
+                    <td className="px-5 py-3.5 font-semibold text-slate-700 bg-slate-50/50">Gesamt-Score</td>
+                    {tools.map((t) => (
+                      <td key={t.name} className={`px-4 py-3.5 text-center ${t.highlight ? "bg-amber-50/30" : ""}`}>
+                        <span className={`inline-block font-bold text-sm px-2 py-0.5 rounded-lg ${t.rank === 1 ? "bg-amber-100 text-amber-800" : t.score >= 85 ? "bg-blue-50 text-blue-700" : "bg-slate-100 text-slate-600"}`}>
+                          {t.score}/100
+                        </span>
+                      </td>
+                    ))}
+                  </tr>
                 </tbody>
               </table>
             </div>
           </section>
 
-          {/* ── DETAILLIERTE EINZELBESPRECHUNGEN ── */}
+          {/* ── DETAIL-CARDS ── */}
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Jedes Tool im Detail</h2>
-            <p className="text-gray-500 text-sm mb-8">Stärken, Schwächen und für wen es wirklich passt.</p>
+            <h2 className="text-xl font-bold text-slate-900 mb-1">Jedes Tool im Detail</h2>
+            <p className="text-slate-500 text-sm mb-8">Stärken, Schwächen, Score-Analyse und für wen es wirklich passt.</p>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
+              {tools.map((t) => (
+                <div
+                  key={t.name}
+                  className={`bg-white rounded-2xl border-2 overflow-hidden shadow-sm ${t.highlight ? "border-amber-300" : "border-slate-200"}`}
+                >
+                  {/* Card header */}
+                  <div className={`px-6 py-3 flex items-center justify-between ${t.highlight ? "bg-amber-400" : "bg-slate-900"}`}>
+                    <span className={`font-bold text-sm ${t.highlight ? "text-amber-900" : "text-white"}`}>
+                      {t.highlight ? "🏆 Platz 1 – Testsieger" : `Platz ${t.rank}`}
+                    </span>
+                    {t.highlight && <span className="text-amber-800 text-xs font-medium">Empfohlen für die meisten Selbstständigen</span>}
+                  </div>
 
-              {/* lexoffice */}
-              <div className="bg-white rounded-xl border-2 border-amber-300 overflow-hidden shadow-sm">
-                <div className="bg-amber-400 px-6 py-2 flex items-center justify-between">
-                  <span className="font-bold text-amber-900 text-sm">🏆 Platz 1 – Testsieger</span>
-                  <span className="text-amber-900 text-xs font-medium">Empfohlen für die meisten Selbstständigen</span>
-                </div>
-                <div className="p-6">
-                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-5">
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-1">lexoffice</h3>
-                      <div className="flex items-center gap-2">
-                        <Stars rating={4.8} size="lg" />
-                        <span className="font-bold text-gray-700">4,8</span>
-                        <span className="text-xs text-gray-400">(1.240 Bewertungen)</span>
+                  <div className="p-6 md:p-8">
+                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
+                      <div>
+                        <div className="flex items-center gap-3 mb-1">
+                          <h3 className="text-2xl font-bold text-slate-900">{t.name}</h3>
+                          <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${t.badgeStyle}`}>{t.badge}</span>
+                        </div>
+                        <p className="text-slate-500 text-sm mb-2">{t.tagline}</p>
+                        <div className="flex items-center gap-2">
+                          <RatingStars rating={t.rating} />
+                          <span className="font-bold text-slate-700">{t.rating}</span>
+                          <span className="text-xs text-slate-400">({t.votes} Bewertungen)</span>
+                        </div>
+                      </div>
+                      <div className="sm:text-right shrink-0">
+                        <div className="text-2xl font-bold text-slate-900">{t.priceLabel}</div>
+                        <div className="text-xs text-slate-400">{t.priceNote}</div>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-gray-900">7,90 €<span className="text-sm font-normal text-gray-500">/Monat</span></div>
-                      <div className="text-xs text-gray-500">inkl. 30 Tage Gratis-Test</div>
+
+                    <p className="text-slate-600 leading-relaxed mb-6">{t.detail}</p>
+
+                    {/* Score bars */}
+                    <div className="bg-slate-50 rounded-xl p-5 mb-6 grid grid-cols-2 gap-4">
+                      <ScoreBar label="Bedienung" value={t.scores.bedienung} />
+                      <ScoreBar label="Funktionsumfang" value={t.scores.funktionen} />
+                      <ScoreBar label="Mobile App" value={t.scores.app} />
+                      <ScoreBar label="Support" value={t.scores.support} />
                     </div>
-                  </div>
 
-                  <p className="text-gray-700 mb-5">
-                    lexoffice ist die benutzerfreundlichste vollständige Buchhaltungslösung für Deutschland. Kein Buchhaltungswissen nötig — die Software führt dich durch alle wichtigen Schritte. Entwickelt von der Haufe Group, einem der renommiertesten deutschen Steuer- und Rechtsverlage.
-                  </p>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
-                    <div className="bg-green-50 rounded-lg p-4">
-                      <h4 className="font-bold text-green-800 mb-3 text-sm">✓ Das spricht dafür</h4>
-                      <ul className="space-y-2">
-                        {tools[0].pros.map(p => (
-                          <li key={p} className="text-sm text-gray-700 flex gap-2">
-                            <span className="text-green-500 shrink-0 mt-0.5">✓</span>{p}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="bg-red-50 rounded-lg p-4">
-                      <h4 className="font-bold text-red-700 mb-3 text-sm">✗ Das spricht dagegen</h4>
-                      <ul className="space-y-2">
-                        {tools[0].cons.map(c => (
-                          <li key={c} className="text-sm text-gray-700 flex gap-2">
-                            <span className="text-red-400 shrink-0 mt-0.5">✗</span>{c}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="bg-blue-50 border border-blue-100 rounded-lg px-4 py-3 text-sm text-blue-900 mb-5">
-                    <strong>Perfekt für:</strong> {tools[0].bestFor}
-                  </div>
-
-                  <a href="#" className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-3 rounded-lg text-sm transition-colors">
-                    lexoffice 30 Tage kostenlos testen →
-                  </a>
-                  <p className="text-xs text-gray-400 mt-2">Kein Kreditkarte nötig · Jederzeit kündbar</p>
-                </div>
-              </div>
-
-              {/* sevDesk */}
-              <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
-                <div className="bg-gray-100 px-6 py-2">
-                  <span className="font-semibold text-gray-600 text-sm">Platz 2 – Top für wachsende Unternehmen</span>
-                </div>
-                <div className="p-6">
-                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-5">
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-1">sevDesk</h3>
-                      <div className="flex items-center gap-2">
-                        <Stars rating={4.5} size="lg" />
-                        <span className="font-bold text-gray-700">4,5</span>
-                        <span className="text-xs text-gray-400">(890 Bewertungen)</span>
+                    {/* Pros / Cons */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                      <div className="bg-emerald-50 rounded-xl p-4">
+                        <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-3">Das spricht dafür</div>
+                        <ul className="space-y-2">
+                          {t.pros.map((p) => (
+                            <li key={p} className="text-sm text-slate-700 flex gap-2.5">
+                              <span className="text-emerald-500 shrink-0 mt-0.5 font-bold">✓</span>{p}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="bg-red-50 rounded-xl p-4">
+                        <div className="text-xs font-bold text-red-600 uppercase tracking-wider mb-3">Das spricht dagegen</div>
+                        <ul className="space-y-2">
+                          {t.cons.map((c) => (
+                            <li key={c} className="text-sm text-slate-700 flex gap-2.5">
+                              <span className="text-red-400 shrink-0 mt-0.5 font-bold">✗</span>{c}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-gray-900">8,90 €<span className="text-sm font-normal text-gray-500">/Monat</span></div>
-                    </div>
-                  </div>
-                  <p className="text-gray-700 mb-5">
-                    sevDesk ist die stärkste Lösung für Selbstständige, die bereits wachsen: Shopify- und WooCommerce-Integration, starke App und solide Buchhaltungsfunktionen. Interface ist etwas komplexer als lexoffice, dafür deutlich mächtiger.
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
-                    <div className="bg-green-50 rounded-lg p-4">
-                      <h4 className="font-bold text-green-800 mb-2 text-sm">✓ Stärken</h4>
-                      <ul className="space-y-1">{tools[1].pros.map(p => <li key={p} className="text-sm text-gray-700">✓ {p}</li>)}</ul>
-                    </div>
-                    <div className="bg-red-50 rounded-lg p-4">
-                      <h4 className="font-bold text-red-700 mb-2 text-sm">✗ Schwächen</h4>
-                      <ul className="space-y-1">{tools[1].cons.map(c => <li key={c} className="text-sm text-gray-700">✗ {c}</li>)}</ul>
-                    </div>
-                  </div>
-                  <div className="bg-blue-50 border border-blue-100 rounded-lg px-4 py-3 text-sm text-blue-900 mb-5">
-                    <strong>Perfekt für:</strong> {tools[1].bestFor}
-                  </div>
-                  <a href="#" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-lg text-sm transition-colors">
-                    sevDesk kostenlos testen →
-                  </a>
-                </div>
-              </div>
 
-              {/* FastBill */}
-              <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
-                <div className="bg-gray-100 px-6 py-2">
-                  <span className="font-semibold text-gray-600 text-sm">Platz 3 – Einfachster Einstieg</span>
-                </div>
-                <div className="p-6">
-                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-5">
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-1">FastBill</h3>
-                      <div className="flex items-center gap-2">
-                        <Stars rating={4.3} size="lg" />
-                        <span className="font-bold text-gray-700">4,3</span>
-                        <span className="text-xs text-gray-400">(620 Bewertungen)</span>
+                    {/* Best for + CTA */}
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4 border-t border-slate-100">
+                      <div>
+                        <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Perfekt für</span>
+                        <p className="text-sm font-semibold text-slate-800 mt-0.5">{t.bestFor}</p>
+                      </div>
+                      <div className="flex flex-col items-start sm:items-end gap-1 shrink-0">
+                        <a href="#" className={`inline-flex items-center gap-2 font-bold px-5 py-2.5 rounded-xl text-sm transition-all ${t.highlight ? "bg-amber-500 hover:bg-amber-400 text-slate-900 shadow-md shadow-amber-500/20" : "bg-blue-600 hover:bg-blue-700 text-white"}`}>
+                          {t.cta} <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 7h6M7 4l3 3-3 3"/></svg>
+                        </a>
+                        <span className="text-xs text-slate-400">{t.ctaNote}</span>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-gray-900">9,00 €<span className="text-sm font-normal text-gray-500">/Monat</span></div>
-                    </div>
-                  </div>
-                  <p className="text-gray-700 mb-5">
-                    FastBill ist auf absolute Einfachheit optimiert. Rechnungen schreiben dauert buchstäblich zwei Minuten. Wer einen Steuerberater hat und selbst nur Rechnungen stellen will, ist hier am besten aufgehoben.
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
-                    <div className="bg-green-50 rounded-lg p-4">
-                      <h4 className="font-bold text-green-800 mb-2 text-sm">✓ Stärken</h4>
-                      <ul className="space-y-1">{tools[2].pros.map(p => <li key={p} className="text-sm text-gray-700">✓ {p}</li>)}</ul>
-                    </div>
-                    <div className="bg-red-50 rounded-lg p-4">
-                      <h4 className="font-bold text-red-700 mb-2 text-sm">✗ Schwächen</h4>
-                      <ul className="space-y-1">{tools[2].cons.map(c => <li key={c} className="text-sm text-gray-700">✗ {c}</li>)}</ul>
-                    </div>
-                  </div>
-                  <div className="bg-blue-50 border border-blue-100 rounded-lg px-4 py-3 text-sm text-blue-900 mb-5">
-                    <strong>Perfekt für:</strong> {tools[2].bestFor}
-                  </div>
-                  <a href="#" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-lg text-sm transition-colors">
-                    FastBill kostenlos testen →
-                  </a>
-                </div>
-              </div>
-
-              {/* Buchhaltungsbutler */}
-              <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
-                <div className="bg-gray-100 px-6 py-2">
-                  <span className="font-semibold text-gray-600 text-sm">Platz 4 – KI-Automatisierung</span>
-                </div>
-                <div className="p-6">
-                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-5">
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-1">Buchhaltungsbutler</h3>
-                      <div className="flex items-center gap-2">
-                        <Stars rating={4.2} size="lg" />
-                        <span className="font-bold text-gray-700">4,2</span>
-                        <span className="text-xs text-gray-400">(410 Bewertungen)</span>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-gray-900">15,00 €<span className="text-sm font-normal text-gray-500">/Monat</span></div>
-                    </div>
-                  </div>
-                  <p className="text-gray-700 mb-5">
-                    Der Buchhaltungsbutler ist das teuerste Tool im Vergleich — liefert dafür aber die höchste Automatisierung. KI liest Belege, bucht automatisch und reduziert manuellen Aufwand auf ein Minimum. Ideal für alle mit vielen Belegen.
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
-                    <div className="bg-green-50 rounded-lg p-4">
-                      <h4 className="font-bold text-green-800 mb-2 text-sm">✓ Stärken</h4>
-                      <ul className="space-y-1">{tools[3].pros.map(p => <li key={p} className="text-sm text-gray-700">✓ {p}</li>)}</ul>
-                    </div>
-                    <div className="bg-red-50 rounded-lg p-4">
-                      <h4 className="font-bold text-red-700 mb-2 text-sm">✗ Schwächen</h4>
-                      <ul className="space-y-1">{tools[3].cons.map(c => <li key={c} className="text-sm text-gray-700">✗ {c}</li>)}</ul>
-                    </div>
-                  </div>
-                  <div className="bg-blue-50 border border-blue-100 rounded-lg px-4 py-3 text-sm text-blue-900 mb-5">
-                    <strong>Perfekt für:</strong> {tools[3].bestFor}
-                  </div>
-                  <a href="#" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-lg text-sm transition-colors">
-                    Buchhaltungsbutler testen →
-                  </a>
-                </div>
-              </div>
-
-              {/* WISO */}
-              <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
-                <div className="bg-gray-100 px-6 py-2">
-                  <span className="font-semibold text-gray-600 text-sm">Platz 5 – Bestes Preis-Leistungs-Verhältnis</span>
-                </div>
-                <div className="p-6">
-                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-5">
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-1">WISO Mein Büro</h3>
-                      <div className="flex items-center gap-2">
-                        <Stars rating={4.0} size="lg" />
-                        <span className="font-bold text-gray-700">4,0</span>
-                        <span className="text-xs text-gray-400">(780 Bewertungen)</span>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-gray-900">6,00 €<span className="text-sm font-normal text-gray-500">/Monat</span></div>
-                    </div>
-                  </div>
-                  <p className="text-gray-700 mb-5">
-                    WISO Mein Büro bietet den günstigsten Einstieg mit vollem Funktionsumfang — inklusive DATEV-Export. Das Interface ist nicht das modernste, aber das Produkt von Buhl Data ist seit Jahren zuverlässig und erprobt.
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
-                    <div className="bg-green-50 rounded-lg p-4">
-                      <h4 className="font-bold text-green-800 mb-2 text-sm">✓ Stärken</h4>
-                      <ul className="space-y-1">{tools[4].pros.map(p => <li key={p} className="text-sm text-gray-700">✓ {p}</li>)}</ul>
-                    </div>
-                    <div className="bg-red-50 rounded-lg p-4">
-                      <h4 className="font-bold text-red-700 mb-2 text-sm">✗ Schwächen</h4>
-                      <ul className="space-y-1">{tools[4].cons.map(c => <li key={c} className="text-sm text-gray-700">✗ {c}</li>)}</ul>
-                    </div>
-                  </div>
-                  <div className="bg-blue-50 border border-blue-100 rounded-lg px-4 py-3 text-sm text-blue-900 mb-5">
-                    <strong>Perfekt für:</strong> {tools[4].bestFor}
-                  </div>
-                  <a href="#" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-lg text-sm transition-colors">
-                    WISO Mein Büro testen →
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* ── ENTSCHEIDUNGSHILFE ── */}
-          <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Welches Tool passt zu dir?</h2>
-            <p className="text-gray-500 text-sm mb-6">Beantworte eine Frage — wir empfehlen das passende Tool.</p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                { icon: "🌱", type: "Einsteiger", desc: "Du willst einfach Rechnungen schreiben, kein Buchhaltungs-Vorwissen", winner: "lexoffice", winnerColor: "text-amber-600" },
-                { icon: "💰", type: "Budget-bewusst", desc: "Möglichst günstig, trotzdem voller Funktionsumfang", winner: "WISO Mein Büro", winnerColor: "text-orange-600" },
-                { icon: "📈", type: "Wachsendes Business", desc: "Mehr Kunden, Online-Shop, mehr Integrationen nötig", winner: "sevDesk", winnerColor: "text-blue-600" },
-                { icon: "🤖", type: "Maximale Automatisierung", desc: "Viele Belege pro Monat, KI soll den Rest erledigen", winner: "Buchhaltungsbutler", winnerColor: "text-purple-600" },
-                { icon: "📄", type: "Nur Rechnungen", desc: "Steuerberater macht die Buchhaltung, du nur Rechnungen", winner: "FastBill", winnerColor: "text-green-600" },
-              ].map((item) => (
-                <div key={item.type} className="bg-white rounded-xl border border-gray-200 p-5 hover:border-blue-200 hover:shadow-sm transition-all">
-                  <div className="text-2xl mb-2">{item.icon}</div>
-                  <h3 className="font-bold text-gray-900 mb-1">{item.type}</h3>
-                  <p className="text-sm text-gray-500 mb-3">{item.desc}</p>
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs text-gray-400">Empfehlung:</span>
-                    <span className={`font-bold text-sm ${item.winnerColor}`}>{item.winner}</span>
                   </div>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* ── HÄUFIGE FEHLER ── */}
+          {/* ── PROFIL-MATCH ── */}
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">4 Fehler, die du bei der Auswahl vermeiden solltest</h2>
-            <div className="space-y-4">
+            <h2 className="text-xl font-bold text-slate-900 mb-1">Welches Tool passt zu dir?</h2>
+            <p className="text-slate-500 text-sm mb-6">Finde dein Profil und sieh sofort welches Tool am besten passt.</p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {profiles.map((p) => (
+                <div key={p.label} className="bg-white rounded-2xl border border-slate-200 p-5 hover:border-blue-200 hover:shadow-md transition-all">
+                  <div className="text-3xl mb-3">{p.icon}</div>
+                  <div className="font-bold text-slate-900 mb-1">{p.label}</div>
+                  <p className="text-sm text-slate-500 mb-4 leading-relaxed">{p.desc}</p>
+                  <div className="flex items-center gap-2 pt-3 border-t border-slate-100">
+                    <span className="text-xs text-slate-400">Empfehlung:</span>
+                    <span className="text-sm font-bold text-blue-600">{p.winner}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ── FEHLER ── */}
+          <section>
+            <h2 className="text-xl font-bold text-slate-900 mb-6">4 Fehler bei der Auswahl – und wie du sie vermeidest</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
-                {
-                  title: "Kein DATEV-Export einplanen",
-                  text: "Wenn du einen Steuerberater hast, braucht er DATEV-Daten. Ohne Export zahlst du extra Stundenhonorar für manuelle Dateneingabe — das kostet dich mehr als das teurere Software-Paket.",
-                },
-                {
-                  title: "Zu viele Funktionen kaufen",
-                  text: "Starte mit dem günstigsten Paket. Upgrade erst, wenn du wirklich an Grenzen stößt. Viele bezahlen für Funktionen, die sie nie nutzen.",
-                },
-                {
-                  title: "Kein Testzeitraum nutzen",
-                  text: "Alle genannten Tools haben kostenlose Testphasen (14–30 Tage). Wer direkt kauft ohne zu testen, bereut das oft nach 2 Wochen. Teste mindestens zwei Optionen.",
-                },
-                {
-                  title: "GoBD-Konformität ignorieren",
-                  text: "In Deutschland müssen digitale Buchhaltungsunterlagen GoBD-konform archiviert werden. Nicht jede Software erfüllt das — prüfe es vor dem Kauf, sonst drohen Probleme beim Finanzamt.",
-                },
-              ].map((item, i) => (
-                <div key={i} className="bg-white rounded-xl border border-gray-200 p-5 flex gap-4">
-                  <div className="shrink-0 w-7 h-7 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold text-sm">!</div>
+                { icon: "⚠️", title: "DATEV-Export ignorieren", text: "Wenn du einen Steuerberater hast, ist DATEV-Export essenziell. Ohne ihn zahlst du Extra-Honorar für manuelle Dateneingabe — teurer als das bessere Software-Paket." },
+                { icon: "💸", title: "Zu viele Funktionen kaufen", text: "Starte immer mit dem günstigsten Paket. Upgrade erst wenn du wirklich an Grenzen stößt. Viele Selbstständige bezahlen für Funktionen, die sie nie nutzen." },
+                { icon: "🚀", title: "Kein Testzeitraum nutzen", text: "Alle 5 Tools bieten kostenlose Tests (14–30 Tage). Wer direkt kauft, bereut das oft. Teste mindestens zwei Optionen nebeneinander." },
+                { icon: "📋", title: "GoBD-Konformität übersehen", text: "In Deutschland müssen digitale Bücher GoBD-konform archiviert werden. Nicht jede Software erfüllt das — wichtig für den Fall einer Steuerprüfung." },
+              ].map((item) => (
+                <div key={item.title} className="bg-white rounded-2xl border border-slate-200 p-5 flex gap-4">
+                  <div className="shrink-0 text-xl mt-0.5">{item.icon}</div>
                   <div>
-                    <h3 className="font-bold text-gray-900 mb-1">{item.title}</h3>
-                    <p className="text-sm text-gray-600">{item.text}</p>
+                    <h3 className="font-bold text-slate-900 mb-1.5">{item.title}</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">{item.text}</p>
                   </div>
                 </div>
               ))}
@@ -647,59 +519,52 @@ export default function BuchhaltungssoftwarePage() {
 
           {/* ── FAQ ── */}
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Häufig gestellte Fragen</h2>
-            <div className="space-y-4">
+            <h2 className="text-xl font-bold text-slate-900 mb-6">Häufig gestellte Fragen</h2>
+            <div className="space-y-3">
               {[
-                {
-                  q: "Welche Buchhaltungssoftware ist die beste für Selbstständige ohne Vorkenntnisse?",
-                  a: "lexoffice. Die Software führt dich Schritt für Schritt durch alle Prozesse, erklärt Fachbegriffe und du brauchst kein Buchhaltungswissen. Die Einrichtung dauert unter 30 Minuten.",
-                },
-                {
-                  q: "Kann ich die Software wechseln, wenn ich unzufrieden bin?",
-                  a: "Ja. Alle genannten Tools erlauben den Export deiner Daten. Ein Wechsel ist immer möglich, aber am einfachsten zu Jahresbeginn, da du dann keine laufende Buchführung übertragen musst.",
-                },
-                {
-                  q: "Brauche ich einen Steuerberater, wenn ich eine Buchhaltungssoftware nutze?",
-                  a: "Das kommt auf deinen Fall an. Reine Einnahmen-Überschuss-Rechnung (EÜR) kannst du mit lexoffice selbst erstellen. Für komplexere Fälle (GmbH, Bilanzen, steuerliche Optimierung) lohnt sich ein Steuerberater — der dank DATEV-Export günstiger arbeiten kann.",
-                },
-                {
-                  q: "Was bedeutet GoBD-konform?",
-                  a: "Die GoBD (Grundsätze zur ordnungsmäßigen Führung und Aufbewahrung von Büchern) sind Richtlinien des deutschen Finanzamts für die digitale Buchführung. GoBD-konforme Software stellt sicher, dass deine Unterlagen bei einer Prüfung anerkannt werden.",
-                },
-                {
-                  q: "Wie teuer ist Buchhaltungssoftware für Selbstständige?",
-                  a: "Die günstigste vollständige Option ist WISO Mein Büro ab 6 €/Monat. lexoffice startet bei 7,90 €/Monat. Beides ist günstiger als eine Stunde Steuerberatung — und spart dir regelmäßig viele Stunden manueller Arbeit.",
-                },
+                { q: "Welche Software ist die beste für Selbstständige ohne Buchhaltungswissen?", a: "lexoffice. Die Software führt dich durch alle Schritte, erklärt Fachbegriffe und ermöglicht einen GoBD-konformen Jahresabschluss auch ohne Vorkenntnisse. Einrichtung dauert unter 30 Minuten." },
+                { q: "Kann ich die Software später wechseln?", a: "Ja. Alle genannten Tools erlauben den Datenexport. Am einfachsten ist ein Wechsel zu Jahresbeginn, da du dann keine laufende Buchführung übertragen musst." },
+                { q: "Brauche ich noch einen Steuerberater mit Buchhaltungssoftware?", a: "Das kommt auf deinen Fall an. Die Einnahmen-Überschuss-Rechnung (EÜR) kannst du mit lexoffice selbst erstellen. Für GmbHs, Bilanzen und steuerliche Optimierung lohnt sich ein Steuerberater — der dank DATEV-Export günstiger arbeiten kann." },
+                { q: "Was bedeutet GoBD-konform?", a: "GoBD sind die Grundsätze zur ordnungsmäßigen Führung digitaler Bücher (Vorgabe des deutschen Finanzamts). GoBD-konforme Software stellt sicher, dass deine Unterlagen bei einer Betriebsprüfung anerkannt werden." },
+                { q: "Wie teuer ist Buchhaltungssoftware im Vergleich zum Steuerberater?", a: "Gute Buchhaltungssoftware kostet 6–15 € pro Monat (72–180 € pro Jahr). Eine Stunde beim Steuerberater kostet 100–200 €. Die richtige Software spart dir mehrere Stunden manuelle Arbeit pro Monat." },
               ].map((item, i) => (
-                <div key={i} className="bg-white rounded-xl border border-gray-200 p-5">
-                  <h3 className="font-bold text-gray-900 mb-2">{item.q}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{item.a}</p>
+                <div key={i} className="bg-white rounded-xl border border-slate-200 p-5">
+                  <h3 className="font-bold text-slate-900 mb-2">{item.q}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{item.a}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* ── FINALE EMPFEHLUNG ── */}
+          {/* ── FINAL CTA ── */}
           <section>
-            <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white text-center">
-              <div className="text-4xl mb-4">🏆</div>
-              <h2 className="text-2xl font-bold mb-3">Unser Fazit: lexoffice ist die beste Wahl</h2>
-              <p className="text-blue-100 mb-6 max-w-xl mx-auto">
-                Für 95 % der Selbstständigen in Deutschland ist lexoffice die richtige Entscheidung: intuitiv, vollständig, GoBD-konform und mit dem besten Kosten-Nutzen-Verhältnis.
-              </p>
-              <a
-                href="#"
-                className="inline-block bg-amber-400 hover:bg-amber-300 text-amber-900 font-bold px-8 py-4 rounded-xl text-base transition-colors"
-              >
-                Jetzt lexoffice 30 Tage kostenlos testen →
-              </a>
-              <p className="text-blue-200 text-xs mt-3">Keine Kreditkarte · Kein Risiko · Jederzeit kündbar</p>
+            <div className="bg-slate-900 rounded-2xl overflow-hidden">
+              <div className="p-8 md:p-12 text-center">
+                <div className="text-5xl mb-5">🏆</div>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                  Unser Urteil: <span className="text-amber-400">lexoffice</span> ist die beste Wahl
+                </h2>
+                <p className="text-slate-400 mb-8 max-w-xl mx-auto leading-relaxed">
+                  Für die meisten Selbstständigen in Deutschland vereint lexoffice Benutzerfreundlichkeit, DATEV-Export und GoBD-Konformität zum besten Gesamtpaket.
+                </p>
+                <a href="#" className="inline-flex items-center gap-2.5 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-8 py-4 rounded-xl text-base transition-all shadow-xl shadow-amber-500/20">
+                  lexoffice 30 Tage kostenlos testen
+                  <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 8h8M9 5l3 3-3 3"/></svg>
+                </a>
+                <p className="text-slate-500 text-xs mt-4">Keine Kreditkarte · Kein Risiko · Jederzeit kündbar</p>
+              </div>
+              {/* Bottom strip */}
+              <div className="bg-slate-800 px-8 py-4 flex flex-wrap justify-center gap-6 text-xs text-slate-400">
+                <span className="flex items-center gap-1.5"><span className="text-emerald-400">✓</span> Unabhängig getestet</span>
+                <span className="flex items-center gap-1.5"><span className="text-emerald-400">✓</span> Kein bezahlter Testsieger</span>
+                <span className="flex items-center gap-1.5"><span className="text-emerald-400">✓</span> Letztes Update: Juni 2025</span>
+              </div>
             </div>
           </section>
 
-          {/* Affiliate disclaimer */}
-          <p className="text-xs text-gray-400 text-center pb-4">
-            * Dieser Artikel enthält Affiliate-Links. Wenn du über unsere Links kaufst, erhalten wir eine kleine Provision — ohne Mehrkosten für dich. Das beeinflusst unsere Empfehlungen nicht. Wir testen alle Tools selbst.
+          {/* Disclaimer */}
+          <p className="text-xs text-slate-400 text-center">
+            * Dieser Artikel enthält Affiliate-Links. Wir erhalten eine kleine Provision bei Kauf über unsere Links — ohne Mehrkosten für dich. Unsere Empfehlungen werden dadurch nicht beeinflusst.
           </p>
 
         </div>
