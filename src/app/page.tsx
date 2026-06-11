@@ -204,7 +204,7 @@ export default function Home() {
 
         {/* ─── KATEGORIEN ─── */}
         <section id="kategorien" className="max-w-6xl mx-auto px-4 pb-14">
-          <div className="mb-8">
+          <div className="mb-8 text-center">
             <h2 className="text-2xl font-bold text-slate-900 mb-1">Alle Vergleichskategorien</h2>
             <p className="text-slate-500 text-sm">Wähle eine Kategorie — wir zeigen dir die besten Tools für deinen Anwendungsfall.</p>
           </div>
@@ -231,7 +231,7 @@ export default function Home() {
 
         {/* ─── RECENT ARTICLES ─── */}
         <section className="max-w-6xl mx-auto px-4 pb-14">
-          <div className="mb-6">
+          <div className="mb-6 text-center">
             <h2 className="text-2xl font-bold text-slate-900 mb-1">Aktuelle Vergleiche & Ratgeber</h2>
             <p className="text-slate-500 text-sm">Die meistgelesenen Inhalte auf Vergleichscheck.</p>
           </div>

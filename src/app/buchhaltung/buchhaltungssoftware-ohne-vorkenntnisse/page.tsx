@@ -193,7 +193,7 @@ export default function Page() {
 
           {/* ── ANGST-SEKTION ── */}
           <section>
-            <div className="mb-8">
+            <div className="mb-8 text-center">
               <span className="text-xs font-bold text-rose-600 uppercase tracking-wider">Das kennen wir alle</span>
               <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2">Die 5 größten Ängste von Einsteigern — und wie Software sie löst</h2>
               <p className="text-slate-500 text-sm">Du bist nicht allein. Das sind die häufigsten Sorgen, die wir von Selbstständigen hören — und die klare Antwort darauf.</p>
@@ -223,7 +223,7 @@ export default function Page() {
 
           {/* ── TOOLS FÜR EINSTEIGER ── */}
           <section>
-            <div className="mb-8">
+            <div className="mb-8 text-center">
               <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">Nur was für Einsteiger wirklich passt</span>
               <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2">Die 3 besten Programme — bewertet nach Einsteigerfreundlichkeit</h2>
               <p className="text-slate-500 text-sm">
@@ -316,7 +316,7 @@ export default function Page() {
 
           {/* ── SO FÄNGT MAN AN ── */}
           <section>
-            <div className="mb-8">
+            <div className="mb-8 text-center">
               <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">So einfach geht es</span>
               <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2">In 5 Schritten von null zur funktionierenden Buchhaltung</h2>
               <p className="text-slate-500 text-sm">Wie du mit lexoffice in unter einer Stunde alles einrichtest — auch ohne Vorkenntnisse.</p>
@@ -352,7 +352,7 @@ export default function Page() {
 
           {/* ── WAS KOMMT DANACH ── */}
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-6">Was passiert, wenn dein Business wächst?</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-6 text-center">Was passiert, wenn dein Business wächst?</h2>
             <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8">
               <p className="text-slate-600 leading-relaxed mb-5">
                 Gute Nachricht: Du musst jetzt nicht die perfekte Lösung für alle Zeit finden. Starte mit lexoffice im günstigsten Paket. Wenn dein Umsatz wächst und du mehr Funktionen brauchst (mehr Nutzer, Lohnbuchhaltung, komplexere Integrationen), gibt es zwei Wege:
@@ -372,7 +372,7 @@ export default function Page() {
 
           {/* ── FAQ ── */}
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-6">Häufige Fragen von Buchhaltungs-Einsteigern</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-6 text-center">Häufige Fragen von Buchhaltungs-Einsteigern</h2>
             <div className="space-y-3">
               {faqs.map((item, i) => (
                 <div key={i} className="bg-white rounded-xl border border-slate-200 p-5">
@@ -388,7 +388,7 @@ export default function Page() {
 
           {/* ── RELATED ── */}
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-5">Weitere hilfreiche Vergleiche</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-5 text-center">Weitere hilfreiche Vergleiche</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Link
                 href="/buchhaltung/beste-buchhaltungssoftware-selbststaendige"

@@ -339,7 +339,7 @@ export default function Page() {
           <section>
             <div className="mb-8">
               <span className="text-xs font-bold text-rose-600 uppercase tracking-wider">Das kennen wir alle</span>
-              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2">4 typische Social-Media-Probleme — und wie du sie mit Tools löst</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2 text-center">4 typische Social-Media-Probleme — und wie du sie mit Tools löst</h2>
               <p className="text-slate-500 text-sm">Ohne Marketingagentur, ohne Team, aber mit den richtigen Tools.</p>
             </div>
 
@@ -367,7 +367,7 @@ export default function Page() {
           <section>
             <div className="mb-8">
               <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">Die 5 besten Tools im Test</span>
-              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2">Buffer, Metricool, Canva & Co. im direkten Vergleich</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2 text-center">Buffer, Metricool, Canva & Co. im direkten Vergleich</h2>
               <p className="text-slate-500 text-sm">Gerankt nach Gesamtbewertung für Selbstständige — nicht für Agenturen.</p>
             </div>
 
@@ -482,7 +482,7 @@ export default function Page() {
           <section>
             <div className="mb-8">
               <span className="text-xs font-bold text-violet-600 uppercase tracking-wider">Welche Plattform für wen?</span>
-              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2">Instagram, LinkedIn, TikTok oder Facebook — was passt zu dir?</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2 text-center">Instagram, LinkedIn, TikTok oder Facebook — was passt zu dir?</h2>
               <p className="text-slate-500 text-sm">Starte auf der Plattform, auf der deine Zielgruppe ist. Nicht auf der, die du persönlich magst.</p>
             </div>
 
@@ -523,7 +523,7 @@ export default function Page() {
           <section>
             <div className="mb-8">
               <span className="text-xs font-bold text-green-600 uppercase tracking-wider">So startest du heute noch</span>
-              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2">Der 3-Tool-Starter-Workflow für Selbstständige</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2 text-center">Der 3-Tool-Starter-Workflow für Selbstständige</h2>
               <p className="text-slate-500 text-sm">Kostet zusammen 0 € pro Monat und macht dich auf 2 Plattformen sichtbar.</p>
             </div>
 
@@ -569,7 +569,7 @@ export default function Page() {
 
           {/* ── FAQ ── */}
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">Häufige Fragen zu Social Media für Selbstständige</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">Häufige Fragen zu Social Media für Selbstständige</h2>
             <div className="space-y-3">
               {faqs.map((item, i) => (
                 <div key={i} className="bg-white rounded-xl border border-slate-200 p-5">
@@ -585,7 +585,7 @@ export default function Page() {
 
           {/* ── RELATED ── */}
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-5">Weitere Vergleiche für Selbstständige</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-5 text-center">Weitere Vergleiche für Selbstständige</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Link href="/ki-tools/ki-assistent-content-marketing-selbststaendige" className="group bg-white rounded-xl border border-slate-200 p-5 hover:border-blue-300 hover:shadow-md transition-all">
                 <div className="text-2xl mb-2">🤖</div>

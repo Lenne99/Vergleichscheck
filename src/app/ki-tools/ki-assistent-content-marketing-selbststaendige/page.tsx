@@ -394,9 +394,9 @@ export default function Page() {
 
           {/* ── USE CASES ── */}
           <section>
-            <div className="mb-8">
+            <div className="mb-8 text-center">
               <span className="text-xs font-bold text-violet-600 uppercase tracking-wider">Der wichtigste Abschnitt</span>
-              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2">5 konkrete Aufgaben – und welches Tool sie am besten löst</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2 text-center">5 konkrete Aufgaben – und welches Tool sie am besten löst</h2>
               <p className="text-slate-500 text-sm">Inklusive einsatzbereiter Prompt-Vorlagen, die du direkt kopieren kannst.</p>
             </div>
 
@@ -463,9 +463,9 @@ export default function Page() {
 
           {/* ── TOOL PROFILES ── */}
           <section>
-            <div className="mb-8">
+            <div className="mb-8 text-center">
               <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">Alle Tools im Detail</span>
-              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2">ChatGPT, Claude & Co. im direkten Vergleich</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2 text-center">ChatGPT, Claude & Co. im direkten Vergleich</h2>
               <p className="text-slate-500 text-sm">Stärken, Schwächen, Kosten und für wen jedes Tool wirklich passt.</p>
             </div>
 
@@ -559,7 +559,7 @@ export default function Page() {
           <section>
             <div className="mb-6">
               <span className="text-xs font-bold text-amber-600 uppercase tracking-wider">Für Budget-Bewusste</span>
-              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2">Was kostet KI wirklich? Alle Preise im Überblick</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2 text-center">Was kostet KI wirklich? Alle Preise im Überblick</h2>
               <p className="text-slate-500 text-sm">Gute Nachricht: Die drei besten Tools für Einsteiger sind kostenlos nutzbar.</p>
             </div>
 
@@ -600,7 +600,7 @@ export default function Page() {
           {/* ── PROFILE ── */}
           <section>
             <div className="mb-6">
-              <h2 className="text-2xl font-bold text-slate-900 mb-2">Welches KI-Tool passt zu dir?</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mb-2 text-center">Welches KI-Tool passt zu dir?</h2>
               <p className="text-slate-500 text-sm">Finde dein Profil — und sieh sofort welche Kombination am besten passt.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -620,7 +620,7 @@ export default function Page() {
 
           {/* ── FAQ ── */}
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">Häufige Fragen zu KI-Tools für Selbstständige</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">Häufige Fragen zu KI-Tools für Selbstständige</h2>
             <div className="space-y-3">
               {faqs.map((item, i) => (
                 <div key={i} className="bg-white rounded-xl border border-slate-200 p-5">
@@ -636,7 +636,7 @@ export default function Page() {
 
           {/* ── RELATED ── */}
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-5">Weitere Vergleiche für Selbstständige</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-5 text-center">Weitere Vergleiche für Selbstständige</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Link href="/buchhaltung/beste-buchhaltungssoftware-selbststaendige" className="group bg-white rounded-xl border border-slate-200 p-5 hover:border-blue-300 hover:shadow-md transition-all">
                 <div className="text-2xl mb-2">📊</div>

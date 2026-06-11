@@ -275,8 +275,8 @@ export default function Page() {
 
           {/* ── RANKINGS ── */}
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-1">Die 5 besten Programme im Überblick</h2>
-            <p className="text-slate-500 text-sm mb-7">Gerankt nach Testergebnis — alle Details weiter unten.</p>
+            <h2 className="text-xl font-bold text-slate-900 mb-1 text-center">Die 5 besten Programme im Überblick</h2>
+            <p className="text-slate-500 text-sm text-center text-center text-center mb-7">Gerankt nach Testergebnis — alle Details weiter unten.</p>
 
             <div className="space-y-3">
               {tools.map((t) => (
@@ -334,7 +334,7 @@ export default function Page() {
 
           {/* ── VERGLEICHSTABELLE ── */}
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-1">Funktionsvergleich</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-1 text-center">Funktionsvergleich</h2>
             <p className="text-slate-500 text-sm mb-6">Welches Tool hat welche Funktion?</p>
 
             <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
@@ -386,7 +386,7 @@ export default function Page() {
 
           {/* ── DETAIL-CARDS ── */}
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-1">Jedes Tool im Detail</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-1 text-center">Jedes Tool im Detail</h2>
             <p className="text-slate-500 text-sm mb-8">Stärken, Schwächen, Score-Analyse und für wen es wirklich passt.</p>
 
             <div className="space-y-6">
@@ -478,7 +478,7 @@ export default function Page() {
 
           {/* ── PROFIL-MATCH ── */}
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-1">Welches Tool passt zu dir?</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-1 text-center">Welches Tool passt zu dir?</h2>
             <p className="text-slate-500 text-sm mb-6">Finde dein Profil und sieh sofort welches Tool am besten passt.</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -498,7 +498,7 @@ export default function Page() {
 
           {/* ── FEHLER ── */}
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-6">4 Fehler bei der Auswahl – und wie du sie vermeidest</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-6 text-center">4 Fehler bei der Auswahl – und wie du sie vermeidest</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
                 { icon: "⚠️", title: "DATEV-Export ignorieren", text: "Wenn du einen Steuerberater hast, ist DATEV-Export essenziell. Ohne ihn zahlst du Extra-Honorar für manuelle Dateneingabe — teurer als das bessere Software-Paket." },
@@ -519,7 +519,7 @@ export default function Page() {
 
           {/* ── FAQ ── */}
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-6">Häufig gestellte Fragen</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-6 text-center">Häufig gestellte Fragen</h2>
             <div className="space-y-3">
               {[
                 { q: "Welche Software ist die beste für Selbstständige ohne Buchhaltungswissen?", a: "lexoffice. Die Software führt dich durch alle Schritte, erklärt Fachbegriffe und ermöglicht einen GoBD-konformen Jahresabschluss auch ohne Vorkenntnisse. Einrichtung dauert unter 30 Minuten." },
