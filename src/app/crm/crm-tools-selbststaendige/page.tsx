@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
+import FaqAccordion from "@/components/FaqAccordion";
 
 export const metadata: Metadata = {
   title: "CRM-Tools für Selbstständige 2026 – Vergleich & Test",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Beste CRM-Tools für Selbstständige 2026 – Vergleich & Testsieger",
     description: "HubSpot, Pipedrive, VerkaufsHub & mehr im Test. Klare Empfehlung für Solo-Unternehmer mit steigendem Umsatz.",
-    url: "https://vergleichscheck.com/crm/crm-tools-selbststaendige",
+    url: "https://vergleichcheck.com/crm/crm-tools-selbststaendige",
     type: "article",
   },
 };
@@ -611,14 +612,8 @@ export default function Page() {
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">Häufige Fragen zu CRM für Selbstständige</h2>
             <div className="space-y-3">
-              {faqs.map((item, i) => (
-                <div key={i} className="bg-white rounded-xl border border-slate-200 p-5">
-                  <h3 className="font-bold text-slate-900 mb-2 flex items-start gap-2">
-                    <span className="text-cyan-500 shrink-0 text-lg leading-none">?</span>
-                    {item.q}
-                  </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed pl-6">{item.a}</p>
-                </div>
+              {faqs.map((item) => (
+                <FaqAccordion key={item.q} question={item.q} answer={item.a} />
               ))}
             </div>
           </section>

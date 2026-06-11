@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
+import FaqAccordion from "@/components/FaqAccordion";
 
 export const metadata: Metadata = {
   title: "Beste Buchhaltungssoftware für Selbstständige 2026 – Test & Vergleich",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Beste Buchhaltungssoftware für Selbstständige 2026 – Testsieger: lexoffice",
     description: "5 Programme ehrlich getestet. lexoffice gewinnt dank bester Bedienbarkeit und GoBD-Konformität. Mit Scoring, Pros & Cons und klarer Empfehlung.",
-    url: "https://vergleichscheck.com/buchhaltung/beste-buchhaltungssoftware-selbststaendige",
+    url: "https://vergleichcheck.com/buchhaltung/beste-buchhaltungssoftware-selbststaendige",
     type: "article",
   },
 };
@@ -540,7 +541,7 @@ export default function Page() {
 
           {/* ── FAQ ── */}
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-6 text-center">Häufig gestellte Fragen</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">Häufig gestellte Fragen</h2>
             <div className="space-y-3">
               {[
                 { q: "Welche Software ist die beste für Selbstständige ohne Buchhaltungswissen?", a: "lexoffice. Die Software führt dich durch alle Schritte, erklärt Fachbegriffe und ermöglicht einen GoBD-konformen Jahresabschluss auch ohne Vorkenntnisse. Einrichtung dauert unter 30 Minuten." },
@@ -548,11 +549,8 @@ export default function Page() {
                 { q: "Brauche ich noch einen Steuerberater mit Buchhaltungssoftware?", a: "Das kommt auf deinen Fall an. Die Einnahmen-Überschuss-Rechnung (EÜR) kannst du mit lexoffice selbst erstellen. Für GmbHs, Bilanzen und steuerliche Optimierung lohnt sich ein Steuerberater — der dank DATEV-Export günstiger arbeiten kann." },
                 { q: "Was bedeutet GoBD-konform?", a: "GoBD sind die Grundsätze zur ordnungsmäßigen Führung digitaler Bücher (Vorgabe des deutschen Finanzamts). GoBD-konforme Software stellt sicher, dass deine Unterlagen bei einer Betriebsprüfung anerkannt werden." },
                 { q: "Wie teuer ist Buchhaltungssoftware im Vergleich zum Steuerberater?", a: "Gute Buchhaltungssoftware kostet 6–15 € pro Monat (72–180 € pro Jahr). Eine Stunde beim Steuerberater kostet 100–200 €. Die richtige Software spart dir mehrere Stunden manuelle Arbeit pro Monat." },
-              ].map((item, i) => (
-                <div key={i} className="bg-white rounded-xl border border-slate-200 p-5">
-                  <h3 className="font-bold text-slate-900 mb-2">{item.q}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">{item.a}</p>
-                </div>
+              ].map((item) => (
+                <FaqAccordion key={item.q} question={item.q} answer={item.a} />
               ))}
             </div>
           </section>
