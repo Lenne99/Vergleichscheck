@@ -29,7 +29,7 @@ export default function Header() {
               </svg>
             </div>
             <span className="font-bold text-slate-900 text-lg tracking-tight">
-              vergleichs<span className="text-blue-600">check</span>
+              vergleich<span className="text-blue-600">check</span>
             </span>
           </Link>
 

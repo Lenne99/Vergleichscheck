@@ -51,7 +51,7 @@ export default function Footer() {
                 </svg>
               </div>
               <span className="font-bold text-white text-lg tracking-tight">
-                vergleichs<span className="text-blue-400">check</span>
+                vergleich<span className="text-blue-400">check</span>
               </span>
             </div>
             <p className="text-sm leading-relaxed mb-4">

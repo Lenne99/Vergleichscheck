@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
+import FaqAccordion from "@/components/FaqAccordion";
 
 export const metadata: Metadata = {
   title: "Beste Produktivitäts-Tools für Selbstständige 2026 – Kein Overkill, einfach nutzbar",
@@ -498,17 +499,7 @@ export default function ProduktivitaetPage() {
             <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">Häufige Fragen zu Produktivitäts-Tools</h2>
             <div className="space-y-3">
               {faqs.map((item) => (
-                <details key={item.frage} className="group bg-white border border-slate-200 rounded-2xl overflow-hidden">
-                  <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-900 list-none hover:bg-slate-50 transition-colors">
-                    {item.frage}
-                    <svg className="w-4 h-4 text-slate-400 shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 16 16">
-                      <path d="M4 6l4 4 4-4"/>
-                    </svg>
-                  </summary>
-                  <div className="px-5 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
-                    {item.antwort}
-                  </div>
-                </details>
+                <FaqAccordion key={item.frage} question={item.frage} answer={item.antwort} />
               ))}
             </div>
           </section>

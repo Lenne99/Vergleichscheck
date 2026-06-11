@@ -26,7 +26,7 @@ export default async function Image() {
             <div style={{ color: "white", fontSize: "24px", fontWeight: "bold" }}>✓</div>
           </div>
           <div style={{ color: "white", fontSize: "28px", fontWeight: "bold", letterSpacing: "-0.5px" }}>
-            vergleichs<span style={{ color: "#60A5FA" }}>check</span>.com
+            vergleich<span style={{ color: "#60A5FA" }}>check</span>.com
           </div>
         </div>
         <div style={{ color: "white", fontSize: "52px", fontWeight: "bold", lineHeight: 1.15, marginBottom: "24px", maxWidth: "900px" }}>
