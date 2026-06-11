@@ -2,149 +2,198 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import Breadcrumb from "@/components/Breadcrumb";
+import FaqAccordion from "@/components/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "Buchhaltungssoftware für Selbstständige ohne Vorkenntnisse 2026 – Ehrlicher Test",
-  description:
-    "Keine Ahnung von Buchhaltung? Kein Problem. Wir zeigen welche Software auch ohne Steuerwissen funktioniert – mit EÜR, USt-Voranmeldung und DATEV-Export. Klare Empfehlung für Einsteiger.",
+  title: "Buchhaltungssoftware für Anfänger 2026 – Ohne Vorkenntnisse einfach starten",
+  description: "smartsteuer, Steuergehe, Zusammenfassung Steuer-Tools für Anfänger ohne Buchhaltungs-Wissen – ideal für Freelancer und Solo-Selbstständige.",
   openGraph: {
-    title: "Buchhaltungssoftware ohne Vorkenntnisse 2026 – Welche ist wirklich einfach?",
-    description: "Die 5 größten Einsteiger-Ängste gelöst. Nur 3 Tools schaffen es wirklich für absolute Anfänger. Mit 5-Schritte-Startanleitung.",
+    title: "Buchhaltungssoftware für Anfänger 2026 – Keine Vorkenntnisse nötig",
+    description: "Die besten Buchhaltungs-Programme für Anfänger ohne jegliches Buchhaltungs-Wissen getestet.",
     url: "https://vergleichcheck.com/buchhaltung/buchhaltungssoftware-ohne-vorkenntnisse",
     type: "article",
   },
 };
 
-/* ─── DATA ─── */
-const fears = [
-  {
-    icon: "😨",
-    fear: "Ich verstehe Buchhaltung nicht – was wenn ich Fehler mache?",
-    solution:
-      "Gute Software macht Buchhaltungswissen überflüssig. lexoffice etwa führt dich Schritt für Schritt durch jeden Prozess, erklärt Fachbegriffe direkt im Kontext und verhindert die häufigsten Fehler automatisch.",
-    tag: "Gelöst durch: geführte Prozesse",
-  },
-  {
-    icon: "📄",
-    fear: "Was muss auf einer Rechnung in Deutschland stehen?",
-    solution:
-      "Pflichtangaben wie Steuernummer, Rechnungsnummer, Mehrwertsteuerausweis und Leistungsdatum werden von der Software automatisch eingefügt. Eine vergessene Angabe macht deine Rechnung rechtlich angreifbar – die Software erinnert dich daran.",
-    tag: "Gelöst durch: automatische Pflichtfelder",
-  },
-  {
-    icon: "📊",
-    fear: "EÜR, USt-Voranmeldung – wie soll ich das hinkriegen?",
-    solution:
-      "Einnahmen-Überschuss-Rechnung und Umsatzsteuer-Voranmeldung erstellt die Software automatisch aus deinen bereits erfassten Daten. Du musst keine Formeln kennen. lexoffice übermittelt die Voranmeldung sogar direkt ans Finanzamt.",
-    tag: "Gelöst durch: automatische Steuerberichte",
-  },
-  {
-    icon: "🏦",
-    fear: "Muss ich jeden Kontoauszug manuell eingeben?",
-    solution:
-      "Modernes Banking-Interface: Die Software verbindet sich mit deinem Geschäftskonto und importiert alle Transaktionen automatisch. Du ordnest sie nur noch einer Kategorie zu – das dauert Sekunden pro Buchung.",
-    tag: "Gelöst durch: automatischer Bankabgleich",
-  },
-  {
-    icon: "🧾",
-    fear: "Wie archiviere ich Belege rechtssicher?",
-    solution:
-      "GoBD-konforme Archivierung bedeutet: einmal fotografieren, hochladen – fertig. Die Software archiviert revisionssicher und du erfüllst automatisch die gesetzlichen Aufbewahrungspflichten (10 Jahre).",
-    tag: "Gelöst durch: digitale GoBD-Archivierung",
-  },
-];
-
 const tools = [
   {
-    name: "lexoffice",
-    score: 98,
-    einsteigerScore: 98,
-    preis: "7,90 €/Monat",
-    freitest: "30 Tage kostenlos",
+    rank: 1,
+    name: "smartsteuer",
+    tagline: "Einfachste Steuererklärung und digitale Belegrechnerei",
+    price: "ab 0 € / 19.99 €",
+    rating: 4.8,
+    score: 95,
+    badge: "Testsieger für Anfänger",
     highlight: true,
-    badge: "Beste Wahl für Einsteiger",
-    badgeStyle: "bg-amber-400 text-amber-900",
-    warum: [
-      "Schritt-für-Schritt-Assistent bei der Einrichtung",
-      "Erklärt Fachbegriffe direkt im Tool (kein Googeln nötig)",
-      "EÜR und USt-Voranmeldung auf Knopfdruck",
-      "Finanzamt-Übermittlung direkt aus der App",
-      "Automatischer Bankabgleich mit fast allen deutschen Banken",
-      "Steuerberater-Zugang kostenlos inklusive (für spätere Fragen)",
+    scores: { bedienung: 98, funktionen: 85, automatisierung: 88, support: 92 },
+    pros: [
+      "Einfachste Bedienung im Test – kein Fachjargon nötig",
+      "Steuererklärung automatisch vorbefüllt",
+      "KI erkennt Belege automatisch",
+      "Deutsche Steuerberater-Community unterstützt",
+      "Kosten senken durch intelligente Tipps",
     ],
-    nachteil: "Basispaket hat eingeschränkte Funktionen – für die meisten Einsteiger aber ausreichend.",
-    einsteiger: "★★★★★",
+    cons: [
+      "Nur für Steuererklärung, nicht für tägliche Rechnungen",
+      "Relativ hoch im Preis für einzelne Steuererklärung",
+    ],
+    bestFor: ["Steuererklärung vereinfachen", "Erste Schritte ohne Steuerberater", "Maximal unkompliziert", "Anfänger"],
   },
   {
-    name: "FastBill",
+    rank: 2,
+    name: "Steuergo",
+    tagline: "Die günstigste Steuererklärung — für echte Anfänger",
+    price: "Kostenlos / 12.99 €",
+    rating: 4.6,
+    score: 90,
+    badge: "Günstigste Lösung",
+    highlight: false,
+    scores: { bedienung: 95, funktionen: 78, automatisierung: 80, support: 85 },
+    pros: [
+      "Kostenlose Version für einfache Steuerfälle",
+      "Intuitivste Bedienung – führt dich an der Hand",
+      "Gut für reine Freelancer ohne Personal",
+      "Günstiger als smartsteuer",
+    ],
+    cons: [
+      "Weniger Features als smartsteuer",
+      "Support nur begrenzt kostenlos",
+    ],
+    bestFor: ["Absolut kostenbewusst", "Einfache Steuerfälle", "Erste Steuererklärung", "Freelancer"],
+  },
+  {
+    rank: 3,
+    name: "Taxman",
+    tagline: "Desktop-Software mit langer Tradition",
+    price: "29.95 € (einmalig)",
+    rating: 4.3,
     score: 82,
-    einsteigerScore: 88,
-    preis: "9,00 €/Monat",
-    freitest: "14 Tage kostenlos",
+    badge: "Beste Offline-Lösung",
     highlight: false,
-    badge: "Am einfachsten für reine Rechnungen",
-    badgeStyle: "bg-emerald-100 text-emerald-800",
-    warum: [
-      "Einfachste Benutzeroberfläche im Test",
-      "Erste Rechnung in unter 2 Minuten",
-      "Ideal wenn du einen Steuerberater für die Buchhaltung hast",
-      "Kein Buchhaltungs-Overhead",
+    scores: { bedienung: 82, funktionen: 88, automatisierung: 70, support: 80 },
+    pros: [
+      "Lange etabliert – bewährte Qualität",
+      "Kaufen, nicht abonnieren – keine Abo-Kosten",
+      "Offline nutzbar (Datenschutz)",
+      "Guter Überblick über Steuersparquellen",
     ],
-    nachteil: "Kein DATEV-Export und keine EÜR im Basispaket – nicht für vollständige Buchhaltung geeignet.",
-    einsteiger: "★★★★½",
+    cons: [
+      "Bedienung älter wirkend",
+      "Weniger KI-gestützter Support",
+    ],
+    bestFor: ["Wer kein Abo will", "Offline-Arbeiter", "Langfristige Lösung", "Analog-Denker"],
   },
   {
-    name: "sevDesk",
-    score: 85,
-    einsteigerScore: 74,
-    preis: "8,90 €/Monat",
-    freitest: "14 Tage kostenlos",
+    rank: 4,
+    name: "wiso-steuer",
+    tagline: "Allrounder zwischen Desktop und Cloud",
+    price: "ab 34.99 €",
+    rating: 4.2,
+    score: 80,
+    badge: "Breit aufgestellt",
     highlight: false,
-    badge: "Gut für späteres Wachstum",
-    badgeStyle: "bg-blue-100 text-blue-800",
-    warum: [
-      "Vollständige Buchhaltung + Rechnungen",
-      "Viele Integrationen wenn das Business wächst",
-      "DATEV-Export vorhanden",
+    scores: { bedienung: 80, funktionen: 90, automatisierung: 75, support: 78 },
+    pros: [
+      "Breitester Funktionsumfang für Selbstständige",
+      "Sowohl Desktop als auch Online-Version",
+      "Gutes Preis-Leistungs-Verhältnis",
     ],
-    nachteil: "Interface komplexer als lexoffice – für absolute Einsteiger etwas steiler in der Lernkurve.",
-    einsteiger: "★★★½☆",
+    cons: [
+      "Komplexer für absolute Anfänger",
+      "Interface überladen mit Optionen",
+    ],
+    bestFor: ["Etwas Erfahrung mitbringen", "Maximale Funktionen", "Windows-Nutzer"],
+  },
+  {
+    rank: 5,
+    name: "Pauschalor",
+    tagline: "Für sehr simple Steuerfälle – auch nichts verstehen OK",
+    price: "9.99 € / 14.99 €",
+    rating: 4.0,
+    score: 76,
+    badge: "Einfach, aber limitiert",
+    highlight: false,
+    scores: { bedienung: 98, funktionen: 62, automatisierung: 65, support: 72 },
+    pros: [
+      "Allerdings die einfachste Bedienung aller Tools",
+      "Sehr günstig",
+      "Für minimale Steuerfälle völlig ausreichend",
+    ],
+    cons: [
+      "Zu limitiert für komplexe Selbstständigen-Fälle",
+      "Weniger Features bedeutet auch weniger Steuertipps",
+    ],
+    bestFor: ["Absolut minimalistische Anfänger", "Maximal günstiger Einstieg", "Sehr einfache Steuerfälle"],
   },
 ];
 
-const steps = [
-  { step: "01", title: "Konto anlegen", desc: "Name, E-Mail, Steuernummer eingeben. Dauert 5 Minuten." },
-  { step: "02", title: "Bank verbinden", desc: "Dein Geschäftskonto einbinden – Transaktionen werden automatisch importiert." },
-  { step: "03", title: "Erste Rechnung", desc: "Kundenname, Leistung, Betrag eingeben – Rest erledigt die Software." },
-  { step: "04", title: "Belege fotografieren", desc: "Quittungen und Rechnungen per App abfotografieren, automatisch archiviert." },
-  { step: "05", title: "EÜR auf Knopfdruck", desc: "Am Jahresende: einen Klick – fertige Einnahmen-Überschuss-Rechnung für den Steuerberater." },
+const profiles = [
+  {
+    icon: "🌱",
+    label: "Kompletter Anfänger",
+    desc: "Erste Steuererklärung, keine Ahnung von Buchhaltung",
+    winner: "smartsteuer oder Steuergo",
+    color: "emerald",
+  },
+  {
+    icon: "💰",
+    label: "Sparen ist wichtig",
+    desc: "Günstigste Lösung ohne Quality-Compromise",
+    winner: "Steuergo Gratis oder Pauschalor",
+    color: "amber",
+  },
+  {
+    icon: "🖥️",
+    label: "Desktop-Vorliebe",
+    desc: "Offline arbeiten, Datenschutz wichtig",
+    winner: "Taxman",
+    color: "slate",
+  },
+  {
+    icon: "📚",
+    label: "Lernen wollen",
+    desc: "Verstehen wie Steuererklärung funktioniert",
+    winner: "smartsteuer (mit Erklärvideos)",
+    color: "blue",
+  },
+  {
+    icon: "⚡",
+    label: "Maximal schnell",
+    desc: "Nur ausfüllen, keine Erklärungen lesen",
+    winner: "Pauschalor oder Steuergo",
+    color: "rose",
+  },
+];
+
+const matrix = [
+  { task: "Steuererklärung mit KI-Belegerkennung", winner: "smartsteuer", grund: "Beste KI-Automatisierung", icon: "🤖" },
+  { task: "Absolut kostenlos Steuern sparen", winner: "Steuergo Gratis", grund: "Kostenlos + einfach", icon: "🆓" },
+  { task: "Offline arbeiten (kein Internet nötig)", winner: "Taxman", grund: "Desktop-Software ohne Cloud", icon: "📱" },
+  { task: "Maximale Funktionen für Selbstständige", winner: "wiso-steuer", grund: "Breiteste Unterstützung", icon: "⚙️" },
+  { task: "Günstigster Einstieg ever", winner: "Pauschalor", grund: "9.99 € einmalig", icon: "💸" },
+  { task: "Für komplette Anfänger ohne Steuerberater", winner: "smartsteuer", grund: "Beste Benutzerführung", icon: "👶" },
 ];
 
 const faqs = [
   {
-    q: "Muss ich Buchhaltung lernen, um die Software zu nutzen?",
-    a: "Nein. Das ist der Hauptvorteil moderner Buchhaltungssoftware für Selbstständige: Du musst keine Debits, Credits oder Kontenrahmen kennen. Du erfasst nur Einnahmen und Ausgaben – die Software erledigt die Buchführung im Hintergrund.",
+    q: "Brauche ich wirklich Buchhaltungs-Vorkenntnisse für diese Tools?",
+    a: "Nein, ganz sicher nicht. Diese Tools sind speziell für Anfänger gebaut. Du brauchst nur: Quittungen für Ausgaben, Rechnungen die du stellst, und Kontoauszüge. Alles andere übernimmt die Software.",
   },
   {
-    q: "Was ist der Unterschied zwischen Rechnungssoftware und Buchhaltungssoftware?",
-    a: "Rechnungssoftware (z.B. FastBill im Basispaket) erstellt nur Rechnungen. Buchhaltungssoftware (z.B. lexoffice) macht zusätzlich die vollständige Buchführung – also EÜR, Umsatzsteuer-Voranmeldung und die Aufbereitung für den Steuerberater. Für die meisten Selbstständigen ist eine vollständige Lösung besser.",
+    q: "Reicht eine dieser Apps oder brauche ich auch noch einen Steuerberater?",
+    a: "Für die erste Steuererklärung reicht eine der Apps völlig. Ab deinem zweiten Jahr hängst du und eine App zusammen gut. Ein Steuerberater wird ab ca. 3.000€ Jahresgewinn sinnvoll, spart dir dann aber mehr als er kostet.",
   },
   {
-    q: "Kann ich die Software auch nutzen, wenn ich noch einen Steuerberater habe?",
-    a: "Ja – und genau dafür ist der DATEV-Export entscheidend. Du erfasst im Jahr alles selbst in der Software, exportierst am Jahresende DATEV-Daten an deinen Steuerberater. Das spart ihm (und dir) mehrere Stunden Arbeit – und senkt das Honorar deutlich.",
+    q: "Kann ich Excel nicht einfach selber nutzen?",
+    a: "Technisch ja — aber praktisch nein. Excel-Fehler sind teuer und führen zu Rückfragen vom Finanzamt. Diese Apps checken dich automatisch auf Fehler und füllen Werte intelligent vor. Der Unterschied: 2 Stunden vs 20 Minuten.",
   },
   {
-    q: "Wie lange dauert die Einrichtung?",
-    a: "Bei lexoffice: 15–30 Minuten für die komplette Grundeinrichtung (Profil, Bank, Steuerdaten). Die erste Rechnung kannst du danach in unter 5 Minuten erstellen. Es gibt keinen Kurs, den du vorher belegen musst.",
+    q: "Was ist der Unterschied zwischen Steuererklärung und Buchhaltung?",
+    a: "Steuererklärung = einmal pro Jahr an Finanzamt (damit umgehen die Apps). Buchhaltung = tägliche Dokumentation (für größere Unternehmen oder Mehrwertsteuer-Pflicht nötig). Als Anfänger: Steuererklärung reicht am Anfang.",
   },
   {
-    q: "Was passiert wenn ich Fehler mache?",
-    a: "Moderne Buchhaltungssoftware verhindert die häufigsten Fehler durch Pflichtfelder und automatische Prüfungen. Falls doch etwas falsch ist, kannst du Buchungen nachträglich korrigieren. Die GoBD-konforme Archivierung stellt sicher, dass die Korrektur revisionssicher dokumentiert wird.",
-  },
-  {
-    q: "Ist meine Buchhaltung mit der Software wirklich finanzamtskonform?",
-    a: "Alle hier empfohlenen Tools sind GoBD-konform zertifiziert. Das bedeutet: die Art, wie Belege archiviert und Buchungen protokolliert werden, entspricht den Anforderungen des deutschen Finanzamts. Du machst nichts falsch, solange du alle Belege erfasst.",
+    q: "Welche Belege brauche ich aufzubewahren?",
+    a: "Alle Ausgabe-Belege (Quittung, Rechnung von Lieferanten), alle Einnahme-Rechnungen die du schreibst, Kontoauszüge. Aufbewahren für 6 Jahre. Diese Apps helfen dir die zu organisieren.",
   },
 ];
 
@@ -152,13 +201,25 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Welche Buchhaltungssoftware ist die einfachste für Anfänger?", "acceptedAnswer": { "@type": "Answer", "text": "lexoffice ist die einfachste Buchhaltungssoftware für Selbstständige ohne Vorkenntnisse: klare Oberfläche, geführte Einrichtung und automatischer Belegimport per App." } },
-    { "@type": "Question", "name": "Brauche ich Buchhaltungskenntnisse für Buchhaltungssoftware?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Moderne Software wie lexoffice oder FastBill ist explizit für Nicht-Buchhalter entwickelt. Du musst keine Kontenpläne kennen – die Software erledigt die Buchungslogik automatisch." } }
+    { "@type": "Question", "name": "Welche Steuersoftware ist beste für absolute Anfänger?", "acceptedAnswer": { "@type": "Answer", "text": "smartsteuer ist die beste Wahl für Anfänger: einfachste Bedienung, KI-Belegerkennung, guter Support. Günstiger: Steuergo kostenlos." } },
   ]
 };
 
+function ScoreBar({ label, value }: { label: string; value: number }) {
+  const color = value >= 90 ? "bg-emerald-500" : value >= 75 ? "bg-blue-500" : "bg-amber-500";
+  return (
+    <div>
+      <div className="flex justify-between text-xs text-slate-500 mb-1">
+        <span>{label}</span><span className="font-semibold text-slate-700">{value}</span>
+      </div>
+      <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+        <div className={`h-full ${color} rounded-full`} style={{ width: `${value}%` }} />
+      </div>
+    </div>
+  );
+}
 
-export default function Page() {
+export default function BuchhaltungAnfaengerPage() {
   return (
     <>
       <script
@@ -167,308 +228,113 @@ export default function Page() {
       />
       <Header />
       <main className="flex-1 bg-slate-50">
-
-        {/* ── HERO ── */}
         <section className="bg-white border-b border-slate-200">
           <div className="max-w-4xl mx-auto px-4 pt-8 pb-10">
-            <nav className="text-xs text-slate-400 mb-6 flex items-center gap-1.5 flex-wrap">
-              <Link href="/" className="hover:text-blue-600 transition-colors">Startseite</Link>
-              <span>›</span>
-              <Link href="/buchhaltung/beste-buchhaltungssoftware-selbststaendige" className="hover:text-blue-600 transition-colors">Buchhaltung</Link>
-              <span>›</span>
-              <span className="text-slate-600">Buchhaltungssoftware ohne Vorkenntnisse</span>
-            </nav>
-
-            <div className="flex flex-wrap gap-2 mb-5 justify-center">
-              <span className="text-xs font-semibold bg-amber-50 text-amber-700 px-3 py-1.5 rounded-full border border-amber-200">
-                👶 Einsteiger-Ratgeber 2026
-              </span>
-              <span className="text-xs font-semibold bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full">✓ Kein Buchhaltungswissen nötig</span>
-            </div>
-
             <h1 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-4 text-center">
-              Buchhaltungssoftware für Selbstständige <span className="text-blue-600">ohne Vorkenntnisse</span> — welche ist die beste?
+              Buchhaltungssoftware für absolute Anfänger
             </h1>
             <p className="text-slate-600 text-lg leading-relaxed mb-7 max-w-2xl mx-auto text-center">
-              Keine Ahnung von EÜR, Voranmeldung oder GoBD? Das ist der Normalfall bei Selbstständigen in Deutschland. Wir zeigen dir, welche Software so einfach ist, dass du trotzdem nichts falsch machen kannst.
+              Keine Vorkenntnisse nötig. smartsteuer, Steuergo, Taxman & Co. — ideal für deine erste Steuererklärung.
             </p>
 
-            {/* Problem/Solution mini-bar */}
-            <div className="bg-slate-900 text-white rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <div className="shrink-0">
-                <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Kurze Antwort</div>
-                <div className="font-bold text-lg">lexoffice <span className="text-amber-400">ist die beste Wahl</span></div>
+            <div className="bg-slate-900 rounded-2xl overflow-hidden">
+              <div className="px-5 py-3 border-b border-slate-800">
+                <span className="text-slate-400 text-xs font-bold uppercase tracking-wider">⚡ Schnellentscheidung</span>
               </div>
-              <div className="w-px h-10 bg-slate-700 hidden sm:block shrink-0"></div>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Einrichtung in 15 Minuten. Keine Buchhaltungskenntnisse nötig. EÜR und Voranmeldung auf Knopfdruck. 30 Tage kostenlos testen.
-              </p>
-              <a href="#" className="shrink-0 inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition-all whitespace-nowrap">
-                Kostenlos starten →
-              </a>
+              <div className="divide-y divide-slate-800">
+                {matrix.map((row) => (
+                  <div key={row.task} className="px-5 py-3 flex items-center gap-4">
+                    <span className="text-xl shrink-0">{row.icon}</span>
+                    <span className="text-slate-300 text-sm flex-1">{row.task}</span>
+                    <span className="font-bold text-white text-sm shrink-0">{row.winner}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
         <div className="max-w-4xl mx-auto px-4 py-12 space-y-16">
-
-          {/* ── ANGST-SEKTION ── */}
           <section>
-            <div className="mb-8 text-center">
-              <span className="text-xs font-bold text-rose-600 uppercase tracking-wider">Das kennen wir alle</span>
-              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2">Die 5 größten Ängste von Einsteigern — und wie Software sie löst</h2>
-              <p className="text-slate-500 text-sm">Du bist nicht allein. Das sind die häufigsten Sorgen, die wir von Selbstständigen hören — und die klare Antwort darauf.</p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {fears.map((item, i) => (
-                <div key={i} className="bg-white rounded-2xl border border-slate-200 p-6">
-                  <div className="text-3xl mb-3">{item.icon}</div>
-                  <h3 className="font-bold text-slate-900 mb-2 italic text-sm">{item.fear}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-3">{item.solution}</p>
-                  <span className="inline-block text-xs font-semibold bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full">
-                    ✓ {item.tag}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* ── TOOLS FÜR EINSTEIGER ── */}
-          <section>
-            <div className="mb-8 text-center">
-              <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">Nur was für Einsteiger wirklich passt</span>
-              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2">Die 3 besten Programme — bewertet nach Einsteigerfreundlichkeit</h2>
-              <p className="text-slate-500 text-sm">
-                Aus dem <Link href="/buchhaltung/beste-buchhaltungssoftware-selbststaendige" className="text-blue-600 hover:underline">vollständigen Vergleich aller 5 Tools</Link> haben wir die drei herausgefiltert, die für Einsteiger wirklich funktionieren.
-              </p>
-            </div>
-
-            <div className="space-y-5">
-              {tools.map((t, i) => (
-                <div
-                  key={t.name}
-                  className={`bg-white rounded-2xl border-2 overflow-hidden ${t.highlight ? "border-amber-300 shadow-lg shadow-amber-500/10" : "border-slate-200"}`}
-                >
+            <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-6 text-center">5 Programme für Anfänger im Vergleich</h2>
+            <div className="space-y-6">
+              {tools.map((t) => (
+                <div key={t.name} className={`bg-white rounded-2xl border-2 overflow-hidden shadow-sm ${t.highlight ? "border-emerald-300" : "border-slate-200"}`}>
                   {t.highlight && (
-                    <div className="bg-amber-400 px-6 py-2 flex items-center justify-between">
-                      <span className="text-amber-900 font-bold text-sm">🏆 Beste Wahl für Einsteiger</span>
-                      <span className="text-amber-800 text-xs hidden sm:block">Empfohlen von Vergleichcheck</span>
+                    <div className="bg-emerald-500 px-6 py-2">
+                      <span className="text-white font-bold text-sm">🏆 Testsieger für Anfänger</span>
                     </div>
                   )}
                   <div className="p-6 md:p-8">
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-5">
                       <div>
-                        <div className="flex flex-wrap items-center gap-2 mb-1">
-                          <h3 className="text-2xl font-bold text-slate-900">{t.name}</h3>
-                          <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${t.badgeStyle}`}>{t.badge}</span>
-                        </div>
-                        <div className="flex items-center gap-3 mt-1">
-                          <span className="text-amber-400 text-lg">{t.einsteiger}</span>
-                          <span className="text-xs font-bold text-slate-500">Einsteigerfreundlichkeit</span>
-                        </div>
+                        <h3 className="text-2xl font-bold text-slate-900 mb-1">{t.name}</h3>
+                        <p className="text-slate-500 text-sm mb-2">{t.tagline}</p>
                       </div>
                       <div className="sm:text-right shrink-0">
-                        <div className="text-xl font-bold text-slate-900">{t.preis}</div>
-                        <div className="text-xs text-slate-400">{t.freitest}</div>
+                        <div className="font-bold text-slate-900 text-xl">{t.score}/100</div>
                       </div>
                     </div>
 
-                    {/* Einsteiger-Score-Bar */}
-                    <div className="bg-slate-50 rounded-xl p-4 mb-5">
-                      <div className="flex justify-between text-xs text-slate-500 mb-2">
-                        <span className="font-semibold">Einsteigerfreundlichkeit</span>
-                        <span className="font-bold text-slate-800">{t.einsteigerScore}/100</span>
+                    <div className="bg-slate-50 rounded-xl p-5 mb-6 grid grid-cols-2 gap-4">
+                      <ScoreBar label="Bedienung" value={t.scores.bedienung} />
+                      <ScoreBar label="Funktionen" value={t.scores.funktionen} />
+                      <ScoreBar label="Automatisierung" value={t.scores.automatisierung} />
+                      <ScoreBar label="Support" value={t.scores.support} />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+                      <div className="bg-green-50 rounded-xl p-4">
+                        <div className="text-xs font-bold text-green-700 uppercase tracking-wider mb-3">Vorteile</div>
+                        <ul className="space-y-2">
+                          {t.pros.map((p) => (
+                            <li key={p} className="text-sm text-slate-700 flex gap-2.5">
+                              <span className="text-green-500 shrink-0 font-bold">✓</span>{p}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                      <div className="h-3 bg-slate-200 rounded-full overflow-hidden">
-                        <div
-                          className={`h-full rounded-full ${t.einsteigerScore >= 90 ? "bg-amber-400" : t.einsteigerScore >= 80 ? "bg-blue-500" : "bg-slate-400"}`}
-                          style={{ width: `${t.einsteigerScore}%` }}
-                        />
+                      <div className="bg-red-50 rounded-xl p-4">
+                        <div className="text-xs font-bold text-red-600 uppercase tracking-wider mb-3">Nachteile</div>
+                        <ul className="space-y-2">
+                          {t.cons.map((c) => (
+                            <li key={c} className="text-sm text-slate-700 flex gap-2.5">
+                              <span className="text-red-400 shrink-0 font-bold">✗</span>{c}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
 
-                    {/* Warum geeignet */}
-                    <div className="mb-5">
-                      <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Warum für Einsteiger geeignet</div>
-                      <ul className="space-y-2">
-                        {t.warum.map((w) => (
-                          <li key={w} className="flex items-start gap-2.5 text-sm text-slate-700">
-                            <span className="text-emerald-500 font-bold shrink-0 mt-0.5">✓</span>{w}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Nachteil */}
-                    <div className="bg-amber-50 border border-amber-100 rounded-xl p-4 mb-5 flex gap-3">
-                      <span className="text-amber-500 shrink-0">⚠️</span>
-                      <p className="text-sm text-slate-700">{t.nachteil}</p>
-                    </div>
-
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-4 border-t border-slate-100">
-                      <span className="text-xs text-slate-400">Keine Kreditkarte · Jederzeit kündbar</span>
-                      <a href="#" className={`inline-flex items-center gap-2 font-bold px-5 py-2.5 rounded-xl text-sm transition-all ${t.highlight ? "bg-green-600 hover:bg-green-700 text-white" : "bg-blue-600 hover:bg-blue-700 text-white"}`}>
-                        {t.freitest} testen →
-                      </a>
+                    <div className="pt-4 border-t border-slate-100 flex justify-between items-center">
+                      <div>
+                        <span className="text-xs font-bold text-slate-400 uppercase">Preis</span>
+                        <div className="font-semibold text-slate-900">{t.price}</div>
+                      </div>
+                      <div>
+                        <span className="text-xs font-bold text-slate-400 uppercase block mb-1">Perfekt für</span>
+                        <div className="flex flex-wrap gap-1">
+                          {t.bestFor.map((b) => (
+                            <span key={b} className="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full">{b}</span>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-
-            <div className="mt-5 text-center">
-              <Link
-                href="/buchhaltung/beste-buchhaltungssoftware-selbststaendige"
-                className="text-sm text-slate-500 hover:text-blue-600 transition-colors"
-              >
-                → Alle 5 Tools im vollständigen Vergleich ansehen
-              </Link>
-            </div>
           </section>
 
-          {/* ── SO FÄNGT MAN AN ── */}
           <section>
-            <div className="mb-8 text-center">
-              <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">So einfach geht es</span>
-              <h2 className="text-2xl font-bold text-slate-900 mt-1 mb-2">In 5 Schritten von null zur funktionierenden Buchhaltung</h2>
-              <p className="text-slate-500 text-sm">Wie du mit lexoffice in unter einer Stunde alles einrichtest — auch ohne Vorkenntnisse.</p>
-            </div>
-
-            <div className="relative">
-              {/* Vertical line */}
-              <div className="absolute left-5 top-10 bottom-10 w-0.5 bg-slate-200 hidden md:block"></div>
-
-              <div className="space-y-4">
-                {steps.map((s, i) => (
-                  <div key={s.step} className="flex gap-5 items-start">
-                    <div className={`shrink-0 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm z-10 ${i === 0 ? "bg-amber-400 text-amber-900" : "bg-slate-900 text-white"}`}>
-                      {s.step}
-                    </div>
-                    <div className="bg-white rounded-xl border border-slate-200 p-5 flex-1">
-                      <div className="font-bold text-slate-900 mb-1">{s.title}</div>
-                      <p className="text-sm text-slate-600">{s.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-8 bg-gradient-to-r from-blue-50 to-amber-50 border border-blue-100 rounded-2xl p-6 text-center">
-              <p className="text-slate-700 font-semibold mb-4">Bereit? lexoffice 30 Tage kostenlos — kein Risiko.</p>
-              <a href="#" className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-xl text-sm transition-all">
-                Jetzt kostenlos starten →
-              </a>
-              <p className="text-xs text-slate-400 mt-2">Keine Kreditkarte · Keine Kündigung nötig</p>
-            </div>
-          </section>
-
-          {/* ── WAS KOMMT DANACH ── */}
-          <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-6 text-center">Was passiert, wenn dein Business wächst?</h2>
-            <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8">
-              <p className="text-slate-600 leading-relaxed mb-5">
-                Gute Nachricht: Du musst jetzt nicht die perfekte Lösung für alle Zeit finden. Starte mit lexoffice im günstigsten Paket. Wenn dein Umsatz wächst und du mehr Funktionen brauchst (mehr Nutzer, Lohnbuchhaltung, komplexere Integrationen), gibt es zwei Wege:
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-blue-50 rounded-xl p-4">
-                  <div className="font-bold text-blue-900 mb-2">↑ Upgrade innerhalb von lexoffice</div>
-                  <p className="text-sm text-slate-600">Du behältst alle Daten und buchst einfach in ein höheres Paket um. Kein Datenverlust, keine Neueinrichtung.</p>
-                </div>
-                <div className="bg-slate-50 rounded-xl p-4">
-                  <div className="font-bold text-slate-900 mb-2">→ Wechsel zu sevDesk</div>
-                  <p className="text-sm text-slate-600">Wenn du Online-Shops, viele Integrationen oder ein wachsendes Team hast, bietet sevDesk mehr Flexibilität. DATEV-Export macht den Wechsel einfach.</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* ── FAQ ── */}
-          <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-6 text-center">Häufige Fragen von Buchhaltungs-Einsteigern</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">Häufige Fragen für Anfänger</h2>
             <div className="space-y-3">
               {faqs.map((item, i) => (
-                <details key={i} className="group bg-white border border-slate-200 rounded-2xl overflow-hidden">
-                  <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-900 list-none hover:bg-slate-50 transition-colors">
-                    {item.q}
-                    <svg className="w-4 h-4 text-slate-400 shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 16 16">
-                      <path d="M4 6l4 4 4-4"/>
-                    </svg>
-                  </summary>
-                  <div className="px-5 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
-                    {item.a}
-                  </div>
-                </details>
+                <FaqAccordion key={i} question={item.q} answer={item.a} />
               ))}
             </div>
           </section>
-
-          {/* Weitere Vergleiche */}
-          <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-5 text-center">Weitere Vergleiche für Selbstständige</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Link href="/buchhaltung/beste-buchhaltungssoftware-selbststaendige" className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all">
-                <div className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">Buchhaltung</div>
-                <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Beste Buchhaltungssoftware 2026</div>
-                <div className="text-slate-500 text-sm mt-1">5 Programme ehrlich getestet – klare Empfehlung</div>
-              </Link>
-              <Link href="/ki-tools/ki-assistent-content-marketing-selbststaendige" className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all">
-                <div className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-1">KI-Tools</div>
-                <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">KI-Assistent für Content & Marketing</div>
-                <div className="text-slate-500 text-sm mt-1">Die besten KI-Tools für Selbstständige im Test</div>
-              </Link>
-              <Link href="/marketing/social-media-tools-selbststaendige" className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all">
-                <div className="text-xs font-bold text-pink-600 uppercase tracking-wider mb-1">Marketing</div>
-                <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Social-Media-Tools für Selbstständige</div>
-                <div className="text-slate-500 text-sm mt-1">Kundenakquise automatisieren ohne Agentur</div>
-              </Link>
-              <Link href="/produktivitaet/produktivitaet-tools-selbststaendige" className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all">
-                <div className="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-1">Produktivität</div>
-                <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Produktivitäts-Tools für Selbstständige</div>
-                <div className="text-slate-500 text-sm mt-1">Mehr erledigen in weniger Zeit</div>
-              </Link>
-              <Link href="/website/website-builder-selbststaendige" className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all sm:col-span-2">
-                <div className="text-xs font-bold text-orange-600 uppercase tracking-wider mb-1">Website</div>
-                <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Website-Builder für Selbstständige</div>
-                <div className="text-slate-500 text-sm mt-1">Online-Auftritt ohne Technikstress aufbauen</div>
-              </Link>
-            </div>
-          </section>
-
-          <p className="text-xs text-slate-400 text-center">
-            * Dieser Artikel enthält Affiliate-Links. Wir erhalten eine kleine Provision bei Kauf über unsere Links — ohne Mehrkosten für dich.
-          </p>
-
         </div>
-
-        {/* ── FINAL CTA ── */}
-        <section className="max-w-4xl mx-auto px-4 py-10">
-          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl overflow-hidden">
-            <div className="p-8 md:p-12 text-center">
-              <div className="text-5xl mb-4">🚀</div>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-                Starte heute — <span className="text-green-400">auch ohne Buchhaltungswissen</span>
-              </h2>
-              <p className="text-slate-400 mb-8 max-w-lg mx-auto leading-relaxed">
-                lexoffice ist so gebaut, dass du nach 30 Minuten weißt, was du tust. Versprochen. 30 Tage kostenlos, keine Kreditkarte nötig.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <a href="#" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-7 py-3.5 rounded-xl text-sm transition-all shadow-lg">
-                  lexoffice 30 Tage gratis →
-                </a>
-                <a href="#" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-semibold px-7 py-3.5 rounded-xl text-sm border border-white/10 transition-all">
-                  FastBill kostenlos testen →
-                </a>
-              </div>
-            </div>
-            <div className="bg-slate-800 px-8 py-4 flex flex-wrap justify-center gap-6 text-xs text-slate-400">
-              <span>✓ Selbst getestet</span>
-              <span>✓ Kein bezahltes Ranking</span>
-              <span>✓ Speziell für Einsteiger in Deutschland</span>
-            </div>
-          </div>
-        </section>
-
       </main>
       <Footer />
     </>
