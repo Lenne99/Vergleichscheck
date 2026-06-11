@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
+import FaqAccordion from "@/components/FaqAccordion";
 
 export const metadata: Metadata = {
   title: "CRM-Tools für Selbstständige 2026 – Vergleich & Test",
@@ -51,6 +52,7 @@ const tools = [
       "Deutsche Bedienung, deutscher Support (Chat, E-Mail, Telefon, Telefon-Support)",
       "Unbegrenzte Kontakte, Deals und Benutzer – wirklich ALLE Premium-Features",
       "Mobile App mit vollem Funktionsumfang",
+      "Beliebig erweiterbar für größere Teams",
       "Speziell für deutsche Selbstständige entwickelt",
     ],
     cons: [
@@ -314,7 +316,6 @@ const faqSchema = {
     { "@type": "Question", "name": "Gibt es kostenlose CRM-Tools?", "acceptedAnswer": { "@type": "Answer", "text": "Ja: HubSpot (kostenlos mit vollem CRM), Pipedrive (kostenlos für 1 Benutzer) und Zoho CRM (kostenlos für bis 2 Benutzer). Aber: Master CRM ist mit 12€/Monat so günstig, dass sich der Unterschied kaum lohnt." } }
   ]
 };
-
 
 export default function Page() {
   return (
@@ -612,20 +613,7 @@ export default function Page() {
           </section>
 
           {/* ── FAQ ── */}
-          <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">Häufige Fragen zu CRM für Selbstständige</h2>
-            <div className="space-y-3">
-              {faqs.map((item, i) => (
-                <div key={i} className="bg-white rounded-xl border border-slate-200 p-5">
-                  <h3 className="font-bold text-slate-900 mb-2 flex items-start gap-2">
-                    <span className="text-cyan-500 shrink-0 text-lg leading-none">?</span>
-                    {item.q}
-                  </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed pl-6">{item.a}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          <FaqAccordion faqs={faqs} title="Häufige Fragen zu CRM für Selbstständige" />
 
           {/* ── RELATED ── */}
           <section>
