@@ -182,7 +182,7 @@ export default function Page() {
               <p className="text-slate-400 text-sm leading-relaxed">
                 Einrichtung in 15 Minuten. Keine Buchhaltungskenntnisse nötig. EÜR und Voranmeldung auf Knopfdruck. 30 Tage kostenlos testen.
               </p>
-              <a href="#" className="shrink-0 inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-5 py-2.5 rounded-xl text-sm transition-all whitespace-nowrap">
+              <a href="#" className="shrink-0 inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition-all whitespace-nowrap">
                 Kostenlos starten →
               </a>
             </div>
@@ -295,7 +295,7 @@ export default function Page() {
 
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-4 border-t border-slate-100">
                       <span className="text-xs text-slate-400">Keine Kreditkarte · Jederzeit kündbar</span>
-                      <a href="#" className={`inline-flex items-center gap-2 font-bold px-5 py-2.5 rounded-xl text-sm transition-all ${t.highlight ? "bg-amber-500 hover:bg-amber-400 text-slate-900 shadow-md shadow-amber-500/20" : "bg-blue-600 hover:bg-blue-700 text-white"}`}>
+                      <a href="#" className={`inline-flex items-center gap-2 font-bold px-5 py-2.5 rounded-xl text-sm transition-all ${t.highlight ? "bg-green-600 hover:bg-green-700 text-white shadow-md shadow-green-600/20" : "bg-blue-600 hover:bg-blue-700 text-white"}`}>
                         {t.freitest} testen →
                       </a>
                     </div>
@@ -343,7 +343,7 @@ export default function Page() {
 
             <div className="mt-8 bg-gradient-to-r from-blue-50 to-amber-50 border border-blue-100 rounded-2xl p-6 text-center">
               <p className="text-slate-700 font-semibold mb-4">Bereit? lexoffice 30 Tage kostenlos — kein Risiko.</p>
-              <a href="#" className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold px-6 py-3 rounded-xl text-sm transition-all shadow-md shadow-amber-500/20">
+              <a href="#" className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-xl text-sm transition-all shadow-md shadow-green-600/20">
                 Jetzt kostenlos starten →
               </a>
               <p className="text-xs text-slate-400 mt-2">Keine Kreditkarte · Keine Kündigung nötig</p>
@@ -420,7 +420,7 @@ export default function Page() {
                   lexoffice ist so gebaut, dass du nach 30 Minuten weißt, was du tust. Versprochen.
                 </p>
                 <p className="text-amber-400 text-sm font-semibold mb-8">30 Tage kostenlos · Keine Kreditkarte · Jederzeit kündbar</p>
-                <a href="#" className="inline-flex items-center gap-2.5 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-8 py-4 rounded-xl text-base transition-all shadow-xl shadow-amber-500/20">
+                <a href="#" className="inline-flex items-center gap-2.5 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-xl text-base transition-all shadow-xl shadow-green-600/20">
                   lexoffice kostenlos testen
                   <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 8h8M9 5l3 3-3 3"/></svg>
                 </a>

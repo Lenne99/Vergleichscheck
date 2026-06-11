@@ -123,7 +123,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/buchhaltung/beste-buchhaltungssoftware-selbststaendige"
-                  className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold px-6 py-3.5 rounded-xl transition-all text-sm shadow-lg shadow-amber-500/20"
+                  className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3.5 rounded-xl transition-all text-sm shadow-lg shadow-green-600/20"
                 >
                   Zum Buchhaltungs-Vergleich
                   <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 8h6M8 5l3 3-3 3"/></svg>
@@ -278,7 +278,7 @@ export default function Home() {
             </div>
             <Link
               href="/buchhaltung/beste-buchhaltungssoftware-selbststaendige"
-              className="shrink-0 inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-6 py-3.5 rounded-xl transition-all text-sm whitespace-nowrap shadow-lg"
+              className="shrink-0 inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3.5 rounded-xl transition-all text-sm whitespace-nowrap shadow-lg"
             >
               Jetzt vergleichen
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 8h6M8 5l3 3-3 3"/></svg>
