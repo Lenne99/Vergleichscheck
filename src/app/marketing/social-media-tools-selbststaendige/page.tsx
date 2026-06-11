@@ -323,7 +323,7 @@ export default function Page() {
               <span>›</span><span className="text-slate-600">Social Media Tools</span>
             </nav>
 
-            <div className="flex flex-wrap gap-2 mb-5">
+            <div className="flex flex-wrap gap-2 mb-5 justify-center">
               <span className="text-xs font-semibold bg-rose-50 text-rose-700 px-3 py-1.5 rounded-full border border-rose-200">
                 📣 Social Media Vergleich 2026
               </span>
@@ -331,11 +331,11 @@ export default function Page() {
               <span className="text-xs font-semibold bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full">5 Tools · Juni 2026</span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-4 text-center">
               Social Media Tools für Selbstständige:<br className="hidden md:block" />
               <span className="text-rose-600">Sichtbar werden ohne Marketingagentur</span>
             </h1>
-            <p className="text-slate-600 text-lg leading-relaxed mb-6 max-w-2xl">
+            <p className="text-slate-600 text-lg leading-relaxed mb-7 max-w-2xl mx-auto text-center">
               Kein Team, kein Budget für eine Agentur, keine Zeit — und trotzdem täglich auf Social Media präsent sein. Das ist kein Widerspruch mehr. Wir zeigen welche Tools für Selbstständige in Deutschland wirklich funktionieren.
             </p>
 

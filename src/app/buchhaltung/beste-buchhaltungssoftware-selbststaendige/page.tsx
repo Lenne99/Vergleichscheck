@@ -262,7 +262,7 @@ export default function Page() {
               <span>›</span><span className="text-slate-600">Beste Buchhaltungssoftware</span>
             </nav>
 
-            <div className="flex flex-wrap gap-2 mb-5">
+            <div className="flex flex-wrap gap-2 mb-5 justify-center">
               <span className="inline-flex items-center gap-1.5 text-xs font-semibold bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full">
                 <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Vergleich 2026
               </span>
@@ -270,10 +270,10 @@ export default function Page() {
               <span className="text-xs font-semibold bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full">5 Tools · Juni 2026</span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-4 text-center">
               Beste Buchhaltungssoftware<br className="hidden md:block" /> für Selbstständige 2026
             </h1>
-            <p className="text-slate-600 text-lg mb-7 max-w-2xl leading-relaxed">
+            <p className="text-center text-slate-600 text-lg mb-7 max-w-2xl leading-relaxed">
               Wir haben 5 Programme mit echten Testkonten geprüft — speziell für Freelancer, Solo-Selbstständige und Einzelunternehmer in Deutschland. Klare Empfehlung, kein Fachjargon.
             </p>
 
@@ -580,6 +580,38 @@ export default function Page() {
                 <span className="flex items-center gap-1.5"><span className="text-emerald-400">✓</span> Kein bezahlter Testsieger</span>
                 <span className="flex items-center gap-1.5"><span className="text-emerald-400">✓</span> Letztes Update: Juni 2026</span>
               </div>
+            </div>
+          </section>
+
+          {/* Weitere Vergleiche */}
+          <section>
+            <h2 className="text-xl font-bold text-slate-900 mb-5 text-center">Weitere Vergleiche für Selbstständige</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Link href="/buchhaltung/buchhaltungssoftware-ohne-vorkenntnisse" className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all">
+                <div className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">Buchhaltung</div>
+                <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Buchhaltungssoftware ohne Vorkenntnisse</div>
+                <div className="text-slate-500 text-sm mt-1">Welche Software ist wirklich einsteigerfreundlich?</div>
+              </Link>
+              <Link href="/ki-tools/ki-assistent-content-marketing-selbststaendige" className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all">
+                <div className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-1">KI-Tools</div>
+                <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">KI-Assistent für Content & Marketing</div>
+                <div className="text-slate-500 text-sm mt-1">Die besten KI-Tools für Selbstständige im Test</div>
+              </Link>
+              <Link href="/marketing/social-media-tools-selbststaendige" className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all">
+                <div className="text-xs font-bold text-pink-600 uppercase tracking-wider mb-1">Marketing</div>
+                <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Social-Media-Tools für Selbstständige</div>
+                <div className="text-slate-500 text-sm mt-1">Kundenakquise automatisieren ohne Agentur</div>
+              </Link>
+              <Link href="/produktivitaet/produktivitaet-tools-selbststaendige" className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all">
+                <div className="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-1">Produktivität</div>
+                <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Produktivitäts-Tools für Selbstständige</div>
+                <div className="text-slate-500 text-sm mt-1">Mehr erledigen in weniger Zeit</div>
+              </Link>
+              <Link href="/website/website-builder-selbststaendige" className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all sm:col-span-2">
+                <div className="text-xs font-bold text-orange-600 uppercase tracking-wider mb-1">Website</div>
+                <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Website-Builder für Selbstständige</div>
+                <div className="text-slate-500 text-sm mt-1">Online-Auftritt ohne Technikstress aufbauen</div>
+              </Link>
             </div>
           </section>
 

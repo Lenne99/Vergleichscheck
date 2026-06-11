@@ -179,17 +179,17 @@ export default function Page() {
               <span className="text-slate-600">Buchhaltungssoftware ohne Vorkenntnisse</span>
             </nav>
 
-            <div className="flex flex-wrap gap-2 mb-5">
+            <div className="flex flex-wrap gap-2 mb-5 justify-center">
               <span className="text-xs font-semibold bg-amber-50 text-amber-700 px-3 py-1.5 rounded-full border border-amber-200">
                 👶 Einsteiger-Ratgeber 2026
               </span>
               <span className="text-xs font-semibold bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full">✓ Kein Buchhaltungswissen nötig</span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-4 text-center">
               Buchhaltungssoftware für Selbstständige <span className="text-blue-600">ohne Vorkenntnisse</span> — welche ist die beste?
             </h1>
-            <p className="text-slate-600 text-lg leading-relaxed mb-6 max-w-2xl">
+            <p className="text-slate-600 text-lg leading-relaxed mb-7 max-w-2xl mx-auto text-center">
               Keine Ahnung von EÜR, Voranmeldung oder GoBD? Das ist der Normalfall bei Selbstständigen in Deutschland. Wir zeigen dir, welche Software so einfach ist, dass du trotzdem nichts falsch machen kannst.
             </p>
 
@@ -451,6 +451,28 @@ export default function Page() {
                 <span>✓ Kein bezahlter Testsieger</span>
                 <span>✓ Speziell für Einsteiger in Deutschland</span>
               </div>
+            </div>
+          </section>
+
+          {/* Weitere Vergleiche */}
+          <section>
+            <h2 className="text-xl font-bold text-slate-900 mb-5 text-center">Weitere Vergleiche für Selbstständige</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Link href="/buchhaltung/beste-buchhaltungssoftware-selbststaendige" className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all">
+                <div className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">Buchhaltung</div>
+                <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Beste Buchhaltungssoftware 2026</div>
+                <div className="text-slate-500 text-sm mt-1">Der komplette Vergleich aller Top-Programme</div>
+              </Link>
+              <Link href="/ki-tools/ki-assistent-content-marketing-selbststaendige" className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all">
+                <div className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-1">KI-Tools</div>
+                <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">KI-Assistent für Content & Marketing</div>
+                <div className="text-slate-500 text-sm mt-1">Die besten KI-Tools für Selbstständige im Test</div>
+              </Link>
+              <Link href="/marketing/social-media-tools-selbststaendige" className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all">
+                <div className="text-xs font-bold text-pink-600 uppercase tracking-wider mb-1">Marketing</div>
+                <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">Social-Media-Tools für Selbstständige</div>
+                <div className="text-slate-500 text-sm mt-1">Kundenakquise automatisieren ohne Agentur</div>
+              </Link>
             </div>
           </section>
 

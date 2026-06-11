@@ -378,7 +378,7 @@ export default function Page() {
               <span>›</span><span className="text-slate-600">KI für Content & Marketing</span>
             </nav>
 
-            <div className="flex flex-wrap gap-2 mb-5">
+            <div className="flex flex-wrap gap-2 mb-5 justify-center">
               <span className="text-xs font-semibold bg-violet-50 text-violet-700 px-3 py-1.5 rounded-full border border-violet-200">
                 🤖 KI-Tools Vergleich 2026
               </span>
@@ -386,11 +386,11 @@ export default function Page() {
               <span className="text-xs font-semibold bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full">5 Tools · Juni 2026</span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-4 text-center">
               KI-Assistent für Content & Marketing:<br className="hidden md:block" />
               <span className="text-violet-600">Welches Tool macht was am besten?</span>
             </h1>
-            <p className="text-slate-600 text-lg leading-relaxed mb-6 max-w-2xl">
+            <p className="text-slate-600 text-lg leading-relaxed mb-7 max-w-2xl mx-auto text-center">
               ChatGPT, Claude, Perplexity, Gemini oder Jasper? Für Selbstständige in Deutschland ohne Marketingteam lautet die richtige Frage nicht „welches ist das beste Tool" — sondern <strong>„welches Tool löst welches Problem am besten"</strong>.
             </p>
 
