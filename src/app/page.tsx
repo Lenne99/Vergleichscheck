@@ -126,9 +126,18 @@ const recentArticles = [
   },
 ];
 
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Vergleichscheck.com",
+  "url": "https://vergleichscheck.com",
+  "description": "Unabhängige Software-Vergleiche für Selbstständige, Freelancer und kleine Unternehmen in Deutschland.",
+};
+
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
       <Header />
       <main className="flex-1">
 

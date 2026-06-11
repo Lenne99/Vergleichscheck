@@ -38,6 +38,7 @@ const tools = [
     badge: "Testsieger",
     badgeStyle: "bg-amber-400 text-amber-900",
     highlight: true,
+    scores: { bedienung: 82, features: 98, mobileApp: 85, preisleistung: 95 },
     useCases: ["Aufgaben & Projekte", "Notizen & Wissen", "Kundenverwaltung", "Content-Planung"],
     bestFuer: ["Selbstständige die alles an einem Ort wollen", "Kreative & Coaches", "Wer kein extra CRM braucht"],
     pros: [
@@ -68,6 +69,7 @@ const tools = [
     badge: "Bestes Task-Management",
     badgeStyle: "bg-blue-100 text-blue-800",
     highlight: false,
+    scores: { bedienung: 95, features: 82, mobileApp: 95, preisleistung: 92 },
     useCases: ["Tägliche To-Do-Liste", "Wiederkehrende Aufgaben", "Prioritäten setzen", "Projekte strukturieren"],
     bestFuer: ["Wer nur einen zuverlässigen Task-Manager sucht", "People who inbox-zero ihre Tasks", "Klare Struktur ohne Schnickschnack"],
     pros: [
@@ -98,6 +100,7 @@ const tools = [
     badge: "Bestes Timetracking",
     badgeStyle: "bg-rose-100 text-rose-800",
     highlight: false,
+    scores: { bedienung: 92, features: 78, mobileApp: 88, preisleistung: 85 },
     useCases: ["Stundenabrechnung mit Kunden", "Eigene Produktivität analysieren", "Projektzeiten tracken", "Rechnungen vorbereiten"],
     bestFuer: ["Freelancer die nach Stunden abrechnen", "Wer wissen will wo die Zeit bleibt", "Projektbasiertes Arbeiten"],
     pros: [
@@ -128,6 +131,7 @@ const tools = [
     badge: "Bestes Preis-Leistung",
     badgeStyle: "bg-emerald-100 text-emerald-800",
     highlight: false,
+    scores: { bedienung: 80, features: 75, mobileApp: 78, preisleistung: 98 },
     useCases: ["Stundenabrechnung", "Projekte mit Budget verwalten", "Team-Timetracking", "Kostenlose Toggl-Alternative"],
     bestFuer: ["Wer Toggl zu teuer ist", "Mehrere Projekte gleichzeitig", "Kostenbewusste Selbstständige"],
     pros: [
@@ -157,6 +161,7 @@ const tools = [
     badge: "Einfachstes Projektboard",
     badgeStyle: "bg-slate-100 text-slate-700",
     highlight: false,
+    scores: { bedienung: 92, features: 68, mobileApp: 82, preisleistung: 88 },
     useCases: ["Projekte visualisieren", "Kundenprojekte tracken", "Content-Redaktionsplan", "Einfaches Kanban"],
     bestFuer: ["Wer Aufgaben visuell sehen will", "Ein-Personen-Projekte", "Einstieg in Projektmanagement"],
     pros: [
@@ -263,6 +268,22 @@ const faqSchema = {
     { "@type": "Question", "name": "Ist Notion wirklich kostenlos?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, Notion ist für Einzelpersonen dauerhaft kostenlos ohne versteckte Limits. Der Plus-Plan (10 €/Monat) lohnt sich erst wenn man Gäste einladen oder unbegrenzte KI nutzen möchte." } }
   ]
 };
+
+
+/* ─── SUB-COMPONENTS ─── */
+function ScoreBar({ label, value }: { label: string; value: number }) {
+  const color = value >= 90 ? "bg-emerald-500" : value >= 75 ? "bg-blue-500" : "bg-amber-500";
+  return (
+    <div>
+      <div className="flex justify-between text-xs text-slate-500 mb-1">
+        <span>{label}</span><span className="font-semibold text-slate-700">{value}</span>
+      </div>
+      <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+        <div className={`h-full ${color} rounded-full`} style={{ width: `${value}%` }} />
+      </div>
+    </div>
+  );
+}
 
 
 export default function ProduktivitaetPage() {
@@ -374,7 +395,15 @@ export default function ProduktivitaetPage() {
                   </div>
 
                   {/* Pros / Cons */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                  {/* Score bars */}
+                  <div className="bg-slate-50 rounded-xl p-5 mb-6 grid grid-cols-2 gap-4">
+                    <ScoreBar label="Bedienung" value={tool.scores?.bedienung ?? 0} />
+                    <ScoreBar label="Features" value={tool.scores?.features ?? 0} />
+                    <ScoreBar label="Mobile App" value={tool.scores?.mobileApp ?? 0} />
+                    <ScoreBar label="Preis-Leistung" value={tool.scores?.preisleistung ?? 0} />
+                  </div>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <div>
                       <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-2">Vorteile</div>
                       <ul className="space-y-1.5">

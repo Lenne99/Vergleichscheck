@@ -38,6 +38,7 @@ const tools = [
     badge: "Testsieger",
     badgeStyle: "bg-amber-400 text-amber-900",
     highlight: true,
+    scores: { design: 98, bedienung: 90, dsgvo: 78, preisleistung: 80 },
     useCases: ["Portfolio", "Business-Website", "Online-Shop", "Terminbuchung"],
     bestFuer: ["Coaches & Berater", "Kreative & Fotografen", "Freelancer mit Stil-Anspruch", "Wer sofort professionell wirken will"],
     pros: [
@@ -68,6 +69,7 @@ const tools = [
     badge: "Beste KI-Features",
     badgeStyle: "bg-violet-100 text-violet-800",
     highlight: false,
+    scores: { design: 98, bedienung: 78, dsgvo: 72, preisleistung: 82 },
     useCases: ["Moderne Portfolio-Website", "Landingpage", "Startup-Website", "KI-generierte Designs"],
     bestFuer: ["Technik-affine Selbstständige", "Wer moderne Ästhetik will", "Landingpage-fokussierte Businesses"],
     pros: [
@@ -98,6 +100,7 @@ const tools = [
     badge: "Bestes für Deutschland",
     badgeStyle: "bg-blue-100 text-blue-800",
     highlight: false,
+    scores: { design: 72, bedienung: 92, dsgvo: 98, preisleistung: 92 },
     useCases: ["Lokales Business", "Handwerker & Dienstleister", "DSGVO-sichere Website", "Kleines Budget"],
     bestFuer: ["Wer DSGVO-Konformität ohne Aufwand will", "Lokale Dienstleister in DE", "Kleinstes Budget"],
     pros: [
@@ -128,6 +131,7 @@ const tools = [
     badge: "Meiste Templates",
     badgeStyle: "bg-rose-100 text-rose-800",
     highlight: false,
+    scores: { design: 82, bedienung: 80, dsgvo: 72, preisleistung: 78 },
     useCases: ["Jeder Use Case", "Buchungssystem", "Blog", "Online-Shop"],
     bestFuer: ["Wer maximale Freiheit will", "Fortgeschrittene ohne Programmier-Skills", "Großer App-Marktplatz gefragt"],
     pros: [
@@ -285,6 +289,22 @@ const faqSchema = {
 };
 
 
+/* ─── SUB-COMPONENTS ─── */
+function ScoreBar({ label, value }: { label: string; value: number }) {
+  const color = value >= 90 ? "bg-emerald-500" : value >= 75 ? "bg-blue-500" : "bg-amber-500";
+  return (
+    <div>
+      <div className="flex justify-between text-xs text-slate-500 mb-1">
+        <span>{label}</span><span className="font-semibold text-slate-700">{value}</span>
+      </div>
+      <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+        <div className={`h-full ${color} rounded-full`} style={{ width: `${value}%` }} />
+      </div>
+    </div>
+  );
+}
+
+
 export default function WebsiteBuilderPage() {
   return (
     <>
@@ -391,7 +411,15 @@ export default function WebsiteBuilderPage() {
                     ))}
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                  {/* Score bars */}
+                  <div className="bg-slate-50 rounded-xl p-5 mb-6 grid grid-cols-2 gap-4">
+                    <ScoreBar label="Design" value={tool.scores?.design ?? 0} />
+                    <ScoreBar label="Bedienung" value={tool.scores?.bedienung ?? 0} />
+                    <ScoreBar label="DSGVO" value={tool.scores?.dsgvo ?? 0} />
+                    <ScoreBar label="Preis-Leistung" value={tool.scores?.preisleistung ?? 0} />
+                  </div>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <div>
                       <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-2">Vorteile</div>
                       <ul className="space-y-1.5">

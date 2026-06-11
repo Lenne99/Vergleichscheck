@@ -37,6 +37,7 @@ const tools = [
     badge: "Vielseitigste Wahl",
     badgeStyle: "bg-emerald-100 text-emerald-800",
     highlight: true,
+    scores: { textqualitaet: 90, vielseitigkeit: 95, geschwindigkeit: 88, preisleistung: 85 },
     bestFuer: ["Social-Media-Posts", "E-Mails", "Kurztexte", "Brainstorming", "Übersetzungen"],
     nichtFuer: ["Sehr lange Artikel (Kontextlimit)", "Aktuelle Nachrichten (Wissensdatum)"],
     staerken: [
@@ -69,6 +70,7 @@ const tools = [
     badge: "Beste Texte & längste Inhalte",
     badgeStyle: "bg-violet-100 text-violet-800",
     highlight: false,
+    scores: { textqualitaet: 95, vielseitigkeit: 88, geschwindigkeit: 85, preisleistung: 82 },
     bestFuer: ["Blogartikel", "Angebote", "Langtexte", "Präzise Formulierungen", "Strukturierte Dokumente"],
     nichtFuer: ["Bildgenerierung", "Aktuelle Nachrichten ohne Websuche"],
     staerken: [
@@ -101,6 +103,7 @@ const tools = [
     badge: "Beste Recherche & aktuelle Infos",
     badgeStyle: "bg-blue-100 text-blue-800",
     highlight: false,
+    scores: { textqualitaet: 82, vielseitigkeit: 78, geschwindigkeit: 92, preisleistung: 90 },
     bestFuer: ["Marktrecherche", "Aktuelle Trends", "Wettbewerberanalyse", "Faktencheck", "Keyword-Recherche"],
     nichtFuer: ["Kreativtexte", "Social-Media-Posts", "Bildgenerierung"],
     staerken: [
@@ -132,6 +135,7 @@ const tools = [
     badge: "Google-Ökosystem-Integration",
     badgeStyle: "bg-amber-100 text-amber-800",
     highlight: false,
+    scores: { textqualitaet: 85, vielseitigkeit: 86, geschwindigkeit: 90, preisleistung: 88 },
     bestFuer: ["Google Workspace Nutzer", "Docs & Gmail Integration", "Schnelle Textentwürfe"],
     nichtFuer: ["Spezialisierte Marketing-Tasks", "Sehr lange strukturierte Texte"],
     staerken: [
@@ -163,6 +167,7 @@ const tools = [
     badge: "Spezialist für Marketing-Texte",
     badgeStyle: "bg-rose-100 text-rose-800",
     highlight: false,
+    scores: { textqualitaet: 80, vielseitigkeit: 72, geschwindigkeit: 85, preisleistung: 55 },
     bestFuer: ["SEO-Blogartikel", "Landingpages", "Werbetexte", "Content-Kampagnen", "Brand Voice"],
     nichtFuer: ["Gelegenheitsnutzer (zu teuer)", "Einfache Alltags-Tasks"],
     staerken: [
@@ -526,6 +531,14 @@ export default function Page() {
                     </div>
 
                     {/* Best for / not for */}
+                    {/* Score bars */}
+                    <div className="bg-slate-50 rounded-xl p-5 mb-6 grid grid-cols-2 gap-4">
+                      <ScoreBar label="Textqualität" value={t.scores.textqualitaet} />
+                      <ScoreBar label="Vielseitigkeit" value={t.scores.vielseitigkeit} />
+                      <ScoreBar label="Geschwindigkeit" value={t.scores.geschwindigkeit} />
+                      <ScoreBar label="Preis-Leistung" value={t.scores.preisleistung} />
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
                       <div className="bg-emerald-50 rounded-xl p-4">
                         <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-3">Am besten geeignet für</div>

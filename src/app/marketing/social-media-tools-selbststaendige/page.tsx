@@ -38,6 +38,7 @@ const tools = [
     badge: "Testsieger",
     badgeStyle: "bg-amber-400 text-amber-900",
     highlight: true,
+    scores: { bedienung: 95, plattformen: 82, analysen: 72, preisleistung: 92 },
     platforms: ["Instagram", "LinkedIn", "Facebook", "X (Twitter)", "TikTok"],
     bestFuer: ["Einsteiger", "1–3 Social-Media-Kanäle", "LinkedIn-Fokus", "Budget-bewusste"],
     pros: [
@@ -67,6 +68,7 @@ const tools = [
     badge: "Beste Analyse-Funktionen",
     badgeStyle: "bg-blue-100 text-blue-800",
     highlight: false,
+    scores: { bedienung: 80, plattformen: 95, analysen: 92, preisleistung: 88 },
     platforms: ["Instagram", "LinkedIn", "Facebook", "X", "TikTok", "YouTube", "Pinterest", "Google Business"],
     bestFuer: ["Fortgeschrittene", "Wer Daten & Wachstum tracken will", "Mehrere Plattformen"],
     pros: [
@@ -96,6 +98,7 @@ const tools = [
     badge: "Unverzichtbar für Designs",
     badgeStyle: "bg-violet-100 text-violet-800",
     highlight: false,
+    scores: { bedienung: 95, plattformen: 78, analysen: 55, preisleistung: 90 },
     platforms: ["Instagram", "LinkedIn", "Facebook", "Pinterest", "YouTube", "Stories", "Reels"],
     bestFuer: ["Alle die selbst Grafiken erstellen", "Markenidentität aufbauen", "Präsentationen & Posts"],
     pros: [
@@ -125,6 +128,7 @@ const tools = [
     badge: "Bester Instagram-Planer",
     badgeStyle: "bg-rose-100 text-rose-800",
     highlight: false,
+    scores: { bedienung: 85, plattformen: 75, analysen: 78, preisleistung: 65 },
     platforms: ["Instagram", "Facebook", "TikTok", "Pinterest", "LinkedIn", "X"],
     bestFuer: ["Instagram-fokussierte Selbstständige", "Visuell denkende Nutzer", "Fotograf:innen, Coaches"],
     pros: [
@@ -153,6 +157,7 @@ const tools = [
     badge: "Für Agenturen & Teams",
     badgeStyle: "bg-slate-100 text-slate-700",
     highlight: false,
+    scores: { bedienung: 68, plattformen: 95, analysen: 88, preisleistung: 35 },
     platforms: ["Alle Plattformen", "auch TikTok, YouTube, Pinterest"],
     bestFuer: ["Agenturen", "Teams mit mehreren Mitgliedern", "Enterprise"],
     pros: [
@@ -275,14 +280,16 @@ function RatingStars({ rating }: { rating: number }) {
   );
 }
 
-function ScoreBar({ value }: { value: number }) {
-  const color = value >= 90 ? "bg-green-500" : value >= 80 ? "bg-blue-500" : "bg-slate-400";
+function ScoreBar({ label, value }: { label: string; value: number }) {
+  const color = value >= 90 ? "bg-emerald-500" : value >= 75 ? "bg-blue-500" : "bg-amber-500";
   return (
-    <div className="flex items-center gap-3">
-      <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+    <div>
+      <div className="flex justify-between text-xs text-slate-500 mb-1">
+        <span>{label}</span><span className="font-semibold text-slate-700">{value}</span>
+      </div>
+      <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
         <div className={`h-full ${color} rounded-full`} style={{ width: `${value}%` }} />
       </div>
-      <span className="text-xs font-bold text-slate-700 w-12 text-right">{value}/100</span>
     </div>
   );
 }
@@ -435,7 +442,7 @@ export default function Page() {
                     {/* Score */}
                     <div className="bg-slate-50 rounded-xl p-4 mb-5">
                       <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Gesamtscore für Selbstständige</div>
-                      <ScoreBar value={t.score} />
+                      <ScoreBar label="Gesamtscore" value={t.score} />
                     </div>
 
                     {/* Platforms */}
@@ -446,6 +453,14 @@ export default function Page() {
                           <span key={p} className="text-xs bg-slate-100 text-slate-600 px-2.5 py-1 rounded-lg">{p}</span>
                         ))}
                       </div>
+                    </div>
+
+                    {/* Score bars */}
+                    <div className="bg-slate-50 rounded-xl p-5 mb-6 grid grid-cols-2 gap-4">
+                      <ScoreBar label="Bedienung" value={t.scores.bedienung} />
+                      <ScoreBar label="Plattformen" value={t.scores.plattformen} />
+                      <ScoreBar label="Analysen" value={t.scores.analysen} />
+                      <ScoreBar label="Preis-Leistung" value={t.scores.preisleistung} />
                     </div>
 
                     {/* Pros / Cons */}

@@ -26,6 +26,7 @@ const cols = [
       { label: "Impressum", href: "/impressum" },
       { label: "Datenschutz", href: "/datenschutz" },
       { label: "Affiliate-Hinweis", href: "/datenschutz#affiliate" },
+      { label: "Über uns", href: "/ueber-uns" },
     ],
   },
 ];
