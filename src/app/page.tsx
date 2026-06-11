@@ -4,12 +4,12 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vergleichscheck.com – Unabhängige Software-Vergleiche für Selbstständige",
+  title: "Vergleichcheck.com – Unabhängige Software-Vergleiche für Selbstständige",
   description: "Finde die beste Software für dein Business. Unabhängige Tests & Vergleiche für Buchhaltung, KI-Tools, Marketing, Produktivität und Website-Builder – speziell für Selbstständige in Deutschland.",
   openGraph: {
-    title: "Vergleichscheck.com – Die besten Tools für dein Solo-Business",
+    title: "Vergleichcheck.com – Die besten Tools für dein Solo-Business",
     description: "Unabhängige Software-Vergleiche für Selbstständige, Freelancer und kleine Unternehmen in Deutschland. Ehrliche Tests, klare Empfehlungen.",
-    url: "https://vergleichscheck.com",
+    url: "https://vergleichcheck.com",
     type: "website",
   },
 };
@@ -129,8 +129,8 @@ const recentArticles = [
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Vergleichscheck.com",
-  "url": "https://vergleichscheck.com",
+  "name": "Vergleichcheck.com",
+  "url": "https://vergleichcheck.com",
   "description": "Unabhängige Software-Vergleiche für Selbstständige, Freelancer und kleine Unternehmen in Deutschland.",
 };
 
@@ -155,7 +155,7 @@ export default function Home() {
                 finden.
               </h1>
               <p className="text-slate-400 text-lg md:text-xl mb-8 max-w-xl leading-relaxed">
-                Vergleichscheck hilft Selbstständigen, Freelancern und kleinen Unternehmen in Deutschland, die richtigen digitalen Tools zu wählen — mit echten Tests und klaren Empfehlungen.
+                Vergleichcheck hilft Selbstständigen, Freelancern und kleinen Unternehmen in Deutschland, die richtigen digitalen Tools zu wählen — mit echten Tests und klaren Empfehlungen.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
@@ -262,7 +262,7 @@ export default function Home() {
         <section className="max-w-6xl mx-auto px-4 pb-14">
           <div className="mb-6 text-center">
             <h2 className="text-2xl font-bold text-slate-900 mb-1">Aktuelle Vergleiche & Ratgeber</h2>
-            <p className="text-slate-500 text-sm">Die meistgelesenen Inhalte auf Vergleichscheck.</p>
+            <p className="text-slate-500 text-sm">Die meistgelesenen Inhalte auf Vergleichcheck.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {recentArticles.map((a) => (
@@ -284,7 +284,7 @@ export default function Home() {
         <section className="bg-white border-y border-slate-200">
           <div className="max-w-6xl mx-auto px-4 py-16">
             <div className="text-center mb-12">
-              <h2 className="text-2xl font-bold text-slate-900 mb-2">So funktioniert Vergleichscheck</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mb-2">So funktioniert Vergleichcheck</h2>
               <p className="text-slate-500 text-sm max-w-lg mx-auto">Wir nehmen uns die Zeit, damit du sie nicht brauchst.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Vergleichscheck.com – Unabhängige Software-Vergleiche für Selbstständige";
+export const alt = "Vergleichcheck.com – Unabhängige Software-Vergleiche für Selbstständige";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

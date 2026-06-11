@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Beste Produktivitäts-Tools für Selbstständige 2026 – Kein Overkill",
     description: "Notion, Todoist, Toggl Track & Co. im Vergleich. 3 fertige System-Setups für Solo-Selbstständige – direkt umsetzbar.",
-    url: "https://vergleichscheck.com/produktivitaet/produktivitaet-tools-selbststaendige",
+    url: "https://vergleichcheck.com/produktivitaet/produktivitaet-tools-selbststaendige",
     type: "article",
   },
 };

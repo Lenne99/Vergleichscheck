@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Beste Social Media Tools für Selbstständige 2026 – Sichtbar ohne Marketingagentur",
     description: "Buffer, Metricool, Canva, Later & Hootsuite im Vergleich. Mit klarer Empfehlung nach Plattform und Budget.",
-    url: "https://vergleichscheck.com/marketing/social-media-tools-selbststaendige",
+    url: "https://vergleichcheck.com/marketing/social-media-tools-selbststaendige",
     type: "article",
   },
 };
@@ -355,7 +355,7 @@ export default function Page() {
                 ))}
               </div>
               <div className="px-5 py-3 bg-slate-800/50">
-                <p className="text-slate-500 text-xs">Empfehlungen der Vergleichscheck-Redaktion · Kein bezahltes Ranking</p>
+                <p className="text-slate-500 text-xs">Empfehlungen der Vergleichcheck-Redaktion · Kein bezahltes Ranking</p>
               </div>
             </div>
           </div>

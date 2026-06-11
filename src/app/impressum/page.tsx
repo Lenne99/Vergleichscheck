@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Impressum – Vergleichscheck.com",
+  title: "Impressum – Vergleichcheck.com",
 };
 
 export default function ImpressumPage() {

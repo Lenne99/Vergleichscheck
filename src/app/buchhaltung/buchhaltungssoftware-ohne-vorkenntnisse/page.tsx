@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Buchhaltungssoftware ohne Vorkenntnisse 2026 – Welche ist wirklich einfach?",
     description: "Die 5 größten Einsteiger-Ängste gelöst. Nur 3 Tools schaffen es wirklich für absolute Anfänger. Mit 5-Schritte-Startanleitung.",
-    url: "https://vergleichscheck.com/buchhaltung/buchhaltungssoftware-ohne-vorkenntnisse",
+    url: "https://vergleichcheck.com/buchhaltung/buchhaltungssoftware-ohne-vorkenntnisse",
     type: "article",
   },
 };
@@ -220,23 +220,15 @@ export default function Page() {
               <p className="text-slate-500 text-sm">Du bist nicht allein. Das sind die häufigsten Sorgen, die wir von Selbstständigen hören — und die klare Antwort darauf.</p>
             </div>
 
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {fears.map((item, i) => (
-                <div key={i} className="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-md transition-shadow">
-                  <div className="p-5 flex gap-4">
-                    <div className="shrink-0 text-2xl mt-0.5">{item.icon}</div>
-                    <div className="flex-1">
-                      <p className="font-semibold text-slate-800 mb-3 italic text-sm md:text-base">
-                        {item.fear}
-                      </p>
-                      <div className="bg-emerald-50 border border-emerald-100 rounded-xl p-4">
-                        <p className="text-sm text-slate-700 leading-relaxed">{item.solution}</p>
-                        <span className="inline-block mt-2 text-xs font-bold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-full">
-                          ✓ {item.tag}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                <div key={i} className="bg-white rounded-2xl border border-slate-200 p-6">
+                  <div className="text-3xl mb-3">{item.icon}</div>
+                  <h3 className="font-bold text-slate-900 mb-2 italic text-sm">{item.fear}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-3">{item.solution}</p>
+                  <span className="inline-block text-xs font-semibold bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full">
+                    ✓ {item.tag}
+                  </span>
                 </div>
               ))}
             </div>
@@ -261,7 +253,7 @@ export default function Page() {
                   {t.highlight && (
                     <div className="bg-amber-400 px-6 py-2 flex items-center justify-between">
                       <span className="text-amber-900 font-bold text-sm">🏆 Beste Wahl für Einsteiger</span>
-                      <span className="text-amber-800 text-xs hidden sm:block">Empfohlen von Vergleichscheck</span>
+                      <span className="text-amber-800 text-xs hidden sm:block">Empfohlen von Vergleichcheck</span>
                     </div>
                   )}
                   <div className="p-6 md:p-8">
@@ -396,61 +388,18 @@ export default function Page() {
             <h2 className="text-xl font-bold text-slate-900 mb-6 text-center">Häufige Fragen von Buchhaltungs-Einsteigern</h2>
             <div className="space-y-3">
               {faqs.map((item, i) => (
-                <div key={i} className="bg-white rounded-xl border border-slate-200 p-5">
-                  <h3 className="font-bold text-slate-900 mb-2 flex items-start gap-2">
-                    <span className="text-blue-600 shrink-0 mt-0.5 text-lg leading-none">?</span>
+                <details key={i} className="group bg-white border border-slate-200 rounded-2xl overflow-hidden">
+                  <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-900 list-none hover:bg-slate-50 transition-colors">
                     {item.q}
-                  </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed pl-6">{item.a}</p>
-                </div>
+                    <svg className="w-4 h-4 text-slate-400 shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 16 16">
+                      <path d="M4 6l4 4 4-4"/>
+                    </svg>
+                  </summary>
+                  <div className="px-5 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                    {item.a}
+                  </div>
+                </details>
               ))}
-            </div>
-          </section>
-
-          {/* ── RELATED ── */}
-          <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-5 text-center">Weitere hilfreiche Vergleiche</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Link
-                href="/buchhaltung/beste-buchhaltungssoftware-selbststaendige"
-                className="group bg-white rounded-xl border border-slate-200 p-5 hover:border-blue-300 hover:shadow-md transition-all"
-              >
-                <div className="text-2xl mb-2">📊</div>
-                <div className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-1">
-                  Alle 5 Buchhaltungstools im Vergleich
-                </div>
-                <p className="text-sm text-slate-500">Vollständige Rangliste aller getesteten Programme — mit Vergleichstabelle und Score-Analyse.</p>
-              </Link>
-              <div className="bg-slate-100 rounded-xl border border-slate-200 p-5 opacity-60">
-                <div className="text-2xl mb-2">🧾</div>
-                <div className="font-bold text-slate-700 mb-1">Rechnungssoftware für Freelancer</div>
-                <p className="text-sm text-slate-400">Demnächst verfügbar</p>
-              </div>
-            </div>
-          </section>
-
-          {/* ── FINAL CTA ── */}
-          <section>
-            <div className="bg-slate-900 rounded-2xl overflow-hidden">
-              <div className="p-8 md:p-12 text-center">
-                <div className="text-5xl mb-4">🚀</div>
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-                  Starte noch heute — auch ohne Buchhaltungswissen
-                </h2>
-                <p className="text-slate-400 mb-2 max-w-lg mx-auto leading-relaxed">
-                  lexoffice ist so gebaut, dass du nach 30 Minuten weißt, was du tust. Versprochen.
-                </p>
-                <p className="text-amber-400 text-sm font-semibold mb-8">30 Tage kostenlos · Keine Kreditkarte · Jederzeit kündbar</p>
-                <a href="#" className="inline-flex items-center gap-2.5 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-xl text-base transition-all">
-                  lexoffice kostenlos testen
-                  <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 8h8M9 5l3 3-3 3"/></svg>
-                </a>
-              </div>
-              <div className="bg-slate-800 px-8 py-4 flex flex-wrap justify-center gap-6 text-xs text-slate-400">
-                <span>✓ Unabhängig getestet</span>
-                <span>✓ Kein bezahlter Testsieger</span>
-                <span>✓ Speziell für Einsteiger in Deutschland</span>
-              </div>
             </div>
           </section>
 
@@ -491,6 +440,35 @@ export default function Page() {
           </p>
 
         </div>
+
+        {/* ── FINAL CTA ── */}
+        <section className="max-w-4xl mx-auto px-4 py-10">
+          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl overflow-hidden">
+            <div className="p-8 md:p-12 text-center">
+              <div className="text-5xl mb-4">🚀</div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                Starte heute — <span className="text-green-400">auch ohne Buchhaltungswissen</span>
+              </h2>
+              <p className="text-slate-400 mb-8 max-w-lg mx-auto leading-relaxed">
+                lexoffice ist so gebaut, dass du nach 30 Minuten weißt, was du tust. Versprochen. 30 Tage kostenlos, keine Kreditkarte nötig.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <a href="#" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-7 py-3.5 rounded-xl text-sm transition-all shadow-lg">
+                  lexoffice 30 Tage gratis →
+                </a>
+                <a href="#" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-semibold px-7 py-3.5 rounded-xl text-sm border border-white/10 transition-all">
+                  FastBill kostenlos testen →
+                </a>
+              </div>
+            </div>
+            <div className="bg-slate-800 px-8 py-4 flex flex-wrap justify-center gap-6 text-xs text-slate-400">
+              <span>✓ Selbst getestet</span>
+              <span>✓ Kein bezahltes Ranking</span>
+              <span>✓ Speziell für Einsteiger in Deutschland</span>
+            </div>
+          </div>
+        </section>
+
       </main>
       <Footer />
     </>

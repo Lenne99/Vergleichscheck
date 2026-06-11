@@ -3,8 +3,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Über uns – Vergleichscheck.com",
-  description: "Wer steckt hinter Vergleichscheck.com? Unser Ansatz für unabhängige Software-Vergleiche speziell für Selbstständige in Deutschland.",
+  title: "Über uns – Vergleichcheck.com",
+  description: "Wer steckt hinter Vergleichcheck.com? Unser Ansatz für unabhängige Software-Vergleiche speziell für Selbstständige in Deutschland.",
 };
 
 export default function UeberUnsPage() {
@@ -18,19 +18,19 @@ export default function UeberUnsPage() {
               👋 Hinter den Kulissen
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight text-slate-900 mb-6">
-              Über Vergleichscheck.com
+              Über Vergleichcheck.com
             </h1>
             <p className="text-lg text-slate-600 leading-relaxed mb-8">
-              Vergleichscheck.com ist eine unabhängige Vergleichsplattform speziell für Solo-Selbstständige, Freelancer und kleine Unternehmen in Deutschland.
+              Vergleichcheck.com ist eine unabhängige Vergleichsplattform speziell für Solo-Selbstständige, Freelancer und kleine Unternehmen in Deutschland.
             </p>
 
             <section className="mb-10">
-              <h2 className="text-xl font-bold text-slate-900 mb-4">Warum Vergleichscheck?</h2>
+              <h2 className="text-xl font-bold text-slate-900 mb-4">Warum Vergleichcheck?</h2>
               <p className="text-slate-600 leading-relaxed mb-4">
                 Wer als Selbstständiger die richtige Software sucht, findet meistens: generische Top-10-Listen, die für Konzerne geschrieben wurden — oder Affiliate-Seiten, bei denen das teuerste Tool immer gewinnt.
               </p>
               <p className="text-slate-600 leading-relaxed">
-                Vergleichscheck macht es anders. Jede Empfehlung basiert auf echten Tests mit echten Accounts, speziell aus der Perspektive von Solo-Selbstständigen ohne IT-Abteilung, ohne Buchhalter und ohne Marketingteam.
+                Vergleichcheck macht es anders. Jede Empfehlung basiert auf echten Tests mit echten Accounts, speziell aus der Perspektive von Solo-Selbstständigen ohne IT-Abteilung, ohne Buchhalter und ohne Marketingteam.
               </p>
             </section>
 
@@ -69,7 +69,7 @@ export default function UeberUnsPage() {
                 Fragen, Feedback oder Hinweise auf veraltete Informationen? Schreib uns — wir antworten.
               </p>
               <p className="text-slate-600 text-sm mt-2">
-                E-Mail: <a href="mailto:hallo@vergleichscheck.com" className="text-blue-600 hover:underline">hallo@vergleichscheck.com</a>
+                E-Mail: <a href="mailto:hallo@vergleichcheck.com" className="text-blue-600 hover:underline">hallo@vergleichcheck.com</a>
               </p>
             </section>
           </div>
