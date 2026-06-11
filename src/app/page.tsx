@@ -17,10 +17,10 @@ const categories = [
     icon: "🤖",
     label: "KI-Tools",
     title: "KI-Assistenten",
-    desc: "Die besten KI-Tools für Content, Marketing und den Business-Alltag.",
-    href: "#",
-    count: "Demnächst",
-    live: false,
+    desc: "ChatGPT, Claude & Co.: Welches KI-Tool macht was am besten für Selbstständige?",
+    href: "/ki-tools/ki-assistent-content-marketing-selbststaendige",
+    count: "5 Tools verglichen",
+    live: true,
     color: "violet",
   },
   {
@@ -87,6 +87,14 @@ const recentArticles = [
     desc: "lexoffice, sevDesk, FastBill, Buchhaltungsbutler und WISO im direkten Vergleich mit Scoring.",
     href: "/buchhaltung/beste-buchhaltungssoftware-selbststaendige",
     meta: "8 min Lesezeit · Juni 2026",
+  },
+  {
+    tag: "KI-Tools",
+    tagColor: "bg-violet-50 text-violet-700",
+    title: "KI für Content & Marketing: Welches Tool macht was am besten?",
+    desc: "ChatGPT, Claude, Perplexity & Co. – nach konkreten Aufgaben bewertet, mit Prompt-Vorlagen.",
+    href: "/ki-tools/ki-assistent-content-marketing-selbststaendige",
+    meta: "6 min Lesezeit · Juni 2026",
   },
 ];
 
