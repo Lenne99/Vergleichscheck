@@ -4,6 +4,7 @@ import Link from "next/link";
 
 const nav = [
   { label: "Buchhaltung", href: "/buchhaltung/beste-buchhaltungssoftware-selbststaendige" },
+  { label: "CRM", href: "/crm/crm-tools-selbststaendige" },
   { label: "KI-Tools", href: "/ki-tools/ki-assistent-content-marketing-selbststaendige" },
   { label: "Marketing", href: "/marketing/social-media-tools-selbststaendige" },
   { label: "Produktivität", href: "/produktivitaet/produktivitaet-tools-selbststaendige" },

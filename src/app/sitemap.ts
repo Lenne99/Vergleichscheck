@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
     { url: `${BASE}/buchhaltung/beste-buchhaltungssoftware-selbststaendige`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/buchhaltung/buchhaltungssoftware-ohne-vorkenntnisse`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/crm/crm-tools-selbststaendige`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/ki-tools/ki-assistent-content-marketing-selbststaendige`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/marketing/social-media-tools-selbststaendige`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/produktivitaet/produktivitaet-tools-selbststaendige`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },

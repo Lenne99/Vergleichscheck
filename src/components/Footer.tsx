@@ -5,6 +5,7 @@ const cols = [
     heading: "Kategorien",
     links: [
       { label: "Buchhaltungssoftware", href: "/buchhaltung/beste-buchhaltungssoftware-selbststaendige" },
+      { label: "CRM-Tools", href: "/crm/crm-tools-selbststaendige" },
       { label: "KI-Assistenten", href: "/ki-tools/ki-assistent-content-marketing-selbststaendige" },
       { label: "Marketing-Tools", href: "/marketing/social-media-tools-selbststaendige" },
       { label: "Produktivität", href: "/produktivitaet/produktivitaet-tools-selbststaendige" },
@@ -16,6 +17,7 @@ const cols = [
     links: [
       { label: "Beste Buchhaltungssoftware", href: "/buchhaltung/beste-buchhaltungssoftware-selbststaendige" },
       { label: "Buchhaltung für Einsteiger", href: "/buchhaltung/buchhaltungssoftware-ohne-vorkenntnisse" },
+      { label: "CRM-Tools für Sales", href: "/crm/crm-tools-selbststaendige" },
       { label: "KI für Content & Marketing", href: "/ki-tools/ki-assistent-content-marketing-selbststaendige" },
       { label: "Social Media Tools", href: "/marketing/social-media-tools-selbststaendige" },
     ],
