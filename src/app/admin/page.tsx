@@ -2,24 +2,26 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Users, Mail, MessageSquare, Eye } from 'lucide-react';
+import { Users, Mail, MessageSquare, Bell } from 'lucide-react';
 
 export default function AdminDashboard() {
   const [stats, setStats] = useState({
     totalUsers: 0,
     totalSubscribers: 0,
     totalContacts: 0,
-    totalPageViews: 0,
+    unreadContacts: 0,
   });
 
   useEffect(() => {
-    // Später: Daten von API laden
-    setStats({
-      totalUsers: 1,
-      totalSubscribers: 0,
-      totalContacts: 0,
-      totalPageViews: 0,
-    });
+    fetch('/api/admin/stats')
+      .then((r) => r.json())
+      .then((d) => setStats({
+        totalUsers: d.totalUsers ?? 1,
+        totalSubscribers: d.totalSubscribers ?? 0,
+        totalContacts: d.totalContacts ?? 0,
+        unreadContacts: d.unreadContacts ?? 0,
+      }))
+      .catch(() => {});
   }, []);
 
   const statsCards = [
@@ -45,11 +47,11 @@ export default function AdminDashboard() {
       href: '/admin/contacts',
     },
     {
-      icon: Eye,
-      label: 'Seitenaufrufe',
-      value: stats.totalPageViews,
+      icon: Bell,
+      label: 'Ungelesene Anfragen',
+      value: stats.unreadContacts,
       color: 'bg-orange-100 text-orange-700',
-      href: '/admin',
+      href: '/admin/contacts',
     },
   ];
 
@@ -172,9 +174,9 @@ export default function AdminDashboard() {
       </div>
 
       {/* Status */}
-      <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-6">
-        <p className="text-blue-900 dark:text-blue-200">
-          <span className="font-semibold">ℹ️ Info:</span> Das Admin-System ist noch in Phase 1 (MVP). Weitere Funktionen wie Newsletter-Versand, Media-Upload und erweiterte Analytics kommen bald!
+      <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+        <p className="text-green-900">
+          <span className="font-semibold">✅ Phase 1 aktiv:</span> Newsletter-Abonnenten, Kontaktanfragen und Einstellungen sind einsatzbereit. Daten werden im Serverspeicher gehalten (Neustart setzt zurück). Datenbankanbindung folgt in Phase 2.
         </p>
       </div>
     </div>

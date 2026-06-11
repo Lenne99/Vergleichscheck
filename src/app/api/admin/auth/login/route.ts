@@ -1,16 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createSessionToken } from '@/lib/session';
+import { getCurrentPassword } from '../password/route';
 
-const ADMIN_USERS = [
-  {
-    id: 'admin-1',
-    name: 'Lenne',
-    email: 'admin@vergleichscheck.com',
-    username: 'Lenne',
-    password: process.env.ADMIN_PASSWORD || '12345',
-    role: 'ADMIN',
-  },
-];
+function getAdminUsers() {
+  return [
+    {
+      id: 'admin-1',
+      name: 'Lenne',
+      email: 'admin@vergleichscheck.com',
+      username: 'Lenne',
+      password: getCurrentPassword(),
+      role: 'ADMIN',
+    },
+  ];
+}
 
 // Einfaches In-Memory Rate-Limiting (resets bei Server-Neustart)
 const loginAttempts = new Map<string, { count: number; blockedUntil: number }>();
@@ -36,7 +39,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Benutzername und Passwort erforderlich' }, { status: 400 });
     }
 
-    const user = ADMIN_USERS.find(
+    const user = getAdminUsers().find(
       (u) => (u.email === email || u.username === email) && u.password === password
     );
 
