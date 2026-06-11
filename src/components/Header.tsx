@@ -5,7 +5,7 @@ import Link from "next/link";
 const nav = [
   { label: "Buchhaltung", href: "/buchhaltung/beste-buchhaltungssoftware-selbststaendige" },
   { label: "KI-Tools", href: "/ki-tools/ki-assistent-content-marketing-selbststaendige" },
-  { label: "Marketing", href: "#" },
+  { label: "Marketing", href: "/marketing/social-media-tools-selbststaendige" },
   { label: "Produktivität", href: "#" },
   { label: "Website", href: "#" },
 ];

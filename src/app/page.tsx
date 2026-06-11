@@ -26,11 +26,11 @@ const categories = [
   {
     icon: "📣",
     label: "Marketing",
-    title: "Marketing & Newsletter",
-    desc: "Newsletter-Software, Social-Media-Tools und Leadgenerierung im Vergleich.",
-    href: "#",
-    count: "Demnächst",
-    live: false,
+    title: "Social Media Tools",
+    desc: "Buffer, Metricool, Canva & Co. – sichtbar werden ohne Marketingagentur.",
+    href: "/marketing/social-media-tools-selbststaendige",
+    count: "1 Vergleich",
+    live: true,
     color: "rose",
   },
   {
@@ -95,6 +95,14 @@ const recentArticles = [
     desc: "ChatGPT, Claude, Perplexity & Co. – nach konkreten Aufgaben bewertet, mit Prompt-Vorlagen.",
     href: "/ki-tools/ki-assistent-content-marketing-selbststaendige",
     meta: "6 min Lesezeit · Juni 2026",
+  },
+  {
+    tag: "Social Media",
+    tagColor: "bg-rose-50 text-rose-700",
+    title: "Beste Social Media Tools für Selbstständige 2026",
+    desc: "Buffer, Metricool, Canva, Later & Hootsuite – sichtbar werden ohne Marketingagentur.",
+    href: "/marketing/social-media-tools-selbststaendige",
+    meta: "7 min Lesezeit · Juni 2026",
   },
 ];
 
