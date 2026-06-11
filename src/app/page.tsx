@@ -71,6 +71,25 @@ const featured = {
   meta: "5 Tools · Zuletzt aktualisiert: Juni 2025",
 };
 
+const recentArticles = [
+  {
+    tag: "Einsteiger-Ratgeber",
+    tagColor: "bg-amber-50 text-amber-700",
+    title: "Buchhaltungssoftware ohne Vorkenntnisse – welche ist wirklich einfach?",
+    desc: "Die 5 größten Ängste von Buchhaltungs-Einsteigern – und wie die richtige Software sie löst.",
+    href: "/buchhaltung/buchhaltungssoftware-ohne-vorkenntnisse",
+    meta: "4 min Lesezeit · Juni 2025",
+  },
+  {
+    tag: "Großer Vergleich",
+    tagColor: "bg-blue-50 text-blue-700",
+    title: "Beste Buchhaltungssoftware für Selbstständige 2025",
+    desc: "lexoffice, sevDesk, FastBill, Buchhaltungsbutler und WISO im direkten Vergleich mit Scoring.",
+    href: "/buchhaltung/beste-buchhaltungssoftware-selbststaendige",
+    meta: "8 min Lesezeit · Juni 2025",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -189,6 +208,28 @@ export default function Home() {
                 <span className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full ${cat.live ? "bg-emerald-50 text-emerald-700" : "bg-slate-100 text-slate-500"}`}>
                   {cat.live ? "✓ " : ""}{cat.count}
                 </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* ─── RECENT ARTICLES ─── */}
+        <section className="max-w-6xl mx-auto px-4 pb-14">
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold text-slate-900 mb-1">Aktuelle Vergleiche & Ratgeber</h2>
+            <p className="text-slate-500 text-sm">Die meistgelesenen Inhalte auf Vergleichscheck.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {recentArticles.map((a) => (
+              <Link
+                key={a.title}
+                href={a.href}
+                className="group bg-white rounded-xl border border-slate-200 p-6 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-500/5 transition-all hover:-translate-y-0.5"
+              >
+                <span className={`inline-block text-xs font-bold px-2.5 py-1 rounded-full mb-3 ${a.tagColor}`}>{a.tag}</span>
+                <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">{a.title}</h3>
+                <p className="text-sm text-slate-500 mb-4 leading-relaxed">{a.desc}</p>
+                <span className="text-xs text-slate-400">{a.meta}</span>
               </Link>
             ))}
           </div>
