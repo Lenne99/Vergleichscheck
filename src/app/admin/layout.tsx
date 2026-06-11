@@ -141,7 +141,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               i.href === '/admin' ? pathname === '/admin' : pathname.startsWith(i.href)
             )?.label ?? 'Admin'}
           </h1>
-          <span className="text-xs text-slate-400 hidden sm:block">vergleichscheck.com</span>
+          <span className="text-xs text-slate-400 hidden sm:block">vergleichcheck.com</span>
         </header>
 
         {/* Page */}

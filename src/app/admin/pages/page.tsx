@@ -9,7 +9,7 @@ const PAGES = [
   { title: 'KI-Assistent für Content', url: '/ki-tools/ki-assistent-content-marketing-selbststaendige', category: 'KI-Tools', description: 'KI-Tools für Content-Marketing' },
   { title: 'Produktivitäts-Tools', url: '/produktivitaet/produktivitaet-tools-selbststaendige', category: 'Produktivität', description: 'Produktivität steigern für Selbstständige' },
   { title: 'Website-Builder', url: '/website/website-builder-selbststaendige', category: 'Website', description: 'Website-Builder im Vergleich' },
-  { title: 'Über uns', url: '/ueber-uns', category: 'Info', description: 'Über vergleichscheck.com' },
+  { title: 'Über uns', url: '/ueber-uns', category: 'Info', description: 'Über vergleichcheck.com' },
   { title: 'Impressum', url: '/impressum', category: 'Rechtliches', description: 'Impressum' },
   { title: 'Datenschutz', url: '/datenschutz', category: 'Rechtliches', description: 'Datenschutzerklärung' },
 ];

@@ -7,7 +7,7 @@ function getAdminUsers() {
     {
       id: 'admin-1',
       name: 'Lenne',
-      email: 'admin@vergleichscheck.com',
+      email: 'admin@vergleichcheck.com',
       username: 'Lenne',
       password: getCurrentPassword(),
       role: 'ADMIN',

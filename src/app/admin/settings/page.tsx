@@ -43,7 +43,7 @@ export default function SettingsPage() {
         <div className="grid grid-cols-2 gap-4 text-sm">
           <div>
             <p className="text-slate-400 text-xs mb-1">Website-Name</p>
-            <p className="font-medium text-slate-800">vergleichscheck.com</p>
+            <p className="font-medium text-slate-800">vergleichcheck.com</p>
           </div>
           <div>
             <p className="text-slate-400 text-xs mb-1">Admin-Benutzer</p>
@@ -51,7 +51,7 @@ export default function SettingsPage() {
           </div>
           <div>
             <p className="text-slate-400 text-xs mb-1">E-Mail</p>
-            <p className="font-medium text-slate-800">admin@vergleichscheck.com</p>
+            <p className="font-medium text-slate-800">admin@vergleichcheck.com</p>
           </div>
           <div>
             <p className="text-slate-400 text-xs mb-1">Phase</p>

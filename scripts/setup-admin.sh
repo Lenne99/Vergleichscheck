@@ -2,7 +2,7 @@
 
 set -e
 
-echo "🚀 Vergleichscheck Admin-System Setup"
+echo "🚀 Vergleichcheck Admin-System Setup"
 echo "========================================"
 echo ""
 

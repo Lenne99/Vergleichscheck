@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { validateSessionToken } from '@/lib/session';
 
 const ADMIN_USERS = [
-  { id: 'admin-1', name: 'Lenne', email: 'admin@vergleichscheck.com', role: 'ADMIN' },
+  { id: 'admin-1', name: 'Lenne', email: 'admin@vergleichcheck.com', role: 'ADMIN' },
 ];
 
 export async function GET(request: NextRequest) {
