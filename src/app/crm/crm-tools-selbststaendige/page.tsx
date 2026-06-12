@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 import FaqAccordion from "@/components/FaqAccordion";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 export const metadata: Metadata = {
   title: "CRM-Tools für Selbstständige 2026 – Vergleich & Test",
@@ -702,6 +703,8 @@ export default function Page() {
               </div>
             </div>
           </section>
+
+          <NewsletterSignup variant="article" />
 
           <p className="text-xs text-slate-400 text-center">
             * Dieser Artikel enthält Affiliate-Links. Wir erhalten eine kleine Provision bei Kauf — ohne Mehrkosten für dich.

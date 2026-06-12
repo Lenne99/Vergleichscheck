@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 const cols = [
   {
@@ -37,6 +38,9 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-400 mt-20">
       <div className="max-w-6xl mx-auto px-4 pt-14 pb-8">
+
+        {/* Newsletter */}
+        <NewsletterSignup variant="footer" />
 
         {/* Top */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">

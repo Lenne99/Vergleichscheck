@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 import FaqAccordion from "@/components/FaqAccordion";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 export const metadata: Metadata = {
   title: "Beste Produktivitäts-Tools für Selbstständige 2026 – Kein Overkill, einfach nutzbar",
@@ -579,6 +580,11 @@ export default function ProduktivitaetPage() {
           </section>
 
         </div>
+
+        {/* ─── NEWSLETTER ─── */}
+        <section className="max-w-4xl mx-auto px-4 pb-4">
+          <NewsletterSignup variant="article" />
+        </section>
 
         {/* ─── FINAL CTA ─── */}
         <section className="max-w-4xl mx-auto px-4 py-10">

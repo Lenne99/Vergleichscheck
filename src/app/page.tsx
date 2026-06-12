@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 export const metadata: Metadata = {
   title: "Vergleichcheck.com – Unabhängige Software-Vergleiche für Selbstständige",
@@ -318,6 +319,9 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        {/* ─── NEWSLETTER ─── */}
+        <NewsletterSignup variant="homepage" />
 
         {/* ─── HOW IT WORKS ─── */}
         <section className="bg-white border-y border-slate-200">

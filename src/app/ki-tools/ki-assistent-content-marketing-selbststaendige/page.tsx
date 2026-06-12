@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 import FaqAccordion from "@/components/FaqAccordion";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 export const metadata: Metadata = {
   title: "KI-Assistent für Content & Marketing 2026 – Welches Tool macht was am besten?",
@@ -765,6 +766,8 @@ export default function Page() {
               </div>
             </div>
           </section>
+
+          <NewsletterSignup variant="article" />
 
           <p className="text-xs text-slate-400 text-center">
             * Dieser Artikel enthält Affiliate-Links. Wir erhalten eine kleine Provision bei Kauf über unsere Links — ohne Mehrkosten für dich.

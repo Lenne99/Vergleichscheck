@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 import FaqAccordion from "@/components/FaqAccordion";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 export const metadata: Metadata = {
   title: "Beste Buchhaltungssoftware für Selbstständige 2026 – Test & Vergleich",
@@ -657,6 +658,8 @@ export default function Page() {
               </Link>
             </div>
           </section>
+
+          <NewsletterSignup variant="article" />
 
           {/* Disclaimer */}
           <p className="text-xs text-slate-400 text-center">

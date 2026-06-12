@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 import FaqAccordion from "@/components/FaqAccordion";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 export const metadata: Metadata = {
   title: "Beste Website Builder für Selbstständige 2026 – In 1 Tag online ohne Programmierkenntnisse",
@@ -596,6 +597,11 @@ export default function WebsiteBuilderPage() {
           </section>
 
         </div>
+
+        {/* ─── NEWSLETTER ─── */}
+        <section className="max-w-4xl mx-auto px-4 pb-4">
+          <NewsletterSignup variant="article" />
+        </section>
 
         {/* ─── FINAL CTA ─── */}
         <section className="max-w-4xl mx-auto px-4 py-10">
