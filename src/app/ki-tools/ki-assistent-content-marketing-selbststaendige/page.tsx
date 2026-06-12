@@ -355,7 +355,7 @@ const faqSchema = {
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "Welches KI-Tool ist das beste für Selbstständige?", "acceptedAnswer": { "@type": "Answer", "text": "ChatGPT (GPT-4o) ist das vielseitigste KI-Tool für Selbstständige. Für deutschsprachige Texte und Nuancen ist Claude oft überlegen. Perplexity empfiehlt sich für Recherche mit aktuellen Quellen." } },
-    { "@type": "Question", "name": "Ist ChatGPT kostenlos nutzbar?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, ChatGPT hat einen dauerhaft kostenlosen Plan mit GPT-4o mini. Für GPT-4o (deutlich besser) kostet ChatGPT Plus 20 $/Monat. Für die meisten Selbstständigen lohnt sich Plus." } }
+    { "@type": "Question", "name": "Ist ChatGPT kostenlos nutzbar?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, ChatGPT hat einen dauerhaft kostenlosen Plan mit GPT-4o mini. Für GPT-4o (deutlich besser) kostet ChatGPT Plus 20 €/Monat. Für die meisten Selbstständigen lohnt sich Plus." } }
   ]
 };
 

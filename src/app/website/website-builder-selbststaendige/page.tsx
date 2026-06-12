@@ -175,7 +175,7 @@ const tools = [
       "Nicht für komplexe Websites geeignet",
       "Nur sinnvoll wenn Notion eh genutzt wird",
     ],
-    aufwand: "30 Min bis fertig (wenn Notion-Seite exists)",
+    aufwand: "30 Min bis fertig (wenn Notion-Seite existiert)",
     rating: 4.0,
     votes: "340",
     cta: "Super.so ausprobieren",

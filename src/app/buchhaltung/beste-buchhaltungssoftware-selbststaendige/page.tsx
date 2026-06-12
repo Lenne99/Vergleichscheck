@@ -142,7 +142,7 @@ const tools = [
     ],
     bestFor: "Selbstständige mit vielen Belegen & Reisekosten",
     detail:
-      "Der Buchhaltungsbutler setzt auf KI-Belezerkennung, die Rechnungen und Quittungen automatisch verbucht. Wer monatlich viele Belege verarbeitet, spart hier die meiste Zeit — trotz höherem Preis.",
+      "Der Buchhaltungsbutler setzt auf KI-Belegerkennung, die Rechnungen und Quittungen automatisch verbucht. Wer monatlich viele Belege verarbeitet, spart hier die meiste Zeit — trotz höherem Preis.",
     scores: { bedienung: 72, funktionen: 88, app: 70, support: 82 },
     cta: "Buchhaltungsbutler testen",
     ctaNote: "Kostenloser Testzeitraum verfügbar",
@@ -298,7 +298,7 @@ export default function Page() {
           {/* ── RANKINGS ── */}
           <section>
             <h2 className="text-xl font-bold text-slate-900 mb-1 text-center">Die 5 besten Programme im Überblick</h2>
-            <p className="text-slate-500 text-sm text-center text-center text-center mb-7">Gerankt nach Testergebnis — alle Details weiter unten.</p>
+            <p className="text-slate-500 text-sm text-center mb-7">Gerankt nach Testergebnis — alle Details weiter unten.</p>
 
             <div className="space-y-3">
               {tools.map((t) => (

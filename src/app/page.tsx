@@ -5,7 +5,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Vergleichcheck.com – Unabhängige Software-Vergleiche für Selbstständige",
-  description: "Finde die beste Software für dein Business. Unabhängige Tests & Vergleiche für Buchhaltung, KI-Tools, Marketing, Produktivität und Website-Builder – speziell für Selbstständige in Deutschland.",
+  description: "Finde die beste Software für dein Business. Unabhängige Tests & Vergleiche für Buchhaltung, CRM, KI-Tools, Marketing, Produktivität und Website-Builder – speziell für Selbstständige in Deutschland.",
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Vergleichcheck.com – Die besten Tools für dein Solo-Business",
     description: "Unabhängige Software-Vergleiche für Selbstständige, Freelancer und kleine Unternehmen in Deutschland. Ehrliche Tests, klare Empfehlungen.",
@@ -24,6 +25,16 @@ const categories = [
     count: "5 Tools · 2 Vergleiche",
     live: true,
     color: "blue",
+  },
+  {
+    icon: "💼",
+    label: "CRM",
+    title: "CRM-Tools",
+    desc: "HubSpot, Pipedrive & Co. – Kundenkontakte und Verkauf im Griff für Selbstständige.",
+    href: "/crm/crm-tools-selbststaendige",
+    count: "5 Tools · 1 Vergleich",
+    live: true,
+    color: "orange",
   },
   {
     icon: "🤖",
@@ -73,6 +84,7 @@ const colorMap: Record<string, string> = {
   rose:    "bg-rose-50 text-rose-700 group-hover:bg-rose-600 group-hover:text-white",
   emerald: "bg-emerald-50 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white",
   amber:   "bg-amber-50 text-amber-700 group-hover:bg-amber-600 group-hover:text-white",
+  orange:  "bg-orange-50 text-orange-700 group-hover:bg-orange-600 group-hover:text-white",
 };
 
 const featured = {
@@ -91,6 +103,22 @@ const recentArticles = [
     desc: "lexoffice, sevDesk, FastBill & Co. im direkten Vergleich mit Scoring – unser Testsieger überrascht.",
     href: "/buchhaltung/beste-buchhaltungssoftware-selbststaendige",
     meta: "8 min Lesezeit · Juni 2026",
+  },
+  {
+    tag: "Buchhaltung",
+    tagColor: "bg-blue-50 text-blue-700",
+    title: "Buchhaltungssoftware ohne Vorkenntnisse 2026",
+    desc: "Welche Software funktioniert wirklich auch ohne Steuerwissen? EÜR, USt-Voranmeldung & DATEV-Export für Einsteiger.",
+    href: "/buchhaltung/buchhaltungssoftware-ohne-vorkenntnisse",
+    meta: "7 min Lesezeit · Juni 2026",
+  },
+  {
+    tag: "CRM",
+    tagColor: "bg-orange-50 text-orange-700",
+    title: "Beste CRM-Tools für Selbstständige 2026",
+    desc: "HubSpot, Pipedrive, Close.io & Co. – welches CRM bringt Kundenkontakte und Verkauf in Form?",
+    href: "/crm/crm-tools-selbststaendige",
+    meta: "7 min Lesezeit · Juni 2026",
   },
   {
     tag: "KI-Tools",
@@ -131,13 +159,24 @@ const orgSchema = {
   "@type": "Organization",
   "name": "Vergleichcheck.com",
   "url": "https://vergleichcheck.com",
+  "logo": "https://vergleichcheck.com/opengraph-image",
   "description": "Unabhängige Software-Vergleiche für Selbstständige, Freelancer und kleine Unternehmen in Deutschland.",
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Vergleichcheck.com",
+  "url": "https://vergleichcheck.com",
+  "inLanguage": "de-DE",
+  "publisher": { "@type": "Organization", "name": "Vergleichcheck.com" },
 };
 
 export default function Home() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       <Header />
       <main className="flex-1">
 

@@ -72,7 +72,7 @@ const tools = [
     highlight: false,
     scores: { bedienung: 95, features: 82, mobileApp: 95, preisleistung: 92 },
     useCases: ["Tägliche To-Do-Liste", "Wiederkehrende Aufgaben", "Prioritäten setzen", "Projekte strukturieren"],
-    bestFuer: ["Wer nur einen zuverlässigen Task-Manager sucht", "People who inbox-zero ihre Tasks", "Klare Struktur ohne Schnickschnack"],
+    bestFuer: ["Wer nur einen zuverlässigen Task-Manager sucht", "Wer seine Aufgaben konsequent abarbeiten will", "Klare Struktur ohne Schnickschnack"],
     pros: [
       "Schnellste Aufgabeneingabe im Test (natürliche Sprache: 'Mo 9 Uhr Angebot schreiben')",
       "Karma-System motiviert zu regelmäßiger Nutzung",

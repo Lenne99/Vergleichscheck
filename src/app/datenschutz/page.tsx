@@ -60,7 +60,7 @@ export default function DatenschutzPage() {
               </p>
             </section>
 
-            <section className="mb-8">
+            <section id="affiliate" className="mb-8 scroll-mt-24">
               <h2 className="text-lg font-bold text-slate-900 mb-3">5. Affiliate-Links</h2>
               <p className="text-base leading-relaxed text-slate-600">
                 Diese Website enthält Affiliate-Links zu Drittanbietern (z. B. lexoffice, sevDesk, ChatGPT). Wenn Sie auf solche Links klicken, verlassen Sie unsere Website. Die verlinkten Drittanbieter haben eigene Datenschutzrichtlinien, für die wir nicht verantwortlich sind. Wir erhalten bei einem Kauf über unsere Links eine Provision, ohne dass Ihnen dadurch Mehrkosten entstehen.

@@ -262,7 +262,7 @@ export default function Page() {
                   {t.highlight && (
                     <div className="bg-amber-400 px-6 py-2 flex items-center justify-between">
                       <span className="text-amber-900 font-bold text-sm">🏆 Beste Wahl für Einsteiger</span>
-                      <span className="text-amber-800 text-xs hidden sm:block">Empfohlen von Vergleichscheck</span>
+                      <span className="text-amber-800 text-xs hidden sm:block">Empfohlen von Vergleichcheck</span>
                     </div>
                   )}
                   <div className="p-6 md:p-8">
