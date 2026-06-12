@@ -153,10 +153,21 @@ const faqs = [
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "Welche Buchhaltungssoftware ist die einfachste für Anfänger?", "acceptedAnswer": { "@type": "Answer", "text": "lexoffice ist die einfachste Buchhaltungssoftware für Selbstständige ohne Vorkenntnisse: klare Oberfläche, geführte Einrichtung und automatischer Belegimport per App." } },
-    { "@type": "Question", "name": "Brauche ich Buchhaltungskenntnisse für Buchhaltungssoftware?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Moderne Software wie lexoffice oder FastBill ist explizit für Nicht-Buchhalter entwickelt. Du musst keine Kontenpläne kennen – die Software erledigt die Buchungslogik automatisch." } }
-  ]
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://vergleichcheck.com" },
+    { "@type": "ListItem", "position": 2, "name": "Buchhaltung", "item": "https://vergleichcheck.com/buchhaltung/beste-buchhaltungssoftware-selbststaendige" },
+    { "@type": "ListItem", "position": 3, "name": "Ohne Vorkenntnisse" },
+  ],
 };
 
 
@@ -166,6 +177,10 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Header />
       <main className="flex-1 bg-slate-50">

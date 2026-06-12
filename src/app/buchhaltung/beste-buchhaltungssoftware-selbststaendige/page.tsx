@@ -232,14 +232,56 @@ function Cross() {
   return <span className="inline-flex items-center justify-center w-6 h-6 bg-slate-100 text-slate-400 rounded-full text-xs">–</span>;
 }
 
+/* ─── FAQ DATA ─── */
+const faqs = [
+  { q: "Welche Software ist die beste für Selbstständige ohne Buchhaltungswissen?", a: "lexoffice. Die Software führt dich durch alle Schritte, erklärt Fachbegriffe und ermöglicht einen GoBD-konformen Jahresabschluss auch ohne Vorkenntnisse. Einrichtung dauert unter 30 Minuten." },
+  { q: "Kann ich die Software später wechseln?", a: "Ja. Alle genannten Tools erlauben den Datenexport. Am einfachsten ist ein Wechsel zu Jahresbeginn, da du dann keine laufende Buchführung übertragen musst." },
+  { q: "Brauche ich noch einen Steuerberater mit Buchhaltungssoftware?", a: "Das kommt auf deinen Fall an. Die Einnahmen-Überschuss-Rechnung (EÜR) kannst du mit lexoffice selbst erstellen. Für GmbHs, Bilanzen und steuerliche Optimierung lohnt sich ein Steuerberater — der dank DATEV-Export günstiger arbeiten kann." },
+  { q: "Was bedeutet GoBD-konform?", a: "GoBD sind die Grundsätze zur ordnungsmäßigen Führung digitaler Bücher (Vorgabe des deutschen Finanzamts). GoBD-konforme Software stellt sicher, dass deine Unterlagen bei einer Betriebsprüfung anerkannt werden." },
+  { q: "Wie teuer ist Buchhaltungssoftware im Vergleich zum Steuerberater?", a: "Gute Buchhaltungssoftware kostet 6–15 € pro Monat (72–180 € pro Jahr). Eine Stunde beim Steuerberater kostet 100–200 €. Die richtige Software spart dir mehrere Stunden manuelle Arbeit pro Monat." },
+];
+
 /* ─── PAGE ─── */
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "Welche Buchhaltungssoftware ist die beste für Selbstständige?", "acceptedAnswer": { "@type": "Answer", "text": "lexoffice ist die beste Buchhaltungssoftware für Selbstständige in Deutschland dank einfachster Bedienung, DATEV-Export und GoBD-Konformität. Ab 7,90 €/Monat." } },
-    { "@type": "Question", "name": "Was kostet Buchhaltungssoftware für Selbstständige?", "acceptedAnswer": { "@type": "Answer", "text": "Buchhaltungssoftware für Selbstständige kostet zwischen 7,90 € und 14,90 €/Monat. Die meisten bieten 14–30 Tage kostenlos zum Testen." } }
-  ]
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": tools
+    .filter((t) => t.rating && t.votes)
+    .map((t, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "Product",
+        "name": t.name,
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": t.rating,
+          "reviewCount": Number(String(t.votes).replace(/\D/g, "")),
+          "bestRating": 5,
+          "worstRating": 1,
+        },
+      },
+    })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://vergleichcheck.com" },
+    { "@type": "ListItem", "position": 2, "name": "Buchhaltung", "item": "https://vergleichcheck.com/buchhaltung/beste-buchhaltungssoftware-selbststaendige" },
+    { "@type": "ListItem", "position": 3, "name": "Beste Buchhaltungssoftware" },
+  ],
 };
 
 
@@ -251,6 +293,14 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Header />
       <main className="flex-1 bg-slate-50">
@@ -544,13 +594,7 @@ export default function Page() {
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">Häufig gestellte Fragen</h2>
             <div className="space-y-3">
-              {[
-                { q: "Welche Software ist die beste für Selbstständige ohne Buchhaltungswissen?", a: "lexoffice. Die Software führt dich durch alle Schritte, erklärt Fachbegriffe und ermöglicht einen GoBD-konformen Jahresabschluss auch ohne Vorkenntnisse. Einrichtung dauert unter 30 Minuten." },
-                { q: "Kann ich die Software später wechseln?", a: "Ja. Alle genannten Tools erlauben den Datenexport. Am einfachsten ist ein Wechsel zu Jahresbeginn, da du dann keine laufende Buchführung übertragen musst." },
-                { q: "Brauche ich noch einen Steuerberater mit Buchhaltungssoftware?", a: "Das kommt auf deinen Fall an. Die Einnahmen-Überschuss-Rechnung (EÜR) kannst du mit lexoffice selbst erstellen. Für GmbHs, Bilanzen und steuerliche Optimierung lohnt sich ein Steuerberater — der dank DATEV-Export günstiger arbeiten kann." },
-                { q: "Was bedeutet GoBD-konform?", a: "GoBD sind die Grundsätze zur ordnungsmäßigen Führung digitaler Bücher (Vorgabe des deutschen Finanzamts). GoBD-konforme Software stellt sicher, dass deine Unterlagen bei einer Betriebsprüfung anerkannt werden." },
-                { q: "Wie teuer ist Buchhaltungssoftware im Vergleich zum Steuerberater?", a: "Gute Buchhaltungssoftware kostet 6–15 € pro Monat (72–180 € pro Jahr). Eine Stunde beim Steuerberater kostet 100–200 €. Die richtige Software spart dir mehrere Stunden manuelle Arbeit pro Monat." },
-              ].map((item) => (
+              {faqs.map((item) => (
                 <FaqAccordion key={item.q} question={item.q} answer={item.a} />
               ))}
             </div>
