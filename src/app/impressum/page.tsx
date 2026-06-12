@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Impressum – Vergleichcheck.com",
+  alternates: { canonical: "/impressum" },
 };
 
 export default function ImpressumPage() {

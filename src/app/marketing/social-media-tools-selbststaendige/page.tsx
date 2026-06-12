@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Social Media Tools für Selbstständige 2026 – Sichtbar werden ohne Marketingagentur",
   description:
     "Welches Social Media Tool spart Selbstständigen die meiste Zeit? Buffer, Metricool, Canva, Later & Hootsuite im Vergleich – mit klarer Empfehlung nach Plattform und Budget.",
+  alternates: { canonical: "/marketing/social-media-tools-selbststaendige" },
   openGraph: {
     title: "Beste Social Media Tools für Selbstständige 2026 – Sichtbar ohne Marketingagentur",
     description: "Buffer, Metricool, Canva, Later & Hootsuite im Vergleich. Mit klarer Empfehlung nach Plattform und Budget.",

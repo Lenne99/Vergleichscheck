@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung – Vergleichcheck.com",
+  alternates: { canonical: "/datenschutz" },
 };
 
 export default function DatenschutzPage() {

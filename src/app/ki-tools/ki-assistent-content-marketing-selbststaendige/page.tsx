@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "KI-Assistent für Content & Marketing 2026 – Welches Tool macht was am besten?",
   description:
     "ChatGPT, Claude, Gemini oder Perplexity? Für Selbstständige in Deutschland: Welches KI-Tool für Social Media, Blogartikel, E-Mails und Angebote am besten funktioniert – mit echten Beispielen.",
+  alternates: { canonical: "/ki-tools/ki-assistent-content-marketing-selbststaendige" },
   openGraph: {
     title: "KI-Assistent für Content & Marketing 2026 – Welches Tool macht was am besten?",
     description: "ChatGPT, Claude, Perplexity & Co. nach konkreten Aufgaben bewertet. Mit fertigen Prompt-Vorlagen zum Kopieren.",

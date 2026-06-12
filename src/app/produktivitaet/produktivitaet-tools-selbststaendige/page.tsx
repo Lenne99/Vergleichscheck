@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Beste Produktivitäts-Tools für Selbstständige 2026 – Kein Overkill, einfach nutzbar",
   description:
     "Notion, Todoist, Toggl Track & Co. im Vergleich – welches Tool passt zu Solo-Selbstständigen ohne IT-Kenntnisse? Mit klarer Empfehlung nach Anwendungsfall.",
+  alternates: { canonical: "/produktivitaet/produktivitaet-tools-selbststaendige" },
   openGraph: {
     title: "Beste Produktivitäts-Tools für Selbstständige 2026 – Kein Overkill",
     description: "Notion, Todoist, Toggl Track & Co. im Vergleich. 3 fertige System-Setups für Solo-Selbstständige – direkt umsetzbar.",

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Über uns – Vergleichcheck.com",
   description: "Wer steckt hinter Vergleichcheck.com? Unser Ansatz für unabhängige Software-Vergleiche speziell für Selbstständige in Deutschland.",
+  alternates: { canonical: "/ueber-uns" },
 };
 
 export default function UeberUnsPage() {

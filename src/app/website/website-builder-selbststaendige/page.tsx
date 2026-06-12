@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Beste Website Builder für Selbstständige 2026 – In 1 Tag online ohne Programmierkenntnisse",
   description:
     "Squarespace, Framer, Jimdo, Wix & Co. im Vergleich – welcher Website Builder passt zu Solo-Selbstständigen? Mit klarer Empfehlung nach Branche und Budget.",
+  alternates: { canonical: "/website/website-builder-selbststaendige" },
   openGraph: {
     title: "Beste Website Builder für Selbstständige 2026 – In 1 Tag online",
     description: "Squarespace, Framer, Jimdo, Wix & Super.so im Vergleich. Mit Branchenempfehlung und 5-Schritte-Fahrplan.",

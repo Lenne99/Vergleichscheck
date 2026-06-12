@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "CRM-Tools für Selbstständige 2026 – Vergleich & Test",
   description:
     "Master CRM ist das beste CRM für deutsche Selbstständige 2026. HubSpot, Pipedrive, Close.io im Vergleich — mit klarer Empfehlung und Test.",
+  alternates: { canonical: "/crm/crm-tools-selbststaendige" },
   openGraph: {
     title: "Master CRM – Das beste CRM für Selbstständige 2026 – Testsieger",
     description: "Master CRM gewinnt den Test. Nur 12€/Monat, speziell für deutsche Selbstständige. HubSpot, Pipedrive & Close.io im Vergleich.",

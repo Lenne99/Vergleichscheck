@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Buchhaltungssoftware für Selbstständige ohne Vorkenntnisse 2026 – Ehrlicher Test",
   description:
     "Keine Ahnung von Buchhaltung? Kein Problem. Wir zeigen welche Software auch ohne Steuerwissen funktioniert – mit EÜR, USt-Voranmeldung und DATEV-Export. Klare Empfehlung für Einsteiger.",
+  alternates: { canonical: "/buchhaltung/buchhaltungssoftware-ohne-vorkenntnisse" },
   openGraph: {
     title: "Buchhaltungssoftware ohne Vorkenntnisse 2026 – Welche ist wirklich einfach?",
     description: "Die 5 größten Einsteiger-Ängste gelöst. Nur 3 Tools schaffen es wirklich für absolute Anfänger. Mit 5-Schritte-Startanleitung.",

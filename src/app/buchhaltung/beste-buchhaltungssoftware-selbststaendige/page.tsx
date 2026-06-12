@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Beste Buchhaltungssoftware für Selbstständige 2026 – Test & Vergleich",
   description:
     "lexoffice, sevDesk, FastBill, Buchhaltungsbutler oder WISO? Wir haben alle 5 getestet. Klare Empfehlung für Selbstständige in Deutschland – mit Vergleichstabelle und FAQ.",
+  alternates: { canonical: "/buchhaltung/beste-buchhaltungssoftware-selbststaendige" },
   openGraph: {
     title: "Beste Buchhaltungssoftware für Selbstständige 2026 – Testsieger: lexoffice",
     description: "5 Programme ehrlich getestet. lexoffice gewinnt dank bester Bedienbarkeit und GoBD-Konformität. Mit Scoring, Pros & Cons und klarer Empfehlung.",
