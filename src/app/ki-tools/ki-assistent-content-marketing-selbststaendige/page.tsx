@@ -354,10 +354,43 @@ function ScoreBar({ label, value, color = "blue" }: { label: string; value: numb
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "Welches KI-Tool ist das beste für Selbstständige?", "acceptedAnswer": { "@type": "Answer", "text": "ChatGPT (GPT-4o) ist das vielseitigste KI-Tool für Selbstständige. Für deutschsprachige Texte und Nuancen ist Claude oft überlegen. Perplexity empfiehlt sich für Recherche mit aktuellen Quellen." } },
-    { "@type": "Question", "name": "Ist ChatGPT kostenlos nutzbar?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, ChatGPT hat einen dauerhaft kostenlosen Plan mit GPT-4o mini. Für GPT-4o (deutlich besser) kostet ChatGPT Plus 20 €/Monat. Für die meisten Selbstständigen lohnt sich Plus." } }
-  ]
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": tools
+    .filter((t) => t.rating && t.votes)
+    .map((t, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "Product",
+        "name": t.name,
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": t.rating,
+          "reviewCount": Number(String(t.votes).replace(/\D/g, "")),
+          "bestRating": 5,
+          "worstRating": 1,
+        },
+      },
+    })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://vergleichcheck.com" },
+    { "@type": "ListItem", "position": 2, "name": "KI-Tools", "item": "https://vergleichcheck.com/ki-tools/ki-assistent-content-marketing-selbststaendige" },
+    { "@type": "ListItem", "position": 3, "name": "KI-Assistent für Content & Marketing" },
+  ],
 };
 
 
@@ -367,6 +400,14 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
       <Header />
       <main className="flex-1 bg-slate-50">

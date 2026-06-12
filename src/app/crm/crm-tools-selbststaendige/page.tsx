@@ -312,10 +312,43 @@ function ScoreBar({ label, value }: { label: string; value: number }) {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "Welches ist das beste CRM für Selbstständige 2026?", "acceptedAnswer": { "@type": "Answer", "text": "Master CRM ist der klare Testsieger: nur 12€/Monat, vollständig auf deutsche Selbstständige optimiert, mit vollem Feature-Set und deutschem Support. Wer kostenlos anfangen möchte, nimmt HubSpot." } },
-    { "@type": "Question", "name": "Gibt es kostenlose CRM-Tools?", "acceptedAnswer": { "@type": "Answer", "text": "Ja: HubSpot (kostenlos mit vollem CRM), Pipedrive (kostenlos für 1 Benutzer) und Zoho CRM (kostenlos für bis 2 Benutzer). Aber: Master CRM ist mit 12€/Monat so günstig, dass sich der Unterschied kaum lohnt." } }
-  ]
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": tools
+    .filter((t) => t.rating != null && t.votes != null)
+    .map((t, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "Product",
+        "name": t.name,
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": t.rating,
+          "reviewCount": Number(String(t.votes).replace(/\D/g, "")),
+          "bestRating": 5,
+          "worstRating": 1,
+        },
+      },
+    })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://vergleichcheck.com" },
+    { "@type": "ListItem", "position": 2, "name": "CRM", "item": "https://vergleichcheck.com/crm/crm-tools-selbststaendige" },
+    { "@type": "ListItem", "position": 3, "name": "CRM-Tools für Selbstständige" },
+  ],
 };
 
 export default function Page() {
@@ -324,6 +357,14 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
       <Header />
       <main className="flex-1 bg-slate-50">

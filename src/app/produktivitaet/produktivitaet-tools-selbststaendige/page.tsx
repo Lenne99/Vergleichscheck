@@ -265,10 +265,43 @@ const faqs = [
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "Welches Produktivitäts-Tool ist das beste für Selbstständige?", "acceptedAnswer": { "@type": "Answer", "text": "Notion ist das beste All-in-one-Produktivitäts-Tool für Selbstständige: Tasks, Notizen, Kundenverwaltung und Planung in einem – dauerhaft kostenlos für Einzelpersonen." } },
-    { "@type": "Question", "name": "Ist Notion wirklich kostenlos?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, Notion ist für Einzelpersonen dauerhaft kostenlos ohne versteckte Limits. Der Plus-Plan (10 €/Monat) lohnt sich erst wenn man Gäste einladen oder unbegrenzte KI nutzen möchte." } }
-  ]
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.frage,
+    "acceptedAnswer": { "@type": "Answer", "text": f.antwort },
+  })),
+};
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": tools
+    .filter((t) => t.rating != null && t.votes != null)
+    .map((t, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "Product",
+        "name": t.name,
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": t.rating,
+          "reviewCount": Number(String(t.votes).replace(/\D/g, "")),
+          "bestRating": 5,
+          "worstRating": 1,
+        },
+      },
+    })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://vergleichcheck.com" },
+    { "@type": "ListItem", "position": 2, "name": "Produktivität", "item": "https://vergleichcheck.com/produktivitaet/produktivitaet-tools-selbststaendige" },
+    { "@type": "ListItem", "position": 3, "name": "Beste Produktivitäts-Tools für Selbstständige" },
+  ],
 };
 
 
@@ -294,6 +327,14 @@ export default function ProduktivitaetPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
       <Header />
       <main className="flex-1 bg-slate-50">

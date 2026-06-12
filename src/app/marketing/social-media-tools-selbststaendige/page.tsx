@@ -299,10 +299,43 @@ function ScoreBar({ label, value }: { label: string; value: number }) {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "Welches Social Media Tool ist das beste für Selbstständige?", "acceptedAnswer": { "@type": "Answer", "text": "Buffer ist das beste Social Media Tool für Selbstständige ohne Marketing-Team: einfachste Bedienung, kostenlos für 3 Kanäle, bester LinkedIn-Scheduler im Test." } },
-    { "@type": "Question", "name": "Welches Social Media Tool ist kostenlos?", "acceptedAnswer": { "@type": "Answer", "text": "Buffer (3 Kanäle, 10 Posts), Metricool (1 Brand) und Canva sind dauerhaft kostenlos nutzbar – ausreichend für den Einstieg als Selbstständiger." } }
-  ]
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": tools
+    .filter((t) => t.rating != null && t.votes != null)
+    .map((t, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "Product",
+        "name": t.name,
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": t.rating,
+          "reviewCount": Number(String(t.votes).replace(/\D/g, "")),
+          "bestRating": 5,
+          "worstRating": 1,
+        },
+      },
+    })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://vergleichcheck.com" },
+    { "@type": "ListItem", "position": 2, "name": "Marketing", "item": "https://vergleichcheck.com/marketing/social-media-tools-selbststaendige" },
+    { "@type": "ListItem", "position": 3, "name": "Social Media Tools für Selbstständige" },
+  ],
 };
 
 
@@ -312,6 +345,14 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
       <Header />
       <main className="flex-1 bg-slate-50">

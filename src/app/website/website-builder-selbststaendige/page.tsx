@@ -284,10 +284,43 @@ const faqs = [
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "Welcher Website Builder ist der beste für Selbstständige?", "acceptedAnswer": { "@type": "Answer", "text": "Squarespace ist für die meisten Selbstständigen die beste Wahl: professionelles Design, All-in-one (Domain, Hosting, SSL), einfache Bedienung, ab 13 €/Monat." } },
-    { "@type": "Question", "name": "Kann ich als Selbstständiger eine Website ohne Vorkenntnisse erstellen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Mit Squarespace, Jimdo oder Wix ist eine professionelle Website in 2–4 Stunden fertig – ohne Programmierkenntnisse. Jimdo baut sogar per KI-Assistent aus 5 Fragen eine erste Website." } }
-  ]
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.frage,
+    "acceptedAnswer": { "@type": "Answer", "text": f.antwort },
+  })),
+};
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": tools
+    .filter((t) => t.rating != null && t.votes != null)
+    .map((t, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "Product",
+        "name": t.name,
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": t.rating,
+          "reviewCount": Number(String(t.votes).replace(/\D/g, "")),
+          "bestRating": 5,
+          "worstRating": 1,
+        },
+      },
+    })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://vergleichcheck.com" },
+    { "@type": "ListItem", "position": 2, "name": "Website", "item": "https://vergleichcheck.com/website/website-builder-selbststaendige" },
+    { "@type": "ListItem", "position": 3, "name": "Beste Website Builder für Selbstständige" },
+  ],
 };
 
 
@@ -313,6 +346,14 @@ export default function WebsiteBuilderPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
       <Header />
       <main className="flex-1 bg-slate-50">
